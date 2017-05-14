@@ -1,0 +1,204 @@
+<Data>
+	<Experience>
+		<Company name="Scannell Solutions Ltd, Ireland">
+			<From name="Start Date">January 03, 2012</From>
+			<To name="End Date">Till Date</To>
+			<Role name="Role">Architect</Role>
+			<Platform name="Software Used">Linux, Windows, JSP, jQuery, Spring, Hibernate, MySql, MS Sql Server </Platform>
+			<Letter name="Experience Certificate">#notAvailable</Letter>
+		</Company>
+		<Company name="Wipro Technologies, Gurgaon, India">
+			<From name="Start Date">December 12, 2005</From>
+			<To name="End Date">December 26, 2011</To>
+			<Role name="Role">Tech Lead</Role>
+			<Platform name="Software Used">UNIX, Core Java, Java Swing,  C, C++, SUN RPC, JNI</Platform>
+			<Letter name="Experience Certificate">/docs/experience/Wipro.jpg</Letter>
+		</Company>
+		<Company name="Flextronics Software Systems, Bangalore, India">
+			<From name="Start Date">April 25, 2005</From>
+			<To name="End Date">December 09, 2005</To>
+			<Role name="Role">Sr. Software Engineer</Role>
+			<Platform name="Software Used">Solaris, C, C++, Oracle, SQL</Platform>
+			<Letter name="Experience Certificate">/docs/experience/FSS.pdf</Letter>
+		</Company>
+		<Company name="IBM Global Services India, Bangalore, India">
+			<From name="Start Date">May 17, 2004</From>
+			<To name="End Date">April 22, 2005</To>
+			<Role name="Role">Software Engineer</Role>
+			<Platform name="Software Used">HP-UX, C, C++, CORBA, </Platform>
+			<Letter name="Experience Certificate">/docs/experience/IBM.pdf</Letter>
+	
+		</Company>
+		<!--  <Company name="NeXtar Software Systems, Delhi, India ">
+			<From name="Start Date">May 16, 2001</From>
+			<To name="End Date">May 07, 2004</To>
+			<Role name="Role">Software Engineer</Role>
+			<Platform name="Software Used">Unix, C, C++, Oracle </Platform>
+			<Letter name="Experience Certificate">#notAvailable</Letter>>
+		</Company>
+		<Company name="IMS, Ghaziabad, UP, India">
+			<From name="Start Date">August, 10,1998</From>
+			<To name="End Date">May 14,, 2001</To>
+			<Role name="Role">Lab Instructor</Role>
+			<Platform name="Software Used">Unix, C, C++, Java </Platform>
+			<Letter name="Experience Certificate">/docs/experience/IMS.pdf</Letter>
+		</Company>-->
+	</Experience>
+	<Education>
+		<Certificate name="Master of Technology(1998)">
+			<Marksheet name="First Sem Marksheet">/docs/education/MTech-Marks-I.pdf</Marksheet>
+			<Marksheet name="Second Sem Marksheet">/docs/education/MTech-Marks-II.pdf</Marksheet>
+			<Marksheet name="Final Sem Marksheet">/docs/education/MarksheetMTechIII.pdf</Marksheet>
+			<Degree name="Certificate Awarded">/docs/education/MTech-Degree.pdf</Degree>
+			<Institution name="Institution/University">GJU, Hisar, Haryana, India</Institution>
+			<Subject name="Subject(s)">Computer Science &amp; Engineering</Subject>
+			<Result name="Marks Obtained">70%-First Division</Result>
+		</Certificate>
+		<Certificate name="Master of Science (1995)">
+			<Marksheet name="First Year Marksheet">/docs/education/MSc-Marks-I.pdf</Marksheet>
+			<Marksheet name="Final Second Marksheet">/docs/education/MSc-Marks-II.pdf</Marksheet>
+			<Degree name="Certificate Awarded">/docs/education/MSc-Degree.pdf</Degree>
+			<Institution name="Institution/University">CCS University, Meerut, UP, India</Institution>
+			<Subject name="Subject(s)">Physics(Specialization-Electronics)</Subject>
+			<Result name="Marks Obtained">74%-First Division</Result>
+		</Certificate>
+		<Certificate name="Bachelor of Science(1993)">
+			<Marksheet name="First Year Marksheet">/docs/education/BSc-Marks-I.pdf</Marksheet>
+			<Marksheet name="Second Year Marksheet">/docs/education/BSc-Marks-II.pdf</Marksheet>
+			<Marksheet name="Final Year Marksheet">/docs/education/BSc-Marks-III.pdf</Marksheet>
+			<Degree name="Certificate Awarded">/docs/education/BSc-Degree.pdf</Degree>
+			<Institution name="Institution/University">Meerut University, Meerut, UP, India</Institution>
+			<Subject name="Subject(s)">Physics, Chemistry, Maths</Subject>
+			<Result name="Marks Obtained">70%-First Division</Result>
+		</Certificate>
+		<Certificate name="Intermediate-10+2 Standard(1990)">
+			<Marksheet name="Certificate Awarded">/docs/education/Intermediate.pdf</Marksheet>
+			<Institution name="Institution/University">UP Board Allahabad, UP, India</Institution>
+			<Subject name="Subject(s)">Physics, Chemistry, Maths, English, Hindi</Subject>
+			<Result name="Marks Obtained">62%-First Division</Result>
+		</Certificate>
+		<Certificate name="High School-10th Standard(1988))">
+			<Marksheet name="Certificate Awarded">/docs/education/HighSchool.pdf</Marksheet>
+			<Institution name="Institution/University">UP Board Allahabad, UP, India</Institution>
+			<Subject name="Subject(s)">Physics, Chemistry, Maths, English, Hindi</Subject>
+			<Result name="Marks Obtained">70%-First Division</Result>
+		</Certificate>
+	</Education>
+	<Recognitions>
+		<Certification name="Wipro Certification">
+			<Award name="GSM/GPRS Certification">/docs/certification/GSM-GPRS.pdf</Award>
+			<Award name="Software Design Certification">/docs/certification/Design4.1.pdf</Award>
+		</Certification>
+		<Certification name="Brainbench Certification">
+			<Award name="C Certification">/docs/certification/brainBenchC.pdf</Award>
+			<Award name="C++ Certification">/docs/certification/brainBenchCpp.pdf</Award>
+		</Certification>
+		<Certification name=" Ericsson Certification">
+			<Award name="IOG/APG Certification">/docs/certification/iogApgEricsson.pdf</Award>
+		</Certification>
+		<Recognition name="Wipro Technology's Encore Award (July 13, 2006)">
+			<Award name="Award Name">Feather in My Cap</Award>
+			<Award name="Given for">For Picking up the UIM/X tool very well in short span of time and implementing the related requirement in well before time.</Award>
+			<Award name="Link">/docs/recognition/encoreAward_2006.pdf</Award>
+		</Recognition>
+		<Recognition name="Wipro Technology's Encore Award (January 18, 2007)">
+			<Award name="Award Name">Feather in My Cap</Award>
+			<Award name="Given for">Showing Extra ordinary support during Function and System Test for Ericsson Project</Award>
+			<Award name="Link">/docs/recognition/encoreAward_2007.pdf</Award>
+		</Recognition>
+		<Recognition name="Wipro Technology's Encore Award (April 3, 2008)">
+			<Award name="Award Name">Feather in My Cap</Award>
+			<Award name="Given for">This is to acknowledge the significant contribution made by Tejbir Singh in feasibility of R-14 release. He not only delivered 10 IPs out of 24 IPs delivered as part of complete release.</Award>
+			<Award name="Link">/docs/recognition/encoreAward_2008.pdf</Award>
+		</Recognition>
+		<Recognition name="Wipro Technology's Encore Award (February 25, 2009)">
+			<Award name="Award Name">Feather in My Cap</Award>
+			<Award name="Given for">Successful XMATE R-14 installation at customer site, with quick turn around and all issues that came across. Anchoring the complete Xmate R-14 release.</Award>
+			<Award name="Link">/docs/recognition/encoreAward_2009.pdf</Award>
+		</Recognition>
+		<Recognition name="Wipro Technology's Beyond and Above Award">
+			<Award name="Award Name">Beyond and Above</Award>
+			<Award name="Given for">To give extraordinary performance for XMATE-12 release.</Award>
+			<Award name="Link">/docs/recognition/anbAward1.pdf</Award>
+		</Recognition>
+		<Recognition name="Wipro Technology's Beyond and Above Award">
+			<Award name="Award Name">Beyond and Above</Award>
+			<Award name="Given for">To give extraordinary performance for XMATE-13 release.</Award>
+			<Award name="Link">/docs/recognition/anbAward2.pdf</Award>
+		</Recognition>
+		
+	</Recognitions>
+	<PhotoVideo>
+		<Photos name="India">
+			<Photo name="Wipro Official Trips">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!2564</Photo>
+			<Photo name="Family Album">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!2604</Photo>
+		</Photos>
+		<Photos name="Ireland">
+			<Photo name="Misc with Friends, Ireland">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!2243</Photo>
+			<Photo name="Family Album, Athlone, Ireland">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!2858</Photo>
+			<Photo name="Donegal and Sligo, Ireland, August 1, 2010">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!1135</Photo>
+			<Photo name="Aran Island, Ireland, August 28, 2010">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!1408</Photo>
+			<Photo name="Dublin City, April 4, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!1647</Photo>
+			<Photo name="Dublin Zoo, July 30, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!3429</Photo>
+			<Photo name="Srishti 11th Birthday and Rakhsa Bandhan 2011">https://skydrive.live.com/?sc=photos#cid=01849066A9BBF197&amp;id=1849066A9BBF197%213621&amp;sc=photos</Photo>
+		</Photos>
+		<Photos name="UK">
+			<Photo name="London Trip Dec 2009">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!1780</Photo>
+		</Photos>
+		<Photos name="Paris, France">
+			<Photo name="Opera House, May 4, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!105</Photo>
+			<Photo name="Disney Land, May 5, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!254</Photo>
+			<Photo name="Louvre Museum, May 6, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197amp;&amp;page=play&amp;resid=1849066A9BBF197!643</Photo>
+			<Photo name="Eiffel Tower, May 7, 2011">https://skydrive.live.com/redir.aspx?cid=01849066a9bbf197&amp;page=play&amp;resid=1849066A9BBF197!869</Photo>
+		</Photos>
+		<Videos name="Ireland">
+			<Video name="Sligo and Donegal, Aug 1, 2010">http://www.youtube.com/watch?v=IqDgtJHwvG0</Video>
+			<Video name="Aran Island, August 28, 2010">http://www.youtube.com/watch?v=2m1HdQ9aaU4</Video>
+			<Video name="Srishti 10th Birthday P1">http://www.youtube.com/watch?v=Kpn0DO3DLPA</Video>
+			<Video name="Srishti 10th Birthday P2">http://www.youtube.com/watch?v=yHY3PNZA_Sw</Video>
+			<Video name="Srishti 10th Birthday P3">http://www.youtube.com/watch?v=9obkaDbDios</Video>
+			<Video name="Snowfall Athlone P1">http://www.youtube.com/watch?v=as1RQvkWV34</Video>
+			<Video name="Snowfall Athlone P2">http://www.youtube.com/watch?v=NM8YXfigBCA</Video>
+			<Video name="Snowfall Athlone P3">http://www.youtube.com/watch?v=MyiOUjYupms</Video>
+			<Video name="Aditya Birthday P1">http://www.youtube.com/watch?v=8dWycTKwoAQ</Video>
+			<Video name="Aditya Birthday P2">http://www.youtube.com/watch?v=yEGNWxWdTGM</Video>
+			<Video name="Aditya Birthday P3">http://www.youtube.com/watch?v=Qj4i0W1Gxvk</Video>
+			<Video name="Aditya Group Dance">http://www.youtube.com/watch?v=X_EfHjEDuic</Video>
+			<Video name="Aditya School Meet Day P1">http://www.youtube.com/watch?v=0UMsV6ZN6UY</Video>
+			<Video name="Aditya School Meet Day P2">http://www.youtube.com/watch?v=JzRGLwvkW1o</Video>
+			<Video name="Srishti 11th Birthday P1">http://www.youtube.com/watch?v=ku9iBcsUsr4</Video>
+			<Video name="Srishti 11th Birthday P2">http://www.youtube.com/watch?v=Vln0kB2HUfo</Video>
+			<Video name="Srishti 11th Birthday P3">http://www.youtube.com/watch?v=Ei2eATyQfV8</Video>
+			<Video name="Srishti 11th Birthday P4">http://www.youtube.com/watch?v=plszxo4rPOA</Video>
+			<Video name="Srishti 11th Birthday P5">http://www.youtube.com/watch?v=RAOQkNHbwXY</Video>
+			<Video name="Srishti 11th Birthday P6">http://www.youtube.com/watch?v=4wz-2RSgVx8</Video>
+			<Video name="Srishti 11th Birthday P7">http://www.youtube.com/watch?v=wKaRWZAcSBI</Video>
+		</Videos>
+		<Videos name="Paris, France">
+			<Video name="Disneyland May 5, 2011">http://www.youtube.com/watch?v=kT6YCifRzBo</Video>
+			<Video name="Lauvre Museum, May 6, 2011">http://www.youtube.com/watch?v=2Fdmyu6t2qc</Video>
+			<Video name="Eiffel Tower, May 7, 2011">http://www.youtube.com/watch?v=I0mXuxs2uB8</Video>
+		</Videos>
+	</PhotoVideo>
+	<ForeignTrips>
+		<ForeignTrip name="Sultanate of Oman">
+			<Start name="Start Date">October 17, 2008</Start>
+			<End name="End Date">October 31, 2008</End>
+			<Visited name="City Visited">Muscat</Visited>
+			<Purpose name="Purpose of Trip">To install XMATE, an Ericsson EMS at Omantel Site.</Purpose>
+		</ForeignTrip>
+		<ForeignTrip name="Morocco">
+			<Start name="Start Date">March 13, 2009</Start>
+			<End name="End Date">March 23, 2009</End>
+			<Visited name="City Visited">Rabat, Casablanca</Visited>
+			<Purpose name="Purpose of Trip">To train Maroc Telecom to facilitate XMATE reporting. </Purpose>
+		</ForeignTrip>
+		<ForeignTrip name="Republic of Ireland">
+			<Start name="Start Date">May 31, 2009</Start>
+			<End name="End Date">Till Date</End>
+			<Visited name="City Visited">Dublin, Athlone, Cork, Galway, Aran Island, Donegal, Sligo</Visited>
+			<Purpose name="Purpose of Trip">To work at Ericsson LMI as Wipro Technologies contrator. Now woking in different company</Purpose>
+		</ForeignTrip>
+	</ForeignTrips>
+</Data>
+

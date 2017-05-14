@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="classpath:com/tssa/km/domain/repo/conf/repository.xml" />
+	<bean name="questionService" parent="baseTransactionProxy">
+		<property name="target" ref="questionServiceImpl"/>
+	</bean>
+	<bean id="questionServiceImpl" class="com.tssa.km.domain.service.QuestionServiceImpl">
+    	<property name="totalQuestions">
+    		<map>
+    			<entry key="java" value="${total.java.questions}" />
+    			<entry key="db" value="${total.db.questions}" />
+    			<entry key="os" value="${total.os.questions}" />
+    			<entry key="design" value="${total.design.questions}" />
+    			<entry key="cpp" value="${total.cpp.questions}" />
+    		</map>
+    	</property>
+    	<property name="questionRepository" ref="questionRepository"/>
+    </bean>
+</beans>

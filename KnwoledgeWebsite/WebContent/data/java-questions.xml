@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java>
+  <question no="1">
+		<body>What are major principles of OOPs supported by Java?
+		</body>
+		<options>
+			<a> Abstration, Encapulation, Inheritace, aggregation</a>
+			<b> Abstration, Encapulation, delegation, Polymorphism </b>
+			<c> Abstration, Encapulation, Inheritace, Polymorphism </c>
+			<d> Abstration, Modularity, Inheritace, Polymorphism</d>
+		</options>
+		<answer name="c">Abstration, Encapulation, Inheritace, Polymorphism, data hiding  are five major  principles of Object Oriented Programming supported by Java
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="2">
+		<body>Which one is the correct list of  primitive data type supported by java?
+		</body>
+		<options>
+			<a> byte, short, int, long, float, double, boolean, char</a>
+			<b> byte, short, int, long, float, double, boolean, String </b>
+			<c> Array, short, int, long, float, double, boolean, char </c>
+			<d> byte, short, int, long, float, double, boolean, char, double double</d>
+		</options>
+		<answer name="a"> The complete list of all primitive data types supported by java is byte, short, int, long, float, double, boolean, char.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="3">
+		<body>What is the correct order of access specifier in order to increase the visibility (i.e. Scope ascending order)?
+		</body>
+		<options>
+			<a> private, protected, no specifier, public</a>
+			<b> private, no specifier, protected,  public </b>
+			<c> private, no specifier, public, protected  </c>
+			<d> no specifier, private, protected,  public</d>
+		</options>
+		<answer name="b"> This is the correct order private(class only), no specifier(class and same package), protected(class, subclass, and same package), public(visible any where).
+		</answer>
+		<category>EDH</category>
+	</question>
+	<question no="4">
+		<body>What is the correct ascending sorted order in terms of memory size for Java primitive types?
+		</body>
+		<options>
+			<a> boolean, byte, char, int, long, float</a>
+			<b> byte, boolean, char, int, long, float </b>
+			<c> byte, char, boolean,  int, long, float</c>
+			<d> boolean, byte, char, int, float, long</d>
+		</options>
+		<answer name="d"> Correct order is boolean(1-bit), byte(8-bits), char(16-bits), int(32-bits), float(32-bits), long(64-bits).
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="5">
+		<body>What are the range of values for short, and char data type in java respectively?
+		</body>
+		<options>
+			<a> -128 to 127, and Unicode 0 to Unicode 256 </a>
+			<b> -32,768 to 32,767, and Unicode 0 to Unicode 327681</b>
+			<c> -32,767 to 32,768, and Unicode 0 to Unicode 327681</c>
+			<d> -32,767 to 32,768, and Unicode 0 to Unicode 512</d>
+		</options>
+		<answer name="b"> The correct range is -32,768 to 32,767, and Unicode 0 to Unicode 327681.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="6">
+		<body>Which of the following can be declared as 'volatile'?
+		</body>
+		<options>
+			<a> class </a>
+			<b> class data member</b>
+			<c> class method</c>
+			<d> interface</d>
+		</options>
+		<answer name="b"> The keyword volatile can be used only with class data member to specify that the variable is modified asynchronously by concurrently running threads. Methods, classes and interfaces thus cannot be declared volatile.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="7">
+		<body>Select the correct statement(s) out of following:
+		</body>
+		<options>
+			<a> class, class method can be a declared as abstract, but class data member can not be declared as abstract  </a>
+			<b> class, class method, and class data member can be declared as abstract </b>
+			<c> class, class data member can be a declared as abstract, but class method can not be declared as abstract </c>
+			<d> none of above is correct</d>
+		</options>
+		<answer name="a"> class, class method can be a declared as abstract, but class data member can not be declared as abstract
+		</answer>
+		<category>AI</category>
+	</question>
+	<question no="8">
+		<body>The modifier 'transient' can be used with:
+		</body>
+		<options>
+			<a> class  </a>
+			<b> class method </b>
+			<c> class data member</c>
+			<d> none of above</d>
+		</options>
+		<answer name="c"> The modifier transient is used with class data member to specify that when an object is serialized, 
+						  then transient variables are not included in the default serial representation. When an object is deserialized, transient fields are initialized only to their default value.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="9">
+		<body>Which of the following can not be 'static'?
+		</body>
+		<options>
+			<a> Top level class(i.e. outer class)  </a>
+			<b> Inner class </b>
+			<c> class data member</c>
+			<d> class method</d>
+		</options>
+		<answer name="a"> An outer class in java can not be declared as static.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="10">
+		<body>The 'final' modifier when used with class field, class method, and class, then: 
+		</body>
+		<options>
+			<a> The class field can not be modified, class method can be overriden, and class can not be derived </a>
+			<b> The class field can not be modified, class method can not be overriden, and class can not be derived </b>
+			<c> The class field can not be modified, class method can not be overriden, and class can be derived</c>
+			<d> The class field can not be modified, class method can be overriden, and class can be derived</d>
+		</options>
+		<answer name="b"> The final class field can not be modified, final class method can not be overriden, and final class can not be derived.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="11">
+		<body>The 'finally' block in exception handling does not execute when:
+		</body>
+		<options>
+			<a> an excetion is raised in 'try' block, and is caught in 'catch' block</a>
+			<b> an excetion is raised in 'try' block, and is not caught in 'catch' block</b>
+			<c> an excetion is raised in 'try' block, and 'return' statement is executed in 'catch' block</c>
+			<d> an excetion is raised in 'try' block, and 'System.exit(-1)' statement is executed in 'catch' block</d>
+		</options>
+		<answer name="d">An excetion is raised in 'try' block, and System.exit(-1) statement is executed in 'catch' block.
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="12">
+		<body>What are the correct statement(s) about an Interface?
+		</body>
+		<options>
+			<a> An interface can not extends another interface.</a>
+			<b> All of the data fields, and methods are by default 'public' in an  interface.</b>
+			<c> An interface can extends an abstract class.</c>
+			<d> All of the data fields, and methods are by default 'final' in an  interface. </d>
+		</options>
+		<answer name="b">All of the data fields, and methods are by default 'public' in an  interface. Also data fields are by default final, whereas methods are abstract.
+		</answer>
+		<category>AI</category>
+	</question>
+	<question no="13">
+		<body>What are the correct statement(s) about an abstract class?
+		</body>
+		<options>
+			<a> An abstract class can be instatiated.</a>
+			<b> An abstract class can not have 'private' method(s).</b>
+			<c> An abtract class can extends a concrete class(non-abstract class).</c>
+			<d> An abstract class can extends another abstract class. </d>
+		</options>
+		<answer name="cd">
+		</answer>An abstract class can have private methods, but can not have private abstract methods. Also an abstract class can extends another class abstract or concrete class.
+		<category>AI</category>
+	</question>
+	<question no="14">
+		<body>Which of the follwing statement(s) are true about a JVM(Java Virtual Machine)
+		</body>
+		<options>
+			<a> JVM is platform independent.</a>
+			<b> JVM is platform dependent.</b>
+			<c> JVM executes java source code.</c>
+			<d> JVM executes bytecode generated by javac</d>
+		</options>
+		<answer name="bd">Java Virtual Machine is platform dependent, therefore, there exist different JVM for different platforms. JVM executes bytecode not the java code.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="15">
+		<body>What is true about a static method in a class?
+		</body>
+		<options>
+			<a> A static method can call non-static methods of the class.</a>
+			<b> A static method can only use static data fields.</b>
+			<c> A static method can use both static, and non-static data fields</c>
+			<d> A non-static method can call static method of the class</d>
+		</options>
+		<answer name="bd"> A static method can only use static data fields of the class, and a non-static method can use static method of the class.
+		</answer>.
+		<category>OOP</category>
+	</question>
+	<question no="16">
+		<body>Pick up correct statement(s) about a Marker interface in java. 
+		</body>
+		<options>
+			<a> A marker interface can have data fields, but can not have methods.</a>
+			<b> A marker interface can have methods, but can not have data fields.</b>
+			<c> A marker interface can have neither data fields nor methods.</c>
+			<d> A marker interface can have both data fields and methods.</d>
+		</options>
+		<answer name="c"> A marker interface in Java interface doesn't actually define any fields, and methods. 
+						  It is just used to "mark" Java classes which support a certain capability, and the class marks itself as implementing the interface.
+						  For example, cloneable, Serializable are marker inteface in Java. 
+		</answer>.
+		<category>OOP</category>
+	</question>
+	<question no="17"> 
+		<body>Pick up correct statement(s) about a non-abstract(concrete class) class in java.
+		</body>
+		<options>
+			<a> A concrete class can have abstract methods.</a>
+			<b> A concrete class can not be used a data field of an abstract class.</b>
+			<c> A concrete class can have an abstract class as super class.</c>
+			<d> A concrete class can not have final methods, and final data fields.</d>
+		</options>
+		<answer name="c">A concrete class can have an abstract class as super class. 
+		</answer>.
+		<category>IP</category>
+	</question>
+	<question no="17">
+		<body>Pick up the correct statement(s) out of following. 
+		</body>
+		<options>
+			<a> The 'Object' class in Java is super class of all other classes.</a>
+			<b> The 'Object' class in Java is super class of all classes except the data type wrapper classes (i.e. Long, Integer etc).</b>
+			<c> The 'Object' class in Java is not super class of user defined class.</c>
+			<d> The 'Object' class in Java is super class of all other classes except 'String' class</d>
+		</options>
+		<answer name="a">Every class  in java is directly or indirectly subclass of 'Object' class.
+		</answer>.
+		<category>IP</category>
+	</question>
+	<question no="18">
+		<body>What is true about a function's parameters in java? 
+		</body>
+		<options>
+			<a> All parameters are passed by value.</a>
+			<b> All parameters are passed by reference.</b>
+			<c> Primitive type parameters are passed by value whereas java objects are passed by reference.</c>
+			<d> Primitive type parameters are passed by reference whereas java objects are passed by value.</d>
+		</options>
+		<answer name="c">Primitive type parameters are passed by value whereas java objects are passed by reference.
+		</answer>.
+		<category>IP</category>
+	</question>
+	<question no="19">
+		<body>What are  true statement(s) about automatic type conversion in java? 
+		</body>
+		<options>
+			<a> Automatic type conversion happens when both source and destination types are compatible, and destination type is larger than source type. </a>
+			<b> Automatic type conversion happens when both source and destination types are compatible, and destination type is smaller than source type.</b>
+			<c> Automatic type conversion happens when both source and destination types are incompatible, and destination type is equal to source type.</c>
+			<d> Automatic type conversion never happens.</d>
+		</options>
+		<answer name="a">In java automatic type conversion happens when both source and destination types are compatible, and destination type is larger than source type.
+						 For example, byte will automatically convert to short, int, and long.
+		</answer>.
+		<category>DTOPCS</category>
+	</question>
+	<question no="20">
+		<body> What is the output of following program? 
+				class ConvTest{
+		    	 	public static void main(String args[]) {
+		    	 		byte b1=0, b2=0;
+		    	 		int x=257;
+		    	 		float y=256.34;
+		    	 		b1=(byte)x;
+		    	 		b2=(byte)y;
+		 	  	 		System.out.println("b1="+b1+", b2="+b2);
+		    	 		
+		    	 	}
+		       }
+		</body>
+		<options>
+			<a> b1=257, b2=256 </a>
+			<b> b1=1, b2=0</b>
+			<c> b1=0, b2=1</c>
+			<d> b1=25, b2=25</d>
+		</options>
+		<answer name="b">If the size of the source is too large to fit into the target type, then that value will be reduced modulo the target type’s range.
+						In this example, byte max range is 256, therefore 257 is reduced to 1, and 256 is reduced to 0. 
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="21">
+		<body> Pick up the correct statement(s) about the Type Promotion Rules applied for in an java arithmatic expression.
+		</body>
+		<options>
+			<a> All byte, short values are promoted to short. </a>
+			<b> If one operand is long, and other operand is int, the whole expression is promoted to long</b>
+			<c> If one operand is float, and other operand is long, the whole expression is promoted to double</c>
+			<d> If one operand is double, the whole expression is promoted to double</d>
+		</options>
+		<answer name="bd">Java provides automatic promotion rules for the expression. The promotion sequence is:
+						  1. All short and byte are promoted to int.
+						  2. If one operand is long, then whole expression is evaluated to long.
+						  3. If one operand is float, then whole expression is evaluated to float.
+						  4. If one operand is double, then whole expression is evaluated to double.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="22">
+		<body> What is the output of following program? 
+				class PromotionTest{
+		    	 	public static void main(String args[]) {
+		    	 		byte x=(byte)255;
+		    	 		byte y=255+2;
+		    	 		System.out.println(y);
+		    	 	}
+		       }
+		</body>
+		<options>
+			<a> 257 </a>
+			<b> 1</b>
+			<c> Error saying "add cast to byte or change byte to int" at byte y=255+2;</c>
+			<d>-256</d>
+		</options>
+		<answer name="c">According to the type promotion rule, expression 255+2 is promoted to int, which can not be assigned to byte.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="23">
+		<body> What is true about the finalize() method in Java?
+		</body>
+		<options>
+			<a> The finalize() method is invoked just before an object goes out of scope.</a>
+			<b> The finalize() method is invoked just before an object is destyoyed by Garbage Collector.</b>
+			<c> The finalize() method is invoded just after an object goes out of scope.</c>
+			<d> The finalize() method is invoked just after an object is destyoyed by Garbage Collector.</d>
+		</options>
+		<answer name="b">The finalize() method is invoked just before an object is destyoyed by Garbage Collector.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="24">
+		<body>What function characterstics are used to oveload a function?
+		</body>
+		<options>
+			<a> Parameter type, number of parameters, return type.</a>
+			<b> Parameter type, number of parameters</b>
+			<c> Parameter type, retrun type</c>
+			<d> Return type, number of parameters</d>
+		</options>
+		<answer name="b">Either Parameter type or  number of parameters  or both are used to ovverload a function in Java. Return type is not considered for overloading.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="25">
+		<body> What is the output of following program? 
+				class FuncTest{
+		    	 	public static void main(String args[]) {
+		    	 		show(65, 66);
+		    	 	}
+		    	 	static void  show(byte a, byte b){
+		    	 		System.out.println("byte a="+a+", byte b="+b);
+		    	 	}
+		    	 	static void  show(int a, int b){
+		    	 		System.out.println("int a="+a+", int b="+b);
+		    	 	}
+		    	 	static void  show(char a, char b){
+		    	 		System.out.println("char a="+a+", char b="+b);
+		    	 	}
+		    	 	static void  show(short a, short b){
+		    	 		System.out.println("short a="+a+", short b="+b);
+		    	 	}
+		       }
+		</body>
+		<options>
+			<a> char a=A, char b=B </a>
+			<b> byte a=65, byte b=66</b>
+			<c> int a=65, int b=66</c>
+			<d> short a=65, short b=66</d>
+		</options>
+		<answer name="b">The type of the arguments passed is int, so "int a=65, int b=66" will be printed.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="26">
+		<body> What is the output of following program? 
+				class DoubleTest{
+		    	 	public static void main(String args[]) {
+		    	 		show((int)10, 20);
+		    	 	}
+		    	 	static void  show(long x, long y){
+		    	 		System.out.println("long x="+x+", long y="+y);
+		    	 	}
+		    	 	static void  show(double x, double y){
+		    	 		System.out.println("double x="+x+", double y="+y);
+		    	 	}
+		    	 	static void  show(short x, short y){
+		    	 		System.out.println("short x="+x+", short y="+y);
+		    	 	}
+		        }
+		</body>
+		<options>
+			<a> long x=10, long y=20 </a>
+			<b> double x=10.0, double y=20.0</b>
+			<c> Error saying "create method(int, int)"</c>
+			<d> short x=10, short y=20  </d>
+		</options>
+		<answer name="a">The function parameters are promoted to long, and therefore, "long x=10, long y=20" printed.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="27">
+		<body> What are the incorrect statement(s) about the nested class? 
+		</body>
+		<options>
+			<a> Outer class can not access data fields of inner class. </a>
+			<b> Inner class can access private data fields of outer class.</b>
+			<c> Inner class scope is limited to outer class.</c>
+			<d> Outer class can access public methods of inner class. </d>
+		</options>
+		<answer name="d">Inner class can access data fields and methods of the outer class, but vice-versa is not true.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="28">
+		<body> What are the correct statement(s) about the static inner class in Java? 
+		</body>
+		<options>
+			<a> A static inner class can access directly the static and non-static data fields of the outer class.</a>
+			<b> A static inner class can access only the static data fields of the outer class.</b>
+			<c> A static inner class can access only the non-static data fields of the outer class.</c>
+			<d> A static inner class can not access any data fields of the outer class</d>
+		</options>
+		<answer name="b">A static inner class in Java can only use static data fields/methods of the outer class.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="29">
+		<body>Find the immutable classes out of following. 
+		</body>
+		<options>
+			<a> StringBuffer</a>
+			<b> String</b>
+			<c> Integer</c>
+			<d> Long</d>
+		</options>
+		<answer name="bcd">The state of the objects of an immutable classe can not be changed after their construction. 
+						   String, Wrapper classes are the examples of immutable classes.  
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="30">
+		<body>What is the output of following program? 
+		public class Shape implements Drawable, Showable{
+			public static void main(String[] args) {
+				Shape shape = new Shape();
+				Shape circle= new Circle();
+				if(circle instanceof Drawable){
+					System.out.print("Drawable ");
+				}
+				if(shape instanceof Showable){
+					System.out.print("Showable ");
+				}
+				if(shape instanceof Circle){
+					System.out.print("Circle ");
+				}
+				if(circle instanceof Shape){
+					System.out.print("Shape ");
+				}
+			}
+		}
+		class Circle extends Shape{}
+		interface Drawable {}
+		interface Showable {}
+		</body>
+		<options>
+			<a> Drawable Showable Shape </a>
+			<b> Drawable Showable Circle </b>
+			<c> Showable Circle Shape </c>
+			<d> Drawable Circle Shape </d>
+		</options>
+		<answer name="a"> Base class 'Shape' is not an instance of derived class 'Circle'.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="31">
+		<body>What is the output of following program? 
+			class A {
+				int a=1;
+				void displayData(){
+					System.out.println("a="+a);
+				}
+			}
+			class AB extends A{
+				int a=10;
+				int b=1;
+				void displayData(){
+					System.out.println("a="+a+", b="+b);
+				}
+				
+			}
+			public class ABC extends AB{
+				int a=100;
+				int b=10;
+				int c=1;
+				void displayData(){
+					System.out.println("a="+a+", b="+b+", c="+c);
+				}
+				public static void main(String[] args) {
+					A obj=(A)new ABC();
+					obj.displayData();
+				}
+			}
+		</body>
+		<options>
+			<a> a=1 </a>
+			<b> a=10, b=1</b>
+			<c> a=100, b=10, c=1 </c>
+			<d> a=100</d>
+		</options>
+		<answer name="c">The obj is the object of class 'ABC', however it is type casted to A, though obj points to the instance of ABC.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="32">
+		<body>What is the output of following program? 
+			class A {
+				A(){
+					System.out.print("A");
+				}
+			}
+			class B extends A{
+				B(){
+					new A();
+					System.out.print("B");
+				}
+				
+			}
+			public class C extends B{
+				C(){
+				    super();
+				    new B();
+					System.out.print("C");
+				}
+				public static void main(String[] args) {
+					new C();
+				}
+			}
+		</body>
+		<options>
+			<a> AABAABC </a>
+			<b> AAAABBC</b>
+			<c> CBAABAA</c>
+			<d> none of the above</d>
+		</options>
+		<answer name="a">The constructor of the base class is called before that of derived class.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="33">
+		<body>What is the output of following program? 
+			class Line {
+			DottedLine DottedLine(){
+				return (DottedLine) this;
+			}
+			void draw(){
+				System.out.println("Line.draw");
+			}
+				
+			}
+			public class DottedLine extends Line{
+				Line Line(){
+					return this;
+					
+				}
+				void draw(){
+					System.out.println("DottedLine.draw");
+				}
+				public static void main(String[] args) {
+					((Line)new DottedLine()).draw();
+				}
+			}
+		</body>
+		<options>
+			<a> Error saying "Can not have method name Line() same as base class Line." </a>
+			<b> Line.draw</b>
+			<c> DottedLine.draw</c>
+			<d> Error saying "Method draw() is already defined"".</d>
+		</options>
+		<answer name="c">The function draw() is defined in both base and derived classes. However  base class definition is hidden by the derived class definition.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="34">
+		<body>A class which does not implement all of the methods of an interface must be declared as:
+			
+		</body>
+		<options>
+			<a>abstract </a>
+			<b>static</b>
+			<c>final</c>
+			<d>transient</d> 
+		</options>
+		<answer name="a">An abstract class does not need to implement all of the methods of an interface.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="35">
+		<body>What are the correct modifiers that can be used with interface's data fields?
+		
+		</body>
+		<options>
+			<a>public, static, final </a>
+			<b>private, public, static, final</b>
+			<c>protected, public, static, final</c>
+			<d>public, protected, static</d> 
+		</options>
+		<answer name="a">public, static, final are the allowed modifiers which can be used with java interfaces.
+		</answer>
+		<category>IP</category>
+	</question>
+	<question no="36">
+		<body>All exception types in java are subclasses of:
+		
+		</body>
+		<options>
+			<a>RuntimeException </a>
+			<b>Exception</b>
+			<c>Error</c>
+			<d>Throwable</d> 
+		</options>
+		<answer name="d">All exception types in java are subclasses of Throwable.
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="37">
+		<body>What is output of the following program?
+			public class ExceptionTest{
+				public static void main(String[] args) {
+					try{
+						System.out.print("Before ");
+						fun();
+						System.out.print("After ");
+					}catch(Exception e){
+						System.out.print("Caught ");
+					}
+				}
+				private static void fun() {
+					try{
+						throw new RuntimeException("Fun");
+					}finally{
+						System.out.print("Finally ");
+					}
+				}
+			}
+					
+		</body>
+		<options>
+			<a>Before Caught Finally </a>
+			<b>Before Finally Caught </b>
+			<c>Before Finally Caught After </c>
+			<d>Before Finally </d> 
+		</options>
+		<answer name="b">The finally block executes when try block concludes. 
+						 The try block in function fun() concludes before the exception is caught in main function.
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="38">
+		<body>What are true statement(s) about a checked exception?
+		</body>
+		<options>
+			<a>A checked exception is a subclass of  RuntimeException class.</a>
+			<b>A checked exception needs to be included in the throws list if there exists no matching catch block in the function where it is thrown.</b>
+			<c>A checked exception needs to be caught in the same function where it is thrown. </c>
+			<d> none of above.</d> 
+		</options>
+		<answer name="b">Inside the standard package java.lang, Java defines several exception classes. The most general of these exceptions are subclasses of the standard type RuntimeException. 
+						 Since java.lang is implicitly imported into all Java programs, most exceptions derived from RuntimeException are automatically available. 
+						 Furthermore, they need not be included in any method’s throws list. In the language of Java, these are called unchecked exceptions because the compiler does not check to see if a method handles or throws these exceptions. 
+						 Exceptions defined by java.lang that must be included in a method’s throws list if that method can generate one of these exceptions and does not handle it itself. These are called checked exceptions. 
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="39">
+		<body>What is the output of following program?
+			public class ThreadTest{
+				public static void main(String[] args) throws InterruptedException {
+					Thread.currentThread().setName("Main");
+					new MyThread("Thread-1");
+					new MyThread("Thread-2").join();
+					System.out.print(Thread.currentThread().getName());
+				}
+			}
+			class MyThread extends Thread{
+				MyThread(String name){
+					super(name);
+					start();
+				}
+				public void run() {
+					try {
+						if(Thread.currentThread().getName().equals("Thread-1"))
+							Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					System.out.print(Thread.currentThread().getName());
+				}
+			}
+		</body>
+		<options>
+			<a>Thread-2 Main Thread-1</a>
+			<b>Thread-1 Main Thread-2</b>
+			<c>Main Thread-2 Thread-1</c>
+			<d>Main Thread-1 Thread-2</d> 
+		</options>
+		<answer name="a">The Main thread starts execution, and creates Thread-1 and Thread-2. 
+					     Main thread waits for Thread-2 to finish, and Thread-1 goes to sleep 2 seconds.
+					     Meanwhile Thread-2 finishes, and then Main thread starts execution to terminate. 
+					     After 2 seconds Thread-1 wakes up and starts execution.
+		</answer>
+		<category>MT</category>  
+	</question>
+	<question no="40">
+		<body>What is the output of following program?
+			public class ThreadTest{
+				public static void main(String[] args) throws InterruptedException {
+					Thread.currentThread().setName("Main");
+					new MyThread("Thread-1").join();
+					new MyThread("Thread-2").join();
+					System.out.print(Thread.currentThread().getName());
+				}
+			}
+			class MyThread extends Thread{
+				MyThread(String name){
+					super(name);
+					start();
+				}
+				public void run() {
+					try {
+						if(Thread.currentThread().getName().equals("Thread-1")){
+							Thread.sleep(2000);
+							System.exit(0);
+						}
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					System.out.print(Thread.currentThread().getName());
+				}
+			}
+		</body>
+		<options>
+			<a>Thread-2 Main Thread-1</a>
+			<b>Thread-1 Main</b>
+			<c>Main</c>
+			<d>Main Thread-2</d> 
+		</options>
+		<answer name="c">The Main thread starts execution, and creates Thread-1 and Thread-2. 
+					     Main thread waits for Thread-1 and Thread-2 to finish, and then Thread-1 goes to sleep 2 seconds.
+					     Meanwhile Thread-2 executes the exit(0) which terminates the process(i.e. all threads).
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="41">
+		<body>What are true statement(s) out of following about the wait() function of 'Object' class?
+		</body>
+		<options>
+			<a>It instructs the calling thread to give up the monitor, and goes to sleep until another thread enters the critical section, and calls notify on same object.</a>
+			<b>It tells the calling thread to occupy the monitor, and instructs the other threads to wait.</b>
+			<c>It tells the other threads to occupy the monitor, but continue its execution.</c>
+			<d>It instructs the other threads to call notify just at the end of the critical section.</d> 
+		</options>
+		<answer name="a">It instructs the calling thread to give up the monitor, and goes to sleep until another thread enters the critical section, and calls notify on same object.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="42">
+		<body>What are true statement(s) out of following about the notifyAll() function of 'Object' class?
+		</body>
+		<options>
+			<a>The notifyAll() function wakes up all the threads of same process that called wait() on any object. The highest priority thread will run first.</a>
+			<b>The notifyAll() function wakes up all the threads of any process that called wait() on the same object. The highest priority thread will run first.</b>
+			<c>The notifyAll() function wakes up all the threads of same process that called wait() on the same object. The highest priority thread will run first.</c>
+			<d>The notifyAll() function wakes up all the threads of same process that called wait() on the same object. The thread that slept first, but lower priority will run first.</d> 
+		</options>
+		<answer name="c">The notifyAll() function wakes up all the threads of same process that called wait() on the same object. The highest priority thread will run first.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="43">
+		<body>Select appropriate statements(s) out of following about suspend(), resume(), and stop() method(s) of class 'Thread'?
+		</body>
+		<options>
+			<a>These methods are part of Java 1.1, and have been depricated in Java 2.</a>
+			<b>These methods are recommended for use in Java 2.</b>
+			<c>These methods are only the ways in Java 2 to suspend, resume, and stop a thread.</c>
+			<d>There are similiar methods in 'Object' class which are recommended to use.</d> 
+		</options>
+		<answer name="a">These methods are part of Java 1.1, and have been depricated in Java 2. 
+						These are not recommended to use in Java 2 because they may cause certain problems. 
+						For example, if a thread is suspended while executing a critical section, 
+						it may cause other threads to wait for entring into the Critical section, and thus resulting a deadlock.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="44">
+		<body>What should be the output of the following program?
+				class Resource1 {
+				synchronized void begin(Resource2 r2) {	
+					String name = Thread.currentThread().getName();
+					try { Thread.sleep(1000);
+					} catch (Exception e) {	}
+					System.out.print(name + " about to call r2.end() ");
+					r2.end(); }
+				synchronized void end() {
+					String name = Thread.currentThread().getName();
+					System.out.print(name+" inside end() ");
+				}}
+			class Resource2 {
+				synchronized void begin(Resource1 r1) {
+					String name = Thread.currentThread().getName();
+					try { Thread.sleep(1000);
+					} catch(Exception e) {}
+					System.out.print(name + " about to call r1.end() ");
+					r1.end(); }
+				synchronized void end() {
+					String name = Thread.currentThread().getName();
+					System.out.println(name+" inside end() "); }
+			}
+			public class TestResuorce implements Runnable {
+				Resource1 r1 = new Resource1();
+				Resource2 r2 = new Resource2();
+				TestResuorce() { Thread.currentThread().setName("Thread-1"); Thread t = new Thread(this, "Thread-2"); t.start();	r1.begin(r2);}
+				public void run() {	r2.begin(r1); }
+				public static void main(String args[]) { new TestResuorce(); }
+			}
+		</body>
+		<options>
+			<a>Program prints "Thread-2 about to call r1.end() Thread-1 about to call r2.end()" and then a deadlock is occurred b/w Thread-1 and Thread-2.</a>
+			<b>Program prints "Thread-2 about to call r1.end(),Thread-2 inside r1.end(), Thread-1 about to call r2.end(), Thread-1 inside r2.end()," and exits normally.</b>
+			<c>Program prints "Thread-1 about to call r2.end(),Thread-1 inside r2.end(), Thread-2 about to call r1.end(), Thread-2 inside r1.end()," and exits normally.</c>
+			<d>Program does not print anything as there exists a dead lock b/w Thread-1 and Thread-2.</d> 
+		</options>
+		<answer name="a">Program prints "Thread-2 about to call r1.end() Thread-1 about to call r2.end()" and then a deadlock is occurred b/w Thread-1 and Thread-2. 
+						 The start(), and end() methods of Resource1, and Resource2 are synchronized, therefore both of the threads wait for each other.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="45">
+		<body>What is the output of the following program?
+		public class StaticTest {
+			static{
+				CInner.sayHello();
+			}
+			static void sayHi(){
+				System.out.print(" Hi ");
+			}
+			static class CInner{
+				private static void sayHello(){
+					System.out.print(" Hello ");
+				}
+				static{
+					StaticTest.sayHi();
+				}
+			}
+			public static void main(String[] args) {
+				System.out.print(" Main ");
+			}
+		}
+					
+		</body>
+		<options>
+			<a>Main Hi  Hello</a>
+			<b>Main  Hello  Hi </b>
+			<c>Hi  Hello  Main </c>
+			<d>None of the above</d> 
+		</options>
+		<answer name="c"> The output of the program is " Hi  Hello  Main ". The static block of inner class executes first, and then static block of outer class executes followed by main() method.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="46">
+		<body>What is the output of the following program?
+		public class StaticTest {
+			static{
+				CInner.sayHello();
+			}
+			static void sayHi(){
+				System.out.print(" Hi ");
+			}
+			static class CInner{
+				private static void sayHello(){
+					System.out.print(" Hello ");
+				}
+				static{
+					StaticTest.sayHi();
+				}
+			}
+			public static void main(String[] args) {
+				System.out.print(" Main ");
+			}
+		}
+		</body>
+		<options>
+			<a>Main Hi  Hello</a>
+			<b>Main  Hello  Hi </b>
+			<c>Hi  Hello  Main </c>
+			<d>None of the above</d> 
+		</options>
+		<answer name="c"> The output of the program is " Hi  Hello  Main ". The static block of inner class executes first, and then static block of outer class executes followed by main() method.
+		</answer>
+		<category>OOP</category>
+	</question>
+	<question no="47">
+		<body>What is the correct syntax to define an stream object to read from standard input?
+		</body>
+		<options>
+			<a>InputStreamReader isr = new InputStreamReader(new BufferedReader(System.in));</a>
+			<b>InputStreamReader isr = new InputStreamReader(new BufferedReader(new File(System.in)));</b>
+			<c>BufferedReader br = new BufferedReader(new InputStreamReader(new File(System.in))); </c>
+			<d>BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</d> 
+		</options>
+		<answer name="d"> The statement "BufferedReader br = new BufferedReader(new InputStreamReader(System.in));" is the correct one.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="48">
+		<body>What are true statement(s) about the Byte Stream and Character Stream in Java?
+		</body>
+		<options>
+			<a>A Character Stream is, effectively, a Byte Stream that has been wrapped with logic that allows it to output characters from a specific encoding.</a>
+			<b>The Character Stream does not support Unicode characters in Java.</b>
+			<c>The Character Stream is a higher level concept than Byte Stream.</c>
+			<d>The Byte Stream is a higher level concept than Character Stream.</d> 
+		</options>
+		<answer name="ac">A character stream is an application-side abstraction over a byte stream, allowing to read/write bytes into or from characters using various encodings.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="49">
+		<body>What are true statement(s) about System.out, System.in, System.err fields of class System?
+		</body>
+		<options>
+			<a>These are defined as static and protected in System class.</a>
+			<b>System.out and System.err are instances of PrintStream, whereas System.in is an instance of InputStream.</b>
+			<c>System.out and System.err are instances of PrintStream and PrintWriter respectively, whereas System.in is an instance of InputStream.</c>
+			<d>System.out and System.err are instances of PrintStream, whereas System.in is an instance of DataInput.</d> 
+		</options>
+		<answer name="b">System.out and System.err are instances of PrintStream, whereas System.in is an instance of InputStream.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="50">
+		<body>Pick up the correct statement(s) out of following. 
+		</body>
+		<options>
+			<a>A character stream for console output makes it easier to internationalize a program.</a>
+			<b>A character stream for console output makes it difficult to internationalize a program.</b>
+			<c>A Byte stream for console output makes it easier to internationalize a program.</c>
+			<d>A Java program can not be internationalize using either of stream.</d> 
+		</options>
+		<answer name="b">A character stream for console output makes it easier to internationalize a program. 
+						Therefore, to write characters on Console PrintWriter is recommended over PrintStream.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="51">
+		<body>What are true statement(s) about generic types in java.  
+		</body>
+		<options>
+			<a>The classes derived from 'Object' class can only be used as generic types</a>
+			<b>Only promitive type like(int, float etc)can be used as generic types</b>
+			<c>Any none primitive types can be used as generic type</c>
+			<d>only class 'Object' can be used as primitive type</d> 
+		</options>
+		<answer name="c">Any none primitive types can be used as generic type. Primitive type are not allowed in generic types.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="52">
+		<body>A generic method in a class called 'MyMaths' is defined as below.
+		class MyMaths{
+			public&amp;#60;T extends Number&amp;#62; String concate( T a, T b){
+				return a+""+b;
+			}
+		}
+		What are the correct statement(s) to invoke concate method.
+		</body>
+		<options>
+			<a>new Maths().&amp;#60;Integer&amp;#62;concate(100, 100);</a>
+			<b>new Maths().concate&amp;#60;Integer&amp;#62;(100, 100)</b>
+			<c>new Maths().concate(100, 100)</c>
+			<d>&amp;#60;Integer&amp;#62;new Maths().concate(100, 100)</d> 
+		</options>
+		<answer name="ac">Any of 'new Maths().&amp;#60;Integer&amp;#62;concate(100, 100); or new Maths().concate(100, 100);' can be used to invoke concate method.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="53">
+		<body>A generic class named "BigCircle" is defined as below.
+			class BigCircle&amp;#60;T extends Figure &amp;amp; Circle &amp;amp; SmallCircle&amp;#62; {
+			//.......
+			}
+		What are the correct statement(s) about above piece of code?
+		</body>
+		<options>
+			<a>If Circle is a class, then Figure certainly will be a class type </a>
+			<b>If Circle is an Interface, then Figure certainly will be a class type </b>
+			<c>If Circle is a Interface type, then SmallCircle certainly will be an Interface type</c>
+			<d>If Circle is a Interface type, then SmallCircle certainly will be a class type</d> 
+		</options>
+		<answer name="ac">When a generic type extends more than one class or interface, then class will appear before interface in the extension list. 
+						  For example, If Circle in this example is a class, then Figure will be definitly a class,  and SmallCircle may be a class or an interface.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="54">
+		<body>A generic method called getArea() is defined as below.
+			  Number getArea(Radius&amp;#60;Number&amp;#62; num){
+			  	//....
+			  }
+			  What are correct calls to this method out of following?
+		</body>
+		<options>
+			<a>Number a=getArea(new Radius&amp;#60;Integer&amp;#62;());</a>
+			<b>Number a=getArea(new Radius&amp;#60;Number&amp;#62;());</b>
+			<c>Number a=getArea(new Radius&amp;#60;Long&amp;#62;());</c>
+			<d>Number a=getArea(new Radius&amp;#60;String&amp;#62;());</d> 
+		</options>
+		<answer name="b">Number a=getArea(new Radius&amp;#60;Number&amp;#62;()); is correct answer because Radius&amp;#60;Integer&amp;#62;, Radius&amp;#60;Long&amp;#62;, and Radius&amp;#60;String&amp;#62;
+						 are not subclasses of Radius&amp;#60;Number&amp;#62;.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="55">
+		<body>Pick up true statement(s) out of following.
+		</body>
+		<options>
+			<a>List&amp;#60;String&amp;#62; is subtype of Collection&amp;#60;String&amp;#62;</a>
+			<b>List&amp;#60;String&amp;#62; is subtype of List&amp;#60;StringBuffer&amp;#62;</b>
+			<c>List&amp;#60;Integer&amp;#62; is subtype of List&amp;#60;Long&amp;#62;</c>
+			<d>List&amp;#60;String&amp;#62; is supertype of Collection&amp;#60;String&amp;#62;</d> 
+		</options>
+		<answer name="a">List&amp;#60;String&amp;#62; is subtype of Collection&amp;#60;String&amp;#62;
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="56">
+		<body>If a class Pair&amp;#60;K,V&amp;#62; extends class Key&amp;#60;K&amp;#62;, then which one of the following statement is true?
+		</body>
+		<options>
+			<a>Class Key&amp;#60;String&amp;#62; is a type of Pair&amp;#60;String,String&amp;#62;</a>
+			<b>Class Pair&amp;#60;String, Integer&amp;#62; is subtype of Key&amp;#60;String&amp;#62;</b>
+			<c>Class Pair&amp;#60;Integer, Exception&amp;#62; is subtype of Key&amp;#60;Exception&amp;#62;</c>
+			<d>Class Pair&amp;#60;Long, Integer&amp;#62; is subtype of Key&amp;#60;Integer&amp;#62;</d> 
+		</options>
+		<answer name="b">Class Pair&amp;#60;String, Integer&amp;#62; is subtype of Key&amp;#60;String&amp;#62;.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="57">
+		<body>Find out the correct statement(s) of following.
+		</body>
+		<options>
+			<a> List&amp;#60;Number&amp;#62; is more restrictive than List&amp;#60;? extends Number&amp;#62;</a>
+			<b> List&amp;#60;Number&amp;#62; is less restrictive than List&amp;#60;? extends Number&amp;#62;</b>
+			<c> List&amp;#60;?&amp;#62; is more restrictive than List&amp;#60;String&amp;#62;</c>
+			<d> List&amp;#60;?&amp;#62; is less restrictive than List&amp;#60;String&amp;#62;</d> 
+		</options>
+		<answer name="ad">List&amp;#60;Number&amp;#62; is more restrictive than List&amp;#60;? extends Number&amp;#62;, and List&amp;#60;?&amp;#62; is less restrictive than List&amp;#60;String&amp;#62;.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="58">
+		<body>Find out correct statement(s) out of follwoing.
+		</body>
+		<options>
+			<a>Set&amp;#60;?&amp;#62; is more restrictive than Set&amp;#60;Object&amp;#62;</a>
+			<b>Set&amp;#60;?&amp;#62; is same as Set&amp;#60;Object&amp;#62;</b>
+			<c>Set&amp;#60;?&amp;#62; is less restrictive than Set&amp;#60;Object&amp;#62;</c>
+			<d>Set&amp;#60;Object&amp;#62; is valid type, but Set&amp;#60;?&amp;#62; is not a valid type</d> 
+		</options>
+		<answer name="c">Set&amp;#60;?&amp;#62; is less restrictive than Set&amp;#60;Object&amp;#62;.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="59">
+		<body>Find out correct statement(s) about following piece of code?
+			public class Printer {
+			    public void print(Set&amp;#60;String&amp;#62; s) { }
+			    public void print(Set&amp;#60;Integer&amp;#62; i) { }
+			}
+
+		</body>
+		<options>
+			<a>There is an error in the code, because both methoda have same erasure Set&amp;#60;E&amp;#62;</a>
+			<b>There are no Errors in this code</b>
+			<c>Method 'print' body can not be empty</c>
+			<d>A class can have only one method'd body empty</d> 
+		</options>
+		<answer name="a">During compile time both methods will have same signature print(Set&amp;#60;Object&amp;#62;) due to same erasure Set&amp;#60;E&amp;#62;.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="60">
+		<body>Which of the following statement(s) are true?
+		</body>
+		<options>
+			<a>Generic type can be used for static fields in a class</a>
+			<b>The instanceof operator can not be used with genneric types</b>
+			<c>Generic types can be used in catch or throw statements</c>
+			<d>Array of generic types can be created</d> 
+		</options>
+		<answer name="b"> Following are the things you can not do with generic types in java.
+						1. Generic types can not be used with static fields.
+						2. The cast and instance operator can not be used with generic types.
+						3  Array of  generic types can not be created.
+						4. Generic types can not be used in catch and throw statements.
+		</answer>
+		<category>GT</category>
+	</question>
+	<question no="61">
+		<body>Pickup the correct statement(s) about 'BlockingQueue'?
+		</body>
+		<options>
+			<a>Multiple producer threads can produce new objects into a BlockingQueue, and only one consumer thread can consume these object out of the queue</a>
+			<b>Only one producer thread can produce new objects into a BlockingQueue, and multple consumer threads can consume these object out of the queue</b>
+			<c>Multiple producer threads can produce new objects into a BlockingQueue, and multiple consumer threads can consume these object out of the queue</c>
+			<d>Only one producer thread can produce new objects into a BlockingQueue, and only one consumer thread can consume these object out of the queue</d> 
+		</options>
+		<answer name="d"> Multiple producer threads can produce new objects into a BlockingQueue, and multiple consumer threads can consume these object out of the queue.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="62">
+		<body>What is true statement about 'SynchronousQueue' blocking queue in java?
+		</body>
+		<options>
+			<a>A SynchronousQueue can contain only one object at a time</a>
+			<b>A SynchronousQueue can contain only two objects at a time</b>
+			<c>A SynchronousQueue can contain any number of objects at a time</c>
+			<d>A SynchronousQueue can not contain an object at any time</d> 
+		</options>
+		<answer name="a"> A SynchronousQueue is a special type of blocking queue which can contain only one object at a time in it.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="63">
+		<body>Pick up correct statement(s) out of follwoing about Java collections.
+		</body>
+		<options>
+			<a>HashMap is a synchronised collection whereas HashTable and HashConcurrentMap are not synchronised</a>
+			<b>ConcurrentHashMap and HashTable are synchronised collections whereas  HashMap is not synchronised</b>
+			<c>HashTable is a synchronised collection whereas HashMap and HashConcurrentMap are not synchronised</c>
+			<d>All of HashMap, HashTable and HashConcurrentMap are synchronised</d> 
+		</options>
+		<answer name="b">In Java collection library, ConcurrentHashMap and HashTable are synchronised collections whereas  HashMap is not synchronised.
+		</answer>
+		<category>JC</category>
+	</question>
+	<question no="64">
+		<body>Which of the following statements is not true about ConcurrentHashMap collection?
+		</body>
+		<options>
+			<a>ConcurrentHashMap does not lock map while a thread is reading it</a>
+			<b>ConcurrentHashMap does not lock entire map while writing to it, it only locks part of the map which is being written to.</b>
+			<c>ConcurrentHashMap throws ConcurrentModificationException if the map is changed by one thread while other thread is iterating through it.</c>
+			<d>ConcurrentHashMap was added as a part of Java 1.5 release</d> 
+		</options>
+		<answer name="c">ConcurrentHashMap does not throw ConcurrentModificationException if the map is changed by one thread while other thread is iterating through it.
+		</answer>
+		<category>JC</category>
+	</question>
+	<question no="65">
+		<body>Which of the two methods need to be overriden when user defined object is used as a key in HashMap?
+		</body>
+		<options>
+			<a>hasCode(), equal()</a>
+			<b>hasCode(), compareTo()</b>
+			<c>equal(), compareTo()</c>
+			<d>none of the above</d> 
+		</options>
+		<answer name="a">The hasCode(), and equal() method need to be overriden when a user defined object is used as HashMap key. 
+						These these two methods are used to find location of the key element in a map. 
+		</answer>
+		<category>JC</category>
+	</question>
+	<question no="66">
+		<body>What is difference between CountDownLatch and CyclicBarrier classes in defined in Java concurrent package.
+		</body>
+		<options>
+			<a>The CountDownLatch is a synchrinizing mechanism in which all threads wait until CountDoqnLatch reaches to zero, whereas CyclicBarrier is a synchronizing mechanism in which threads wait at  a barrier point until all threads reach that barrier point.</a>
+			<b>The CyclicBarrier is a synchrinizing mechanism in which all threads wait until CountDownLatch reaches to zero, whereas CyclicBarrier is a synchronizing mechanism in which threads wait at  a barrier point until all threads reach that barrier point.</b>
+			<c>The CountDownLatch can be used by at most 2 threads whereas CyclicBarrier can be used by any number of threads</c>
+			<d>The CyclicBarrier can be used by at most 2 threads at a time whereas CountDownLatch can be used by any number of threads</d> 
+		</options>
+		<answer name="a">The CountDownLatch is a synchrinizing mechanism in which all threads wait until CountDoqnLatch reaches to zero, whereas CyclicBarrier is a synchronizing mechanism in which threads wait at  a barrier point until all threads reach that barrier point.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="67">
+		<body>Select the correct statement(s) out of follwoing about ReadWriteLock in Java.
+		</body>
+		<options>
+			<a>It allows multiple threads to write to a shared resource concurrently, and allows only one thread to read it</a>
+			<b>It allows multiple threads to read  a shared resource concurrently, and allows only one thread to write to it</b>
+			<c>It allows only one thread to write to a shared resource, and allows only one thread to read it</c>
+			<d>It allows multiple threads to write to a shared resource concurrently, and allows multiple threads threads to read it</d> 
+		</options>
+		<answer name="b">The ReadWriteLock allows multiple threads to read  a shared resource, and allows only one thread to write to it.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="68">
+		<body>Which one of the following design patterns is vastly used in Java I/O streaming?
+		</body>
+		<options>
+			<a>Abstarct Factory</a>
+			<b>Momento</b>
+			<c>Builder</c>
+			<d>Decorator</d> 
+		</options>
+		<answer name="d">The Decorator design pattern is commonly used in java I/O classes.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="69">
+		<body>What happens if in a multithreading application, a thread enters into a synchronised method (say processing())of a class called 'MyProcess'?
+		</body>
+		<options>
+			<a>Other thread can enter into the method 'Processing()' at the same time</a>
+			<b>Other threads can not enter in any of the methods of 'MyProcess' while this thread is in method 'processing'</b>
+			<c>Other threads can not enter in any of the synchronised methods of 'MyProcess' while this thread is in method 'processing'</c>
+			<d>Other threads can not eneter in any of the unsynchronised methods of 'MyProcess' while this thread is in method 'processing'</d> 
+		</options>
+		<answer name="c">In java, if a thread is executing a synchronised method of a class, then other threads can not execute any of the synchronised method of that class.
+		</answer>
+		<category>MT</category>
+	</question>
+	<question no="70">
+		<body>Select true statement(s) out of the follwoing about the java collections.
+		</body>
+		<options>
+			<a>ArrayList is a better choice over LinkedList in the situation where insertion and delete operations are frequently performed.</a>
+			<b>TreeMap is a better choice over HashMap in the situation where items need to be ordered.</b>
+			<c>ArrayList is better choice over HashSet in the situation where duplicate items need to be stored.</c>
+			<d>ArrayList is better choice over Vector in the situation where items need to be synchronised.</d> 
+		</options>
+		<answer name="bc">The TreeMap stores the items sorted order by default, and Vector is synchronised collection.
+		</answer>
+		<category>JC</category>
+	</question>
+</java>

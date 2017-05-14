@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<design>
+  <question no="1">
+		<body>Identify the design pattern which is best described by the below statements.
+			1. This is a creational design pattern and is known a virtual constructor.
+			2. The design pattern lets the subclasses decide which class to instantiate.
+		</body>
+		<options>
+			<a>Builder</a>
+			<b>Factory Method</b>
+			<c>Prototype</c>
+			<d>Abstract Factory</d>
+		</options>
+		<answer name="b">Factory Method design pattern defines an interface to create an object, but let subclasses decide which class to instatiate.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="2">
+		<body>What are true statement(s) about the Singleton design pattern?
+				a. Provides a global point of access to the object.
+				b. Violates the Single Responsibility Principle.
+				c. Violates Open/closed design principle.
+		</body>
+		<options>
+			<a>a and b</a>
+			<b>b and c </b>
+			<c>a and c </c>
+			<d>all of the above</d>
+		</options>
+		<answer name="a">The singleton design pattern provides a global point of access to the object in the subject. 
+						  Also it violets the the Single Responsibility Principle, which states that every class should have a single responsibility,
+						  and that responsibility should be entirely encapsulated by that class. This is because it has extra responsibility to 
+						  instantiate itself.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="3">
+		<body>What are false statement(s) about the Factory Method design pattern?
+			a. It violates Open Close Principle(OCP).
+			b. It is structural design pattern.
+		</body>
+		<options>
+			<a> a </a>
+			<b> b </b>
+			<c> a and b </c>
+			<d> None of the above</d>
+		</options>
+		<answer name="b">The factory design pattern is one of the Creational design patterns. 
+						It violates the OCP principle by the fact that when a new product need to be supported, factory method is modified.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="4">
+		<body>Identify the design pattern best described by the below text.
+			1. It provides a way to encapsulate a group of individual factories that have a common theme.
+			2. It allows to interchange concrete implementations without changing the code that uses them, even at runtime.
+		</body>
+		<options>
+			<a>Factory Method</a>
+			<b>Abstract Factory</b>
+			<c>Builder</c>
+			<d>Prototype</d>
+		</options>
+		<answer name="b">The abstract factory design pattern encapsulates a group of objects that have same theme.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="5">
+		<body>Pickup the correct statement(s) out of following.
+			a. In the Abstract factory design pattern, client program does not know which object(s) it gets from internal factories.
+			b. Abstract Factory pattern does not insulate the creation of objects from their usage.
+		</body>
+		<options>
+			<a>a</a>
+			<b>b </b>
+			<c>a and b </c>
+			<d>None of the above.</d>
+		</options>
+		<answer name="a">First statement is correct as in Abstract Factory pattern, client only knows about the abstraction.
+						 Also it separates the creation and usage of the objects.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="6">
+		<body>Identify the design pattern best described by the below text.
+			1. The pattern abstracts steps of the construction of the objects.
+			2. The pattern returns object(or product) as a final step. 
+		</body>
+		<options>
+			<a>Singleton</a>
+			<b>Abstract Factory</b>
+			<c>Builder</c>
+			<d>Prototype</d>
+		</options>
+		<answer name="c">The Builder pattern abstract the step of construction of an Object. 
+						Using different implementations of these steps different objects can be created.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="7">
+		<body>Pickup the correct statement(s) about the Builder design pattern.
+			a. It is used to create complex object step by step.
+			b. The Director object is responsible for creating the parts of the object. 
+		</body>
+		<options>
+			<a>a</a>
+			<b>b </b>
+			<c>a and b </c>
+			<d>None of the above.</d>
+		</options>
+		<answer name="a">The Builder pattern is used to create complex objects.
+						Builder object is responsible for  creating the parts.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="8">
+		<body>What are false statement(s) about the Prototype design pattern?
+			a. The design pattern is used when object creation is very expensive in application. 
+			b. This design pattern uses subclasses of the object creator like abstract factory.  
+		</body>
+		<options>
+			<a>a</a>
+			<b>b</b>
+			<c>a and b </c>
+			<d>None of the above.</d>
+		</options>
+		<answer name="b">The prototype design pattern creates an object from a prototypical instance, and used where object creation is very 
+						expensive. This pattern also avoids use of the object creator subclasses.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="9">
+		<body>Select the correct statement(s) about the Adapter design pattern?
+			a. The client program does not know about the Adaptee interface. 
+			b. The Adapter class adapts the interface of Adaptee to the target interface. 
+			c. This is Behavioral  design pattern.
+		</body>
+		<options>
+			<a>ab</a>
+			<b>bc </b>
+			<c>ac </c>
+			<d>abc</d>
+		</options>
+		<answer name="ab">Adapter is a structural design pattern. The client program is only aware of the target interface, and does not know 
+						  anything about the Adaptee. The Adapter class connects target and adaptee interfaces.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="10">
+		<body>Name the design pattern described by below text.
+			a. The design pattern allows abstraction and implementation to vary independently. 
+			b. The abstraction maintain a reference to the implementation.  
+			c. This is structural design pattern.
+		</body>
+		<options>
+			<a>Adapter</a>
+			<b>Decorator</b>
+			<c>Bridge </c>
+			<d>Proxy</d>
+		</options>
+		<answer name="c">The bridge design pattern decouples the abstraction from the implementation. Therefore both can vary independently
+						The abstraction's implementation can be configured at runtime.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="11">
+		<body>Pick up correct statement(s) about the adapter design pattern.
+			a. The Class Adapter pattern does not work when a class and all its subclasses need to be adapted. 
+			b. The Object Adapter pattern can not work with many adaptees.  
+		</body>
+		<options>
+			<a>a</a>
+			<b>b</b>
+			<c>a and b </c>
+			<d>None of the above</d>
+		</options>
+		<answer name="a">The first statement is correct because Class Adapter is defined by defining the adapter class as subclass of Target 
+						interface and Adaptee class. Therefore, this can not work with more than one adaptee. The Object Adapter pattern keeps 
+						the reference to the adaptee, and therefore can work with more than one adaptee.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="12">
+		<body>Which one statement is not true about the Bridge design pattern.
+			a. It allows to change the implementation at run-time. 
+			b. The client program does not need to recompile when there is a change in the implementation.  
+			c. The abstraction is not extendable whereas implementation is extendable.
+		</body>
+		<options>
+			<a>a</a>
+			<b>b</b>
+			<c>c </c>
+			<d>None of the above</d>
+		</options>
+		<answer name="c">The Bridge design pattern allows abstraction and implementation to extend together.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="13">
+		<body>Identify the design pattern described by below statement(s).
+			a. The design pattern arranges the objects in tree structure to represent the part-whole relationship. 
+			b. In this design pattern, client program does not know whether it's dealing with composition of the objects or individual object.  
+			
+		</body>
+		<options>
+			<a>Bridge</a>
+			<b>Composite</b>
+			<c>Adapter</c>
+			<d>Proxy</d>
+		</options>
+		<answer name="b">The Composite design pattern composes the objects in a tree structure, and client program is not aware of the composition i.e 
+						 Client program deals with uniformly with the composition a,d individual object.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="14">
+		<body>A structural design pattern is best described by following statements given below. What is the name of the design pattern?
+			a. The design pattern provides the facility to add responsibilities and state at runtime to an individual object. 
+			b. Provides flexible alternative to sub-classing for extending functionality.  
+		</body>
+		<options>
+			<a>Facade</a>
+			<b>Flyweight</b>
+			<c>Adapter</c>
+			<d>Decorator</d>
+		</options>
+		<answer name="d">The Decorator design pattern provides the facility to extend an Object functionality at runtime,
+						and is an alternative for extending object functionality.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="15">
+		<body>Which one of the following statements is not true about "Decorator" design pattern?
+			a. It offers Pay-as-you-go approach for adding responsibilities to the Objects. 
+			b. A decorator object and it's component object are identical.
+			c. A decorator object contains reference to the object which is being decorated.
+			
+		</body>
+		<options>
+			<a>a</a>
+			<b>b</b>
+			<c>c</c>
+			<d>None of the above</d>
+		</options>
+		<answer name="b">The decorator object and the component object are not identical. The identities of both are different, however both conform to the same interface.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="16">
+		<body>Which design pattern is the best solution for the below requirements?
+			There are around 7 subsystems in a complex system in design. A single interface needs to be published to access all of these
+			subsystems. This interface must be able to dispatch requests from the clients to the subsystem responsible for the request.
+		</body>
+		<options>
+			<a>Facade</a>
+			<b>Singleton</b>
+			<c>Bridge</c>
+			<d>Decorator</d>
+		</options>
+		<answer name="a">The Facade design pattern provides a unified interface for a set of interfaces. The facade interface delegates the request 
+						to the subsystem by calling subsystem's interface. The facade interface knows about all the subsystems, but reverse is not true.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="17">
+		<body>A customer asked a system engineer to design a system with following requirements.
+			 1. The system should be windows based multi-lingual, and user should be able to configure the language, and theme at run time.
+			 2. When a theme is selected, and applied, a complete different set of windows controls (like button, menu etc) should be displayed.
+			 3. System should be able to adopt new themes and should obey Open Closed Principle(OCP). 
+			 
+			 Advise the system engineer which design pattern should he/she use?
+		 
+		</body>
+		<options>
+			<a>Factory Method</a>
+			<b>Builder</b>
+			<c>Composite</c>
+			<d>Abstract Factory</d>
+		</options>
+		<answer name="d">Abstract Factory design pattern provides a interface for creating families of related objets. Here a theme is a set of 
+						related objects, and when a theme is selected all the objets of that theme are  constructed, and displayed.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="18">
+		<body>In an object oriented legecy system, some of the objects need additional states, and responsibilities to be added at runtime. 
+			  What design pattern is best suited for this?
+		</body>
+		<options>
+			<a>Decorator</a>
+			<b>Visitor</b>
+			<c>Adapter</c>
+			<d>Abstract Factory</d>
+		</options>
+		<answer name="a">The Decorator design pattern can add state, and responsibilities to the objects at run time..
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="19">
+		<body>A designer wants to encapsulate a File System of an operating system, where system is described in a heirarichal structure. 
+			  Which design pattern is the best option for this? 
+		</body>
+		<options>
+			<a>Decorator</a>
+			<b>Prototype</b>
+			<c>Adapter</c>
+			<d>Composite</d>
+		</options>
+		<answer name="d">A Composite design pattern describes a part-whole relationship among the objects.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="20">
+		<body>An online shopping centre has around 1000 registered customers. The system needs to inform all of it's customers when 
+			there is a change in terms and conditions for the shopping. Which design pattern is the suitable solutions for this problem?
+		</body>
+		<options>
+			<a>Observer</a>
+			<b>Visitor</b>
+			<c>Adapter</c>
+			<d>Proxy</d>
+		</options>
+		<answer name="a">The Observer design provides publish-subscribe facility. Here publisher is the Shopping centre, and subsriber are the customers. 
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="21">
+		<body>Which one of the following designs patterns is not part of GoF design patterns?
+		</body>
+		<options>
+			<a>Object Pool</a>
+			<b>Visitor</b>
+			<c>Adapter</c>
+			<d>Visitor</d>
+		</options>
+		<answer name="a">The design pattern 'Object Pool' is not part of GoF patterns. 
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="22">
+		<body>Which of the following design principles are violated if a system in design has follwing charaterstics.
+		1. A class has more than one responsibilites to do.
+		2. All of the classes of the system are closed to modify, but open for extending.
+		3. Interfaces are dependent on the  Details of the system.
+		</body>
+		<options>
+			<a>Open Close Principle(OCP)</a>
+			<b>Single Responsibility Principle(SRP)</b>
+			<c>Interface Segregation Principle(ISP)</c>
+			<d>Dependency Inversion Principle(DIP)</d>
+		</options>
+		<answer name="bd"> The SRP, and DIP principles are violated because SRP states that a class must have only one responsibilty, and DIP states
+			that abstraction(interfaces) should not be dependent on the details(Implementation) of the system.
+		</answer>
+		<category>DPP</category>
+	</question>
+	<question no="23">
+		<body>In some of the programming languages like C++, a derived type can be casted into the base type. Following is an example of 
+			the base type to derived type conversion.
+			class Base {
+				public: 
+				int base;
+			};
+			class Derived : public Base {   //derive from base
+				public
+				int derived;
+			};
+			Base baseObj = new Base();
+			Derived derivedObj = (Derived)baseObj; // base type  is substitutable for derived type.
+			
+			Which of the following Design principles is violated in above code.
+		</body>
+		<options>
+			<a>Open Close Principle(OCP)</a>
+			<b>Single Responsibility Principle(SRP)</b>
+			<c>Interface Segregation Principle(ISP)</c>
+			<d>None of the above</d>
+		</options>
+		<answer name="d"> The Liskov's Substitution Principle(LSP) is violated by this code. The LSP states that Derived types must be completely substitutable for their base types.
+		</answer>
+		<category>DPP</category>
+	</question>
+	<question no="24">
+		<body>Interface Segeration Principle(ISP) states that
+		</body>
+		<options>
+			<a>A common interface should be used to serve multiple clients.</a>
+			<b>The client specific interface should be designed separately.</b>
+			<c>Always use abstract class at the place of Interfaes.</c>
+			<d>Always depends on the Interfaces rather than implementation.</d>
+		</options>
+		<answer name="b">The ISP states that the clients should not be forced to depend upon interfaces that they don't use. Therefore client specific interfaces should be designed separately.
+		</answer>
+		<category>DPP</category>
+	</question>
+	<question no="25">
+		<body> In a badly designed system when details(implementation) is changed, then abstraction is forced to change. Which of the 
+			   Design Principle is violated by this behaviour? 
+		</body>
+		<options>
+			<a>Liskov's Substitution Principle(LSP)</a>
+			<b>Single Responsibility Principle(SRP)</b>
+			<c>Interface Segeration Principle(ISP)</c>
+			<d>Dependency Inversion Principle(DIP)</d>
+		</options>
+		<answer name="d"> The Dependency Inversion Principle is broken by this design. The DIP states that abstractions should not depend on details.
+		</answer>
+		<category>DPP</category>
+	</question>
+	<question no="26">
+		<body>There is a requirement to create  around 1000 objects of a class named "Icon" having following charatcterstics.
+			 1. Size,color,image of all Icons are same.
+			 2. Location of each icon is different.
+			 3. Title of each icon is different.
+			 4. Icons should be movable from one location to another location.
+			 
+			 If a designer uses Flyweight design pattern for this, what should be the flyweight intrinsic states?
+		</body>
+		<options>
+			<a>Size,color,image of the Icon</a>
+			<b>Location,Title of the Icon</b>
+			<c>Size,color,image,Location of the Icon</c>
+			<d>Size,color,image,Location,Title of the Icon</d>
+		</options>
+		<answer name="a"> The flyweight intrinsic state contains only the common attributes of the flyweight object.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="27">
+		<body> What are true statement(s) about the Memento design pattern?
+		</body>
+		<options>
+			<a>Violates the encapsulation.</a>
+			<b>The Memento object should have interfaces to Care Taker, and Originator.</b>
+			<c>This is used to capture internal state of an object.</c>
+			<d>The Memento object should have interface to Care Taker only.</d>
+		</options>
+		<answer name="bc"> The 'Memeto' design pattern is used to save internal state of an object without violating the encapsulation. The memento object must have interfaces to Care Taker, and the Originator.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="28">
+		<body> There is a requirement to provide controlled/secured access to a Bank Service Object for security reasons. 
+			Also system needs to filter the contents of the client request to the Bank Service Object. Could you please advise which 
+			design pattern is best suited for these requirementts.
+		</body>
+		<options>
+			<a>Adapter Pattern</a>
+			<b>Proxy Pattern</b>
+			<c>Mediator Pattern</c>
+			<d>Visitor Pattern</d>
+		</options>
+		<answer name="b"> Proxy Pattern is the best one as this pattern provides a placeholder and the ability to control references to an business object.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="29">
+		<body> Advise the design pattren to encapsulate the following customet requirements.
+			1. An application for a loan needs to be approved by one of the bank employees based on certain condition as following.
+				a. loan amount is more than 1000000 Euro -  approved by Bank Director
+				b. loan amount is in range 100000 to 1000000 Euro -  approved by Bank Deputy Director
+				c. loan amount is in range 10000 to 100000 Euro  -  approved by Bank Manager
+				d. loan amount is in range 1000 to 10000 Euro -  approved by Bank Deputy Manager
+				e. loan amount is less than 1000 Euro -  approved by Bank Branch Manager
+			2. Client only knows about Bank Branch Manager, and all the Bank employees know each other in the below sequence.
+			
+				Bank Branch Manager - Bank Deputy Manager - Bank Manager - Bank Deputy Director - Bank Director
+			
+		</body>
+		<options>
+			<a>Chain of Responsibility Pattern</a>
+			<b>Proxy Pattern</b>
+			<c>Mediator Pattern</c>
+			<d>Visitor Pattern</d>
+		</options>
+		<answer name="a"> The Chain of Responsibility Pattern design pattern is the best suited for these requirements.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="30">
+		<body>What is not true about the Command Design Patten?
+		</body>
+		<options>
+			<a>Invoker asks the Command object to  execute the request.</a>
+			<b>Command object encapsulates a method call in an object.</b>
+			<c>Invoker knows how to carry out the requested operations.</c>
+			<d>Receiver knows how to perform the operations.</d>
+		</options>
+		<answer name="c">In the Command pattern only Receiver knows how to carry out the client requests. 
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="31">
+		<body>Which of the follwoing design patterns is used to traverse through the colletion of the objects and encapsulate the 
+		      internal access mechanism of the objects? 
+		</body>
+		<options>
+			<a>Visitor</a>
+			<b>Iterator</b>
+			<c>Decorator</c>
+			<d>Observer</d>
+		</options>
+		<answer name="b"> The Iterator design pattern hides the internal a struture of the collection, and provides a generaic way to access the elements of the collection.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="32">
+		<body>To evaluate the expression like below which design pattern is best suited?
+			x=a+b-(c+d)/e*f+g-h
+		</body>
+		<options>
+			<a>Interpreter</a>
+			<b>Composite</b>
+			<c>State</c>
+			<d>Iterator</d>
+		</options>
+		<answer name="a"> The Interpreter design is the best one which can be used to calculate the mathematical expressions.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="33">
+		<body>In a complex system where several objects communicate with each other, each object needs to maintain communication 
+			   links(object's reference) to all other objects. Also objects are tightly coupled to each other which makes system very 
+			   difficult to enhance. To overome this problem, can you advise which of the following design patterns may be used?
+		</body>
+		<options>
+			<a>Visitor</a>
+			<b>Observer</b>
+			<c>Mediator</c>
+			<d>Bridge</d>
+		</options>
+		<answer name="c">The Mediator design pattern provides a uniform interface for an Object to interact other objects. 
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="34">
+		<body>Which of the following design pattern is used to encasulate a set of algorithms so that an alogorithm can be changed at run time by the client? 
+		</body>
+		<options>
+			<a>Interpreter</a>
+			<b>Composite</b>
+			<c>State</c>
+			<d>Strategy</d>
+		</options>
+		<answer name="d">The Strategy design pattern is used to encapsulte a set of similiar algorithms.
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="35">
+		<body>Which of the following statements are not true about the Template Method design pattern? 
+		</body>
+		<options>
+			<a>Template Method defines an algorithm as an operation.</a>
+			<b>Template Method lets subclasses define some of the tasks.</b>
+			<c>Template Method can be overriden in the subclasses.</c>
+			<d>Template Method never called directly by the client.</d>
+		</options>
+		<answer name="c"> A template method in Template Design Pattern can not be overriden by the subclasses. However subclasses define some of the steps of the algorithm. 
+		</answer>
+		<category>DPT</category>
+	</question>
+	<question no="36">
+		<body>What is not true about the 'Layers Architectural Pattern'? 
+		</body>
+		<options>
+			<a>Each layer provides services to the layer above it, and uses the services of the layer below.</a>
+			<b>Each layer provides services to the layer below it, and uses the services of the layer above.</b>
+			<c>A system is decomposed into coupled subsystems vertically and horizontally.</c>
+			<d>The high level components dependes on low level components to perform their functionality.</d>
+		</options>
+		<answer name="bc"> In the Layers pattern high level layer is dependent on the low level layer, and a layer is an abstraction of a group of subtasks.
+						   The whole system is decomposed into decoupled subsystems so that change in one subsystem will not affect the othe subsystems. 
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="37">
+		<body>What are the true statements about the 'Indirection Layer architectural pattern'? 
+		</body>
+		<options>
+			<a>Between two adjacent layers a clearly defined interface is available.</a>
+			<b>In the true form of the Pattern a layer can be by-passed.</b>
+			<c>The Indirection layer is dependent of the Hardware infra structure.</c>
+			<d>When there is change in the hardware components Indirection layer remains unaffected.</d>
+		</options>
+		<answer name="ac"> The Indirection Layer pattern introduces a separate indirection layer which is dependent on the hardware. 
+					       Therefore when hardware is changed, indirection layer needs to be changed, however the layers above indirection layer are unaffected.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="38">
+		<body>Identify the architectural pattern which can be used to design the system explained below.
+			1. The computations are dependent on the shared data.
+			2. The system does not have deterministic solution stategy.
+			3. The partial solution solvers collaborate, but do not follow a predefiend stategy.  
+		</body>
+		<options>
+			<a>Shared Repository</a>
+			<b>Blackboard</b>
+			<c>Batch Sequential</c>
+			<d>Micro kernel</d>
+		</options>
+		<answer name="b">The Blackboard pattern is dependent on the shared data in form of a blackboard, and each collaborator writes his/her Partial soluition on the blackboard.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="39">
+		<body>What are the main differences between 'Batch Sequential' and 'Pipes and Filters' architectural patterns
+		</body>
+		<options>
+			<a>Batch Sequential is Data Centered System whereas Pipes and Filters is Data Flow Ssystem.</a>
+			<b>Parallel processing of data is possible in Batch Sequential whereas  the same is not possible in Pipes and Filters.</b>
+			<c>Parallel processing of data is possible in Pipes and Filters whereas  the same is not possible in Batch Sequential.</c>
+			<d>In Batch Sequential a batch of data is processed in a step and sent as a whole to the next step whereas 'Pipes and Filters' operates on a stream of data.</d>
+		</options>
+		<answer name="cd">Both of the patterns are Data Flow System. In case of Batch Sequential a step of execution only starts once previuos step is completed, 
+						 however in Pipes and Filters data is processed as it arrives incrementally, not gathered and then processed.
+.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="40">
+		<body>Identify the true statement(s) about the 'Batch Sequential' architectural pattern.
+		</body>
+		<options>
+			<a>The data to be process is gathered first, and then processed.</a>
+			<b>The data is processed as it arrives incrementally, and sent to next step immediately</b>
+			<c>The proccessing elements are called filters, and order of the filters can not be changed.</c>
+			<d>The processing elements are called Pipes, and order of the Pipes can be chnaged.</d>
+		</options>
+		<answer name="a"> In the Batch Sequential pattern whole task is divided into small proccessing steps, and in each step first data is gathered, and then process. 
+.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="41">
+		<body>Identify the true statement(s) about the 'Pipes and Filters' architectural pattern.
+		</body>
+		<options>
+			<a>The data to be process is gathered first, and then processed.</a>
+			<b>The data is processed as it arrives incrementally, and sent to next step immediately</b>
+			<c>The proccessing elements are called filters, and order of the filters can not be changed.</c>
+			<d>The processing elements are called Pipes, and order of the Pipes can be chnaged.</d>
+		</options>
+		<answer name="b"> In the Pipes and Filters pattern data is processed as it arrives. The filters are the processing elements, and the order of the filters can be changed. 
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="42">
+		<body>Identify the true statement(s) about the 'Shared Repository' architectural pattern.
+		</body>
+		<options>
+			<a>Shared data is passed from one component to another component</a>
+			<b>One component of the system works as Central Data Store whereas rest of the components use this shared data.</b>
+			<c>No synchronization mechanism is used to access shared data.</c>
+			<d>Data Store is Active i.e. accessors are not responsibile for finding the data of intrest to them.</d>
+		</options>
+		<answer name="b">Shared Repository is kind of Data Centered System, where one component of the system is used as 'Data Store' while other components access that data in synchrinised manner. 
+						 Also accessors of the data need to find data of their intrest i.e. Data Store is passive.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="43">
+		<body>Which one of the following architectral pattern is an Adaptable System.
+		</body>
+		<options>
+			<a>Shared Repository</a>
+			<b>Sequential Batch</b>
+			<c>Broker</c>
+			<d>Reflection</d>
+		</options>
+		<answer name="d">The 'Reflection' architectural pattern is one of examples of Adaptable Systems.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="44">
+		<body>A customer requirements are explained as of below.
+		1. The system in design should be adaptable system which provides plug-in mechanism to adapt the new functionality without affecting the core functionality.
+		2. The components more likely to change should be isolated from the components less likely to change.
+		3. The system should be evolvable and reusable with negligible change to the core component.
+		Itentify the architectral pattern for above requirements.
+		</body>
+		<options>
+			<a>Reflection</a>
+			<b>Microkernel</b>
+			<c>Shared Repository</c>
+			<d>Blackboard</d>
+		</options>
+		<answer name="b">The 'Microkernel' architectural pattern is best suited for this customer.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="45">
+		<body>Identify the the architectral pattern described below.
+		1. The system in design is splitted into two parts called 'Meta Level, and 'Base level'. 
+		2. The Meta Level proivdes information about the system itself.
+		3. Any change in the 'Meta Level' affects subsequent change in the 'Base Level'.
+		</body>
+		<options>
+			<a>Reflection</a>
+			<b>Microkernel</b>
+			<c>Broker</c>
+			<d>Blackboard</d>
+		</options>
+		<answer name="a">The 'Reflection' architectural pattern is the one which provides a mechanism to make system self-aware using the meta information.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="46">
+		<body>What are the true statement(s) about the 'Explicit Invocation', and 'Implicit Invocation' architectural patterns?
+		</body>
+		<options>
+			<a>In both of the patterns location(address) of the serving component(server) is known.</a>
+			<b>The location(address) of the serving component(server) is known in 'Explicit Invoication' but not in 'Implicit Invocation'. </b>
+			<c>The location(address) of the serving component(server) is known in 'Implicit Invoication' but not in 'Explicit Invocation'. </c>
+			<d>In 'Explicit Invoication', the clients initiates the invocation whereas in 'Implicit Invoication', client may or may not initiate the invocation.</d>
+		</options>
+		<answer name="bd"> The 'Implicit Invoication' and 'Explicit Invoication' are Components Interaction Systems with following characterstics.
+		  				 1. The 'Explicit Invoication' provides the known coupling between client component and server component. The location of the serving components is know at design time.
+		  				    Also invocation is always initiated by the client component, and client may/may not wait for result.
+		  				 2. In 'Implicit Invoication', there is no well know coupling b/w the client and server. Also client is more interested in the result of the invocation, then to know who is processing the function. 
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="47">
+		<body>In the Model-View-Controller(MVC) design pattern:
+		</body>
+		<options>
+			<a>Controller knows both View and Model.</a>
+			<b>View knows Model, but not the Controller.</b>
+			<c>Model knows the View, but not the Controller.</c>
+			<d>All three know each other.</d>
+		</options>
+		<answer name="ab"> The MVC is user interaction system with following characterstics. 
+						1. Model components only know about itself.
+						2. View knows Model to get the current state of the data to represent.
+						3. Controller know both View and Model. 
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="48">
+		<body>Common Object Request Broker Architecture (CORBA) is an example of:
+		</body>
+		<options>
+			<a>MVC pattern</a>
+			<b>Explicit Invocation pattern</b>
+			<c>Layers Pattern</c>
+			<d>None of above</d>
+		</options>
+		<answer name="b"> CORBA is an implementation of Explicit Invocation architectural pattern where location of the serving object is alwayas known to the clinet.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="49">
+		<body>The Kruchen’s 4+1 view  software model contains:
+		</body>
+		<options>
+			<a>Use case View, Development view, Process View, Physical View, Logical View </a>
+			<b>Use case View, Development view, Deployement View, Physical View, Logical View</b>
+			<c>Use case View, Development view, Test View, Physical View, Logical View</c>
+			<d>Use case View, Development view, Design View, Physical View, Logical View</d>
+		</options>
+		<answer name="a"> The Kruchen’s 4+1 view  software model contains  Use case View, Development view, Process View, Physical View, Logical View.
+		</answer>
+		<category>APT</category>
+	</question>
+	<question no="50">
+		<body>Principle of Least Knowledgee (also known as the Law of Demeter or LoD) states that 
+		</body>
+		<options>
+			<a>A component or object should know about internal details of other components or objects.</a>
+			<b>A component or object should not know about internal details of other components or objects.</b>
+			<c>Divide your application into distinct features with as little overlap in functionality as possible</c>
+			<d>None of above</d>
+		</options>
+		<answer name="b"> Principle of Least Knowledgee (also known as the Law of Demeter or LoD) states that a component or object should not know about internal details of other components or objects
+		</answer>
+		<category>APT</category>
+	</question>
+</design>

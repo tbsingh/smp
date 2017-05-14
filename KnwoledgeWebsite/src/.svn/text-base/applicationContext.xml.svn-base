@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+
+	<!-- ========================= CONFIGURATION ========================= -->
+	<bean id="ContextLookup" class="com.tssa.km.core.context.ContextLookup" lazy-init="false" />
+   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="ignoreResourceNotFound" value="true" />
+    <property name="locations">
+      <list>
+        <value>conf/knowledge.properties</value>
+      </list>
+    </property>
+	<property name="properties">
+		<map>
+				<entry key="jdbc.preparedStatementCacheSize" value="500" />
+				<entry key="jdbc.initialSize" value="5" />
+				<entry key="jdbc.maxActive" value="50" />
+				<entry key="jdbc.maxIdle" value="${jdbc.initialSize}" />
+				<entry key="jdbc.minIdle" value="0" />
+				<entry key="jdbc.validationQuery" value="select database()" />
+				
+				<entry key="sql.version" value="MySQL5"/>
+				<entry key="sql.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+				<entry key="jdbc.driverClassName" value="com.mysql.jdbc.Driver"/>
+				
+				<!--  <entry key="jdbc.host" value="localhost"/> 
+				<entry key="jdbc.url" value="jdbc:mysql://localhost/kmp"/>
+				<entry key="jdbc.username" value="user"/>
+                <entry key="jdbc.password" value="passwd"/> 
+                <entry key="jdbc.defaultSchema" value="kmp"/> -->
+
+				<entry key="jdbc.url" value="jdbc:mysql://ec2-50-19-213-178.compute-1.amazonaws.com:3306/knowledge_db"/>
+				<entry key="jdbc.host" value="ec2-50-19-213-178.compute-1.amazonaws.com"/>  
+                <entry key="jdbc.defaultSchema" value="knowledge_db"/>
+                <entry key="jdbc.username" value="tbsingh"/>
+                <entry key="jdbc.password" value="abc123abc"/> 
+                
+			</map>
+		</property>
+    </bean>
+   <bean id="sysProps" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="java.lang.System" />
+		<property name="targetMethod" value="getProperties" />
+	</bean>
+<!--  
+	 =========================================================================
+		Email Config
+		========================================================================-->
+    <bean id="googleAppMailSender" class="com.tssa.km.core.mail.JavaMailManager">
+		<property name="senderMail"><value>tbsingh@gmail.com</value></property>
+        <property name="receiverMail"><value>tbsingh@ymail.com</value></property>
+    </bean>
+
+	<bean id="simpleMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host"><value>smtp.gmail.com</value></property>
+        <property name="port"><value>587</value></property>
+        <property name="protocol"><value>smtp</value></property>
+        <property name="username"><value>onlineobjectivetest</value></property>
+        <property name="password"><value>onlineobjectivetest</value></property>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.quitwait">false</prop>
+            </props>
+        </property>
+	</bean>
+	<bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
+  		<property name="to" value="tbsingh@ymail.com"/>
+  		<property name="subject" value="Online Test Registration"/>
+  	</bean>
+
+	<bean id="simpleMailManager" class="com.tssa.km.core.mail.SimpleMailManager">
+  		<property name="mailSender" ref="simpleMailSender"/>
+  		<property name="templateMessage" ref="templateMessage"/>
+	</bean>
+
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/messages</value>
+			</list>
+		</property>
+		<property name="cacheSeconds" value="30" />
+	</bean>
+	<!-- =========================================================================
+		AOP Config
+		======================================================================== -->
+  <bean id="methodInterceptor" class="com.tssa.km.core.interceptor.AbstractMethodInterceptor">
+  </bean>
+
+  <bean
+    class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    <property name="beanNames">
+      <list>
+        <value>questionService</value>
+      </list>
+    </property>
+  	<property name="interceptorNames">
+      <list>
+        <value>methodInterceptor</value>
+      </list>
+      </property>
+  </bean>
+  <!-- Database Transaction Management -->
+   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  <bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="list*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+  	<bean id="sessionFactory" parent="baseSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingLocations" value="classpath:com/tssa/km/domain/hibernate/conf/**/*.hbm.xml" />
+	</bean>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+      	<property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+	</bean>
+	<bean id="baseSessionFactory" abstract="true">
+   <!--  <property name="entityCacheStrategies">
+			<props>
+				<prop key="com.tssa.km.domain.hibernate.QuestionExt">read-only</prop>
+			</props>
+		</property>
+		<property name="collectionCacheStrategies">
+			<props>
+				<prop key="com.tssa.km.domain.hibernate.QuestionExt.questionOptions">nonstrict-read-write</prop>
+			</props>
+		</property> 
+		-->
+		<property name="hibernateProperties" ref="hibernateProperties" />
+		<property name="namingStrategy">
+			<bean class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+				<property name="staticField"
+					value="org.hibernate.cfg.ImprovedNamingStrategy.INSTANCE" />
+			</bean>
+		</property>
+	</bean>
+	<bean name="hibernateProperties" parent="baseHibernateProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	</bean>
+	<bean id="baseHibernateProperties" abstract="true">
+		<property name="properties">
+			<map>
+				<entry key="hibernate.query.substitutions" value="true 1, false 0" />
+				<entry key="hibernate.dialect" value="${sql.dialect}" />
+				<entry key="hibernate.jdbc.batch_size" value="20" />
+
+				<entry key="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+				<entry key="hibernate.cache.use_query_cache" value="true" />
+				<entry key="hibernate.cache.use_second_level_cache" value="true" />
+				<entry key="hibernate.max_fetch_depth" value="4" />
+ 				<entry key="hibernate.show_sql">
+					<bean
+						class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+						<property name="targetObject" ref="sysProps" />
+						<property name="targetMethod" value="getProperty" />
+						<property name="arguments">
+							<list>
+								<value>hibernate.showSQL</value>
+								<value>false</value>
+							</list>
+						</property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean> 
+  </beans>

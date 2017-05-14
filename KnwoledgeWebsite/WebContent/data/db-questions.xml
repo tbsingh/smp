@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db>
+  <question no="1">
+		<body>The acronym 'ACID' in database management system stands for
+		</body>
+		<options>
+			<a>Atomicity, Consistency, Isolation, Durability </a>
+			<b>Atomicity, Consistency, Isolation, Distributable</b>
+			<c>Atomicity, Consistency, Integrity, Durability</c>
+			<d>Atomicity, Concurrency, Isolation, Durability</d>
+		</options>
+		<answer name="a">The ACID stands for Atomicity, Consistency, Isolation, Durability.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="2">
+		<body> The term 'Atomicity' in database management system states that 
+		</body>
+		<options>
+			<a>Each transaction is "all or nothing" i.e. if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged. </a>
+			<b>Each transaction is "all or something" i.e. if one part of the transaction fails, the other parts of the  transaction many not fail, and the database state is left changed.</b>
+			<c>Primary key and foreign key should be atomic.</c>
+			<d>Primary key may be atomic, but foreign key can not be atomic.</d>
+		</options>
+		<answer name="a">The term 'Atomicity' in database management system states that each transaction is "all or nothing" i.e. if one part of the transaction fails, 
+						 the entire transaction fails, and the database state is left unchanged.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="3">
+		<body> The property 'Isolation' in database management system ensures that
+		</body>
+		<options>
+			<a>two or more transactions can not be run concurrently if they are using same database resources.</a>
+			<b>the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially, i.e. one after the other.</b>
+			<c>the effects of an incomplete transaction might be visible to another transaction.</c>
+			<d>ensures that any transaction will bring the database from one valid state to another.</d>
+		</options>
+		<answer name="b">The property 'Isolation' in database management system ensures that the concurrent execution of transactions results in a system state that would be obtained 
+						 if transactions were executed serially, i.e. one after the other.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="4">
+		<body> The property 'Durability' in database management system means that
+		</body>
+		<options>
+			<a>when a transaction has been committed, it should remain so, even in the event of power failure, system crash or errors.</a>
+			<b>when a transaction has been committed, it should remain so only, if there is no power failure, no system crash or no errors.</b>
+			<c>when a transaction has been committed, it should remain so only, if there is no power failure, no system crash.</c>
+			<d>when a transaction has been committed, it should remain so only, if there is no errors.</d>
+		</options>
+		<answer name="a">The property 'Durability' in database management system means that when a transaction has been committed, it should remain so, even in the event of power failure, 
+						 system crash or errors.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="5">
+		<body>The 'Entity Integrity Rule' in RDBMS states that
+		</body>
+		<options>
+			<a>A table may or may not have a unique and not null primary key.</a>
+			<b>A table can have a null primary key.</b>
+			<c>Every table must have either a primary key or a foreign key.</c>
+			<d>Every table must have a unique and not null primary key.</d>
+		</options>
+		<answer name="d">The 'Entity Integrity' in RDBMS rule states that every table must have a unique and not null primary key.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="6">
+		<body>The 'Referential Integrity Rule' in RDBMS states that
+		</body>
+		<options>
+			<a>A foreign key can not contain a null value, it always contains only values from a parent table's primary key</a>
+			<b>If a primary key is null, the corresponding foreign should also be null.</b>
+			<c>A foreign key can contain either a null value, or only values from a parent table's primary key.</c>
+			<d>Every must have either a primary key or a foreign key.</d>
+		</options>
+		<answer name="c">The 'Referential Integrity Rule' in RDBMS states that A foreign key can contain either a null value, or only values from a parent table's primary key.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="7">
+		<body>Which one of the statements is incorrect about a Relation(Database Table) following the 1NF(First Normal Form)?
+		</body>
+		<options>
+			<a>Two tuples(rows) in a relation(table) can be identical.</a>
+			<b>Each attribute(column)value must be a single value(atomic).</b>
+			<c>The order of the attributes(columns) is significant.</c>
+			<d>Each attribute(column) must have a unique value.</d>
+		</options>
+		<answer name="a"> According to 1NF, A database table can not have duplicate rows.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="8">
+		<body>Which one of the following statements is not true if a database relation(table) is in 2NF?
+		</body>
+		<options>
+			<a>The relation(table) is in 1NF.</a>
+			<b>All non key attributes(columns) are functional dependent on the key attributes(columns).</b>
+			<c>The relations(tables) that have a single attribute for a key are automatically in 2NF.</c>
+			<d>The relation(table) contains no transitive dependencies.</d>
+		</options>
+		<answer name="d">A relation in 2NF can contain transitive dependencies. 
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="9">
+		<body>Which of the following statements are true if a relation(table) is in 3NF?
+		</body>
+		<options>
+			<a>The relation(table) is in 1NF.</a>
+			<b>The relation(table) is in 2NF.</b>
+			<c>The relation(table) is in BCNF(Boyce-Codd Normal Form).</c>
+			<d>The relation(table) contains transitive dependencies.</d>
+		</options>
+		<answer name="cd"> A relation in 3NF is also in 1NF, and 2NF, but not in BCNF. Also 3NF relation contains no contains transitive dependencies.
+		</answer>
+		<category>DBMS</category>
+	</question>
+	<question no="10">
+		<body>Find the incorrect statement(s) out of following?
+		</body>
+		<options>
+			<a>A relation which is in 4NF is also in 1NF, 2NF, 3NF and BCNF.</a>
+			<b>A relation which is in 4NF is also in 1NF, 2NF, 3NF but not in BCNF.</b>
+			<c>A relation which is in 4NF is also in 1NF, 2NF, 3NF and BCNF.</c>
+			<d>A relation which is in 5NF is also in BCNF.</d>
+		</options>
+		<answer name="b"> The statement "A relation which is in 4NF is also in 1NF, 2NF, 3NF but not in BCNF" is false.
+		</answer>
+		<category>DBMS</category>
+	</question>
+</db>

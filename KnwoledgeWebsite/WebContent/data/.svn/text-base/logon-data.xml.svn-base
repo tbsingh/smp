@@ -1,0 +1,13 @@
+<Data>
+	<Users>
+		<User name="Administrator">
+			<Login name="Login">admin</Login>
+			<Password name="Password">HKTPU89:</Password>
+		</User>
+		<User name="Visitor">
+			<Login name="Login">guest</Login>
+			<Password name="Password">N\LZ[</Password>
+		</User>
+	</Users>		
+</Data>
+

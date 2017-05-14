@@ -1,0 +1,68 @@
+<project name="KnwoledgeWebsite" default="war" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src.dir" location="src"/>
+  <property name="build.dir" location="build"/>
+  <property name="classes.dir" value="${build.dir}/classes" />
+  <property name="dist.dir"  location="dist"/>
+  <property name="web.root.dir" location="WebContent"/>
+  <property name="web.xml" location="WebContent/WEB-INF/web.xml"/>
+  <property name="lib.runtime.dir" location="WebContent/WEB-INF/lib"/>
+  <property name="jspsrc.dir" location="WebContent/WEB-INF/view"/>
+  <property name="build.war" value="${dist.dir}/kmp.war"/>	
+	
+  <path id="lib.path.id">
+	<fileset dir="${lib.runtime.dir}">
+		<include name="*.jar" />
+	</fileset>
+  </path>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build.dir}"/>
+  	<mkdir dir="${classes.dir}"/>
+  	<mkdir dir="${dist.dir}"/>
+  </target>
+
+  <target name="compile" depends="init"  description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="lib.path.id"/>
+  
+  </target>
+
+  <target name="dist" depends="compile"  description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist.dir}"/>
+    <!-- Put everything in ${build} into the kmp-${DSTAMP}.jar file -->
+    <jar jarfile="${dist.dir}/kmp-${DSTAMP}.jar" basedir="${build.dir}"/>
+  </target>
+	
+  <target name="compile.post">
+	<!-- <copyfile src="${src.dir}/applicationContext.xml" dest="${classes.dir}/applicationContext.xml"/> -->
+  	<copy todir="${classes.dir}">
+  	   <fileset dir="${src.dir}" >
+  	  		<include name="**/*.xml" />
+  	   </fileset>
+  	</copy>
+  </target>
+	
+  <target name="war" depends="clean, compile, compile.post" description="Generate WAR file.">
+		<delete file="${build.war}" />
+		<war destfile="${build.war}" webxml="${web.xml}">
+			<fileset dir="${web.root.dir}">
+			</fileset>
+			<classes dir="${classes.dir}" />
+		</war>
+
+ 	</target>
+	
+  	<target name="clean"  description="clean up" >
+	    <!-- Delete the ${build} and ${dist} directory trees -->
+	    <delete dir="${build.dir}"/>
+	    <delete dir="${dist.dir}"/>
+  	</target>
+</project>

@@ -1,0 +1,13 @@
+dateFormat={0,date,dd-MMM-yyyy}
+datetimeFormat={0,date,dd-MMM-yyyy HH:mm:ss}
+
+##########################################################################
+# General Words & 
+menu.name={0}
+
+errors.global="Please fix the errors"
+registration.email.address.error="Enter valid email address"
+string.required="Required"
+
+
+

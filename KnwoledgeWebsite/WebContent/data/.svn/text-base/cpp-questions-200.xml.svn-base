@@ -1,0 +1,5710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpp>
+	<question no="1">
+		<body>Which one of the following operators is used to resolve scope of a symbol?
+		</body>
+		<options>
+			<a> : </a>
+			<b> :: </b>
+			<c> ?: </c>
+			<d> . </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The scope resolution operator (::) is used to define scope of a symbol. For example, to access a global variable, which have same name as local variable, scope resolution operator can be used as given below:
+			#include "iostream"
+			using namespace std;
+			int nData =100;
+			int main() {
+			    int nData=10;
+			    cout&#171;::nData; //use :: to refer global data
+			    return 0;
+			}
+			The output of above program will be 100. Another use of scope resolution operator is to define class members outside the class, and to call global library function if the function	of same name exists in local program module.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="2">
+		<body>What is basic difference between a C++ structure type and a class type?
+		</body>
+		<options>
+			<a> A class can have both data members and function members as well, but structure can have only data members.
+			</a>
+			<b> By default, all members of a class and a structure are private	and public respectively.
+			</b>
+			<c> By default, all members of a class and a structure are public and private respectively.
+			</c>
+			<d> Both are same in all respect. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The structure and class differ in their access specifies. By default all members of a class are private if no access  specifier is given whereas those in structure are public. For example, the structure SData and class CData defined below, are equivalent.
+			struct SData {
+			   void getData() {
+			       cin&#187;m_d;
+			   }
+			    private:
+			    void showData() {
+			       cout&#171;m_d;
+			    }
+			    int m_d;
+			};
+			class CData {
+				void showData() {
+					cout&#171;m_d;
+				}
+				int m_d;
+				public:
+				void getData() {
+					cin&#187;m_d;
+				}
+			};
+
+			When a structure is inherited from another	structure, by default inheritance is public however that in case of class is private. In the following example, the structure SData is public base structure of the SDD.
+			struct SDD : SData { }  //is same as
+			struct SDD : public SData{}
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="3">
+		<body>What is output of the following program?
+			#include&#60;iostream&#62;
+			using namespace std;
+			class Title {
+				public:
+				Title() {}
+				Title(Title t) {
+					t.showTitle();
+				}
+				void showTitle(){
+					cout&#171;&quot;Title &quot;;
+				}
+			};
+			int main() {
+				Title t;
+				t.showTitle();
+				Title tt = t;
+				tt.showTitle();
+				return 0;
+			} 
+		</body>
+		<options>
+			<a> Title Title </a>
+			<b> Title  </b>
+			<c> Program gives compile time error. </c>
+			<d> Program has end less loop which displays "Title" infinitely. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c"> When program is compiled it gives compile time
+			error because object of a class can not be passed to the constructor
+			of that class. If this were not compilation error, the program could
+			have gone in endless loop at the time of object construction. To get
+			same functionality, pass object reference instead of object itself.
+			Constructor definition with argument as reference is called copy
+			constructor, and for class Title, it will be:
+			Title(Title&amp; title)	{
+				title.copyTitle();
+			}
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="4">
+		<body>Static polymorphism is achieved by:</body>
+		<options>
+			<a> Function overloading </a>
+			<b> Virtual functions </b>
+			<c> Function overriding </c>
+			<d> Abstract class </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a"> Static polymorphism means multiple
+			implementations for a function identified at compile time. In
+			function overloading, same function name can be used to implement
+			different behaviors. For example, a function sum() can be defined twice as given below:
+			long sum(int n1, int n2) {
+				return n1+n2;
+			}
+			double	sum(float n1, float n2) {
+				return n1+n2;
+			}
+			When the program containing	above function definitions is compiled,
+			separate name for each	function definition is generated to resolve
+			name conflict. This	technique is called name mangling in C++.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="5">
+		<body>Which of the following operators cannot be overloaded?</body>
+		<options>
+			<a> :: </a>
+			<b> -&#62; </b>
+			<c> ? : </c>
+			<d> ++ </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ac">The operators that cannot be overloaded in C++ are given below:
+			:: Scope resolution operator
+			?: Ternary operator
+			->* Pointer to member operator
+			.* Member reference operator
+			. Dot operator
+			sizeof Size operator
+
+			The reason these operators cannot be overloaded	is that except ternary	operator all operators take type as one of
+			their arguments, and for any operation, type cannot be considered as an operand. The ternary
+			operator takes three arguments and there is no	way defined to pass	three arguments to an operator.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="6">
+		<body>Which of the following statement(s) are true about exception	handling?
+		</body>
+		<options>
+			<a> A try block can have another try-catch block. </a>
+			<b> A catch block can have another try-catch block. </b>
+			<c> A catch block can have another catch block. </c>
+			<d> One catch statement can be associated with more than one try block.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">A try block can have another try-catch block, and	exception object thrown from the inner most try block can be caught
+			by any of the catch blocks coming after the throw statement. A try block cannot be written without catch statement(s) and an object is
+			always thrown in try block. For example in the following piece of code, exception of int type is caught in the last catch block.
+
+			void process() {
+				try {
+					try{
+						try{
+							throw int(10);
+						}
+						catch(char c) {
+							cout&#171;”Char is caught”;
+						}
+						catch(string s) {
+							cout&#171;”String is caught”;
+						}
+					}
+					catch(double d) {
+						cout&#171;”Double is caught”;
+					}
+					catch(float f) {
+						cout&#171;”Float is caught”;
+					}
+				}
+				catch(long l) {
+					cout&#171;”Long is caught”;
+				}
+				catch(int i) {
+					cout&#171;”Int is	caught”;
+				}
+			}
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="7">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Symbol {
+				public:
+				Symbol() {
+					cout&#171;&quot;Constructor &quot;;
+				}
+				~Symbol() {
+					cout&#171;"Destructor";
+				}
+			};
+			void useSymbol() {
+				static Symbol s1;
+				auto Symbol s2;
+			}
+			int main() {
+				useSymbol();
+				cout&#171;&quot;Main Ends&quot;;
+				return 0;
+			}
+		</body>
+		<options>
+			<a> Constructor Constructor Main Ends Destructor Destructor </a>
+			<b> Constructor Constructor Destructor Main Ends Destructor </b>
+			<c> Constructor Destructor Main Ends Destructor </c>
+			<d> Constructor Main Ends Destructor Destructor </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Two objects of the class Symbol are created when function useSymbol executes and as a result Constructor Constructor
+			is printed on the console The object s1 has static storage whereas
+			object s2 has auto storage. Therefore, object s2 is destroyed when
+			useSymbol returns and destructor for object s2 is called which prints
+			Destructor on the console. Now control returns to the main function
+			and program terminates after printing Main Ends followed by
+			Destructor. At last Destructor is printed because the static object
+			s1 is destroyed when program terminates.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="8">
+		<body>The operator typeid is used:</body>
+		<options>
+			<a> To convert one type to another type. </a>
+			<b> To get type information of all data types </b>
+			<c> To get type information of polymorphic objects only. </c>
+			<d> To get type information of primitive types only. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The operator typeid is used to get type information of all types of valid identifier of primitive type and
+			class objects. The operator takes identifier or object as its only
+			argument and returns object of the class type_info defined in the
+			header file type_info.h. The type_info class describes type
+			information generated by an implementation, and has following
+			functions that can be used to collect information about the objects.
+			• const char* name() const
+			• type_info&amp; operator = (const type_info&amp;)
+		</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="9">
+		<body>The scope of the identifiers defined in an anonymous namespace is:
+		</body>
+		<options>
+			<a> Global </a>
+			<b> Local to the namespace in which anonymous namespace is defined.
+			</b>
+			<c> Local to the file in which namespace is defined. </c>
+			<d> An anonymous namespace can not be defined. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The scope of functions and identifiers defined in
+			an anonymous namespace is limited to the file in which namespace is
+			defined. The members of the anonymous namespace are referred directly
+			by their name. All the static functions and static variables/objects
+			defined in a file can be put in anonymous namespace without affecting
+			the behavior of the program. Following example illustrates the use of
+			anonymous namespace to restrict the scope counter in the file
+			counter.cc.
+			//counter.cc
+			namespace {
+				long counter = 0;
+				long getCount() {
+					return counter;
+				}
+				void setCount(long cnter) {
+					counter = contr;
+				}
+			}// end	of the name space
+			The members of anonymous namespace have extern	linkage whereas static	global objects/functions have internal linkage
+			and therefore, limitations of static data imposed by internal linkage	are resolved
+			by anonymous namespace. Following piece of code shows how	two	structure objects can have pointer to each other with scope
+			limited	to file level. This is not possible using static objects.
+			struct BA;
+			struct AB {
+				BA *pBA;
+			};
+			struct BA {
+				AB* pAB;
+			};
+			namespace {
+				extern AB ab;
+				extern BA ba;
+
+				AB ab = {&amp;ba};
+				BA ba = {&amp;ab};
+			}
+		</answer>
+		<category>N</category>
+	</question>
+	<question no="10">
+		<body>Which one is root base class of I/O stream class hierarchy?
+		</body>
+		<options>
+			<a> ios_base </a>
+			<b> basic_ios&#60;char&#62; </b>
+			<c> basic_iostream&#60;char&#62; </c>
+			<d> ios </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The ios_base is the root class of the stream class
+			hierarchy. All of the classes in the hierarchy are template class,
+			and support ASCII characters set and Unicode character set as well.
+			To make class’s name easy for use all class type have simple name
+			defined by typedef in the respective header file. For example,
+			standard input/output classes are typedefed as given below.
+			typedef 
+			basic_ios&#60;char&#62; ios;
+			typedef basic_ostream&#60;char&#62; ostream;
+			typedef basic_istream&#60;char&#62; istream
+
+			In the similar way all other
+			classes are defined to make them more
+			users friendly.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="11">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Phone {
+				public:
+				Phone() {
+					cout&#171;&quot; Base &quot;;
+				}
+				void showPhone() {
+					cout&#171;"Phone";
+				}
+			};
+			class MobilePhone : Phone{
+				public:
+				MobilePhone() {
+					cout&#171;&quot;Derived &quot;;
+				}
+			};
+			int main() {
+				MobilePhone mp;
+				mp.showPhone();
+				return 0;
+			}
+		</body>
+		<options>
+			<a> Base Derived Phone </a>
+			<b> Derived Base Phone  </b>
+			<c> Phone Derived Base  </c>
+			<d> Program gives compile time error.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The class Phone is the private base class of
+			MobilePhone and all data members and methods defined in class Phone
+			become private in class MobilePhone. Therefore,
+			MobilePhone::showPhone() method has private access and cannot be
+			called from the main function.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="12">
+		<body>What is true about the keyword class and keyword typename when used with templates as below?
+			template&#60;class T1, typename T2&#62;
+			void show() { //some stuff goes here}</body>
+		<options>
+			<a> Both are same.  </a>
+			<b> class is used for C++ class object types while typename is used for primitive types.
+			</b>
+			<c> typename is used for C++ class object types while class is used for primitive types.
+			</c>
+			<d> typename is used to specify constant template parameter. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Both of the keywords have same meaning when used
+			as template parameters. However, these keywords may have different
+			meanings in different scenarios. For example, typename can be used to
+			specify whether a class member is a type or an identifier and class
+			keyword can be used to define classes in C++. Following example
+			illustrates the use of typename to guide the compiler that iterator
+			is a type not a data member.
+			#include "iostream"
+			using namespace
+			std;
+			class MyContainer{
+			public:
+			typedef int* iterator;
+			typedef int
+			value_type;
+			MyContainer() {
+			count=0;
+			}
+			void push_back(value_type value) {
+			data[count++]= value;
+			}
+			iterator begin() {
+			return &amp;data[0];
+			}
+			iterator end() {
+			return &amp;data[count];
+			}
+			private:
+			value_type
+			data[1024];
+			short count;
+
+			};
+			int main() {
+			MyContainer c;
+			for(int i=10;i&#60;=15; i++)
+			c.push_back(i);
+			//use typename to specify that iterator
+			is a type not a data member
+			typename MyContainer :: iterator itr=c.begin();
+			while(itr != c.end())
+			cout&#171;*itr++&#171;&quot;&quot;;
+			return 0;
+			}
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="13">
+		<body>Which one of the following containers is a container adapter	(derived container)?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> stack&#60;T&#62; </b>
+			<c> list&#60;T&#62; </c>
+			<d> deque&#60;T&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The containers defined in the Standard Template
+			Library, are objects that contain data or other objects. STL provides
+			following two types of standard containers.
+			Sequential Containers:
+			Allows sequential access to the data a container
+			contains. These are
+			vector, list and deque, and other sequential
+			containers like stack,
+			priority_queue are specialization of any of
+			these. These specialized
+			containers are also called container
+			adapters.
+			Associative Containers:
+			Allows fast access to the data using key-value pairs.
+			These are map,
+			multimap, set, multiset.
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="14">
+		<body>The operators &#171; and &#187; are respectively called as:
+		</body>
+		<options>
+			<a> Insertion and extraction operators. </a>
+			<b> Extraction and insertion operators. </b>
+			<c> Insertion operators. </c>
+			<d> Extraction operators. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The operator &#171; is called stream insertion
+			operator and the operator &#187; is called stream extraction
+			operator. These operators are overloaded in the standard stream
+			classes and are used to insert/extract information to/from the stream
+			object.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="15">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Pen {
+				char m_name[20];
+				char m_type[5];
+				void showName() {
+					cout&#171;m_name;
+				}
+				public:
+				Pen() {
+					cout&#171;"Const1";
+				}
+				Pen(char* name, char* type) {
+					strcpy(m_name,name);
+					strcpy(m_type,type);
+					cout&#171;"Const2";
+				}
+				void showType() {
+					cout&#171;m_type;
+				}
+			};
+			int main() {
+				Pen p("Raynold","Red");
+				p.showName();
+				p.showType();
+				return 0;
+			}
+		</body>
+		<options>
+			<a> Const2 Raynold Red  </a>
+			<b> Const1 Raynold Red  </b>
+			<c> Const1 Const2 Raynold Red  </c>
+			<d> Program gives compile time error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The class method showName() is private and cannot be called from the main function as private members of a class can
+			only be used by the class methods, friend class methods and friend functions.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="16">
+		<body>Pick up the correct statement(s) about a C++ union?</body>
+		<options>
+			<a> A union can have member functions defined in it.        </a>
+			<b> The memory allocated for a union object is always equal to the size of its largest member.
+			</b>
+			<c> A class can be derived from a union as base.  </c>
+			<d> A union can not have static data members. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ab">A union is like a structure except the following
+			key features.
+			• The memory allocated for union object is equal to its
+			largest (in
+			size) data member
+			• A union can not be used in inheritance
+			• A union can not have virtual functions
+			• A union can not have static
+			functions
+
+			Like structure, default access to the union members is
+			private and a
+			union can have methods defined in it.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="17">
+		<body>Which of the following characteristics cannot be used for	function overloading?
+		</body>
+		<options>
+			<a> Return type </a>
+			<b> Constantness of the function </b>
+			<c> Different number of arguments </c>
+			<d> Different types of arguments </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Function overloading implements static
+			polymorphism that provides static binding of the arguments with
+			function name. In function overloading, same function name can be
+			used for different type of implementations. To overload a function
+			only function arguments are used and two functions with same
+			arguments and different return types are assumed to be same. For
+			example, following two functions are assumed same by the compiler.
+			double Area(int l, int b);
+			long Area(int l, int b);
+
+			To overload a
+			function following features can be used:
+			1. Argument types
+			e.g. double
+			f1(float l, float b);
+			long f1(int l, float b);
+			long f1(int l, int b);
+			2. Number of arguments
+			e.g. int f2(int l);
+			long f2(int l, int b);
+			long
+			f2(int l, int b, int w);
+			3. Constantness of the function
+
+			e.g. long
+			f3(int l, int b)const ;
+			long f3(int l, int b);
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="18">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			int main() {
+				for(float i = 1.0; float i&#60;3.0; i++)
+					for(float i = 1.0; float i&#60;3.0; i++)
+						for(char j =’a’; j&#60;’c’; j++)
+							cout&#171;i&#171;” “&#171;j&#171;” “;
+				return 0;
+			}
+		</body>
+		<options>
+			<a> 1.0 a 2.0 b </a>
+			<b> 1.0 a 1.0 b  </b>
+			<c> Program has infinite loop. </c>
+			<d> Program gives syntax error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">Program executes without showing any error/warning
+			and 1 a 1 b 2 a 2 b is displayed on the console. Though compiler does
+			not complaint any error about the loop driving variable i and j, yet
+			it is recommended to use only int types of variables to control the
+			loops.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="19">
+		<body>What is the value of x when following statement executes?
+			int x =	(10,5)+(5,10)*(2,5);
+		</body>
+		<options>
+			<a> 25 </a>
+			<b> 20   </b>
+			<c> 55 </c>
+			<d> The statement has syntax error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">In the program use of comma operator is
+			illustrated, and program displays 55 on the console. The comma
+			operator always returns its first argument when applied without
+			parenthesis and returns its second argument when expression is put in
+			parenthesis. For example, the expression 10,5 returns 10 whereas the
+			expression (10,5) returns 5. The evaluation of variable x is
+			explained below.
+			(10,5)+(5,10)*(2,5)
+			=5+(5,10)*(2,5) //(10,5) returns 5
+			=5+10*(2,5) //(5,10) returns 10
+			=5+10*5 //(2,5) returns 5
+			=5+50
+			=55
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="20">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			void (*ptr)();
+			class Counter {
+				static int count;
+				public:
+				Counter(){
+					++count;
+				}
+				Counter(Counter&amp; c){
+					++count;
+				}
+				void setPointer(){
+					ptr=&amp;Counter::showCount;
+				}
+				private:
+				static void showCount(){
+					cout&#171;count;
+				}
+			};
+			int Counter::count=0;
+			int main() {
+				Counter c;
+				Counter cc = c;
+				cc.setPointer();
+				(*ptr)();
+				return 0;
+			}
+		</body>
+		<options>
+			<a> 1  </a>
+			<b> 2  </b>
+			<c> 0  </c>
+			<d> Program gives compile time error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The program contains a function pointer ptr which
+			is initialized by the address of static private method showCount().
+			Two objects of the class Counter are created and the value of count
+			reaches to 2. The method showCount() prints value of the count, which
+			is called through the pointer ptr. Calling private method of a class
+			through pointer like this, violets the principle of encapsulation and
+			data hiding, and leads to the security break in C++.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="21">
+		<body>The return type of the typeid operator is:</body>
+		<options>
+			<a> The class name of the object being passed as argument. </a>
+			<b> The object of the class std::type_info. </b>
+			<c> Reference to the object being passed as argument. </c>
+			<d> void* </d>
+			<e> None of the above  </e>
+		</options>
+		<answer name="b">The operator typeid returns object of the class type_info defined in namespace std. 
+		</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="22">
+		<body>What is the size of the following class? [Assume size of int,	char and double 4, 1 and 8 bytes respectively]
+			class Info {
+				int m_x;
+				char m_y;
+				double m_z;
+				public:
+				Info() {
+					m_x=m_y=m_z=0;
+				}
+			};
+		</body>
+		<options>
+			<a> 13 bytes  </a>
+			<b> 16 bytes </b>
+			<c> 24 bytes </c>
+			<d> 14 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The #pragma pack directive modifies the current
+			alignment rule for members of structures/classes whose declarations
+			follow the directive. This directive cannot increase the alignment of
+			a member, but rather can decrease the alignment. For example, for a
+			member with data type of integer (int), a #pragma pack(2) directive
+			would cause that member to be packed in the class on a 2-byte
+			boundary, while a #pragma pack(4) directive would have no effect.
+
+			Here, size of the class will be 16 bytes because of the memory
+			alignment. The run time environment allocates memory for the class
+			member’s in the chunk of 4 bytes, so that the memory allocated for
+			the class member’s ends at the 4-bytes boundary. The memory allocated
+			for individual data member on a Solaris system, will be as follows:
+			m_x : 4 bytes
+			m_y : 4 bytes [one byte for the char type and 3 bytes
+			padding]
+			m_z : 8 bytes
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="23">
+		<body>Pick up incorrect statement(s) about the class Single.
+			class Single {
+				int m_single;
+				Single(Single&amp; s) {
+					m_single=s.m_single;
+				}
+				public:
+				Single(int x=0) {
+					m_single=x;
+				}
+			};
+		</body>
+		<options>
+			<a> Single s2 = s1; //s2 is an object of Single class </a>
+			<b> Single s3(int(10));  </b>
+			<c> s5 = s4; //s5 and s4 are objects of Single class </c>
+			<d> Both b &amp; c  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">First statement Single&amp; s2 = s1 calls copy
+			constructor whereas other statements Single s3(int(10)) and s5=s4
+			call constructor with one int argument, and assignment operator
+			respectively. The copy constructor of the class has been defined with
+			private access so this cannot be called from outside world. The
+			statement Single s3(int(10)) is equivalent Single s3(10) and calls
+			the constructor defined in the class.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="24">
+		<body>What is the relationship between classes XX and YY given below?
+			class XX {
+				public:
+				XX {
+					cout&#171;&quot;XX &quot;;
+				}
+				private:
+				int m_xx;
+			};
+			class YY : XX {
+			};
+		</body>
+		<options>
+			<a> YY is a kind-of XX </a>
+			<b> XX has-a YY </b>
+			<c> XX is a kind-of YY </c>
+			<d> YY has-a XX </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">Class XX is private base class of YY, which means
+			YY type can not be converted to XX type. Therefore XX is not kind-of
+			YY and vice-versa. By the virtue of inheritance, the size of class YY
+			is the sum of data defined in XX and YY, stating that YY has-a XX.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="25">
+		<body>To allocate memory for 3-dimensional array of int, which	statement is correct?
+		</body>
+		<options>
+			<a> int*** pa= new int [L][W][H]; </a>
+			<b> int (*pa)[L][W]=new int [L][W][H]; </b>
+			<c> int (*pa)[W][H]=new int [L][W][H]; </c>
+			<d> int (*pa)[L][H]=new int [L][W][H]; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The statement int (*pa)[W][H]; declares a pointer
+			pa to two-dimensional array of int that contains W rows and H
+			columns. A three-dimensional, say Arr[L][W][H] is an array of
+			two-dimensional arrays containing W rows and H columns. So the
+			pointer pa can be used to hold the pointer returned by new int
+			[L[W][H]; making following statement correct.
+			int (*pa)[W][H] = new
+			int [L[W][H];
+
+			Other statements given in the rest of the options may
+			not give any compile
+			time error, but definitely will produce some
+			logical problems.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="26">
+		<body>What happens when following files are compiled and run simultaneously?
+			//err1.cc
+			#include "iostream"
+			inline void errorMesg(char* msg) {
+			std::cerr&#171;msg;
+			}
+			//err2.cc
+			#include "iostream"
+			void errorMesg(char* msg) {
+			std::cerr&#171;msg;
+			}
+			//main.cc
+			#include "iostream"
+			using namespace std;
+			void errorMesg(const char*);
+			int main() {
+			errorMesg("This is test");
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Compiler gives an error stating errorMesg function is defined
+				twice.
+			</a>
+			<b> Compiler gives an ambiguity error because two definitions of the
+				same function are idenfied.
+			</b>
+			<c> The program runs successfully and inline definition from err1.cc
+				file is called because inline function is given more preference.
+			</c>
+			<d> The program runs successfully and the function from err2.cc file
+				is called because inline function does not have external linkage.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">Inline functions defined in a file have internal
+			linkage i.e. an inline function defined in a file can only be used in
+			the same file. This is not visible in other files of the program. The
+			errorMesg function defined in file er1r.cc has internal linkage and
+			is not visible in file main.cc. Therefore errorMesg function defined
+			in err2.cc is called, as it is only function definition in the scope
+			of main function.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="27">
+		<body>Which are valid functions declarations?</body>
+		<options>
+			<a> long f1(int a=10, int b, int c=20); </a>
+			<b> char f2(char a, char b='\0', char c='\n'); </b>
+			<c> double f3( float a=12.5, float b, float c); </c>
+			<d> short f3( short a=100, short b=200, short c); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">C++ functions can have default arguments and
+			position of the default argument in the argument list must be at end
+			i.e. all the default arguments must be the trailing arguments in a
+			function declaration. The declarations long f1(int a=10, int b, int
+			c=20), double f3( float a=12.5, float b, float c) and short f3(short
+			a=100, short b=200, short c) are invalid because each of these has at
+			least one default argument before non-default one.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="28">
+		<body>Function overloading is achieved by:</body>
+		<options>
+			<a> using same function name with different type of return value. </a>
+			<b> using same function name with different type of arguments. </b>
+			<c> using same function name with different number of arguments. </c>
+			<d> using different function name with same type/number of arguments.
+			</d>
+			<e> None of the above   </e>
+		</options>
+		<answer name="bc">Function overloading is an example of static
+			polymorphism that provides static binding of the arguments with the
+			function name. In function overloading, same function name can be
+			used for different type of implementations. To overload a function
+			only function arguments are used and two functions with same
+			arguments and different return types are assumed to be same. For
+			example, following two functions are assumed same by the compiler.
+			double Area(int l, int b);
+			long Area(int l, int b);
+
+			To overload a
+			function following features can be used:
+			4. Argument types
+			e.g. double
+			f1(float l, float b);
+			long f1(int l, float b);
+			long f1(int l, int b);
+			5. Number of arguments
+			e.g. int f2(int l);
+			long f2(int l, int b);
+			long
+			f2(int l, int b, int w);
+
+			6. Constant ness of the function
+
+			e.g. long
+			f2(int l, int b)const ;
+			long f2(int l, int b);
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="29">
+		<body>Read following code segment and select appropriate option(s).
+			class Base {
+			/* some stuff goes here */
+			};
+			class Derived1 : public Base
+			{
+			/* some stuff goes here */
+			};
+			class Derived2 : public Base {
+			/* some	stuff goes here */
+			};
+			void MyFunc(int x) {
+			/* some stuff goes here */
+			try {
+			if(x == 1)
+			throw Derived1();
+			else
+			throw Derived2();
+			}
+			catch(Base&amp; b) {/* some stuff goes here */}
+			catch(Derived1&amp; d1) {/*	some stuff goes here */}
+			catch(Derived2&amp; d2) {/* some stuff goes	here */}
+			}
+		</body>
+		<options>
+			<a> The catch blocks for Derived1 and Deribed2 are unreachable,	warning is generated.
+			</a>
+			<b> If Derived1 is thrown, it is caught in the catch(Derived1&amp;)	block.
+			</b>
+			<c> If Derived2 is thrown, it is caught in the catch(Derived2&amp;) block.
+			</c>
+			<d> There is Syntax error because catch block for Derived classes appears after that of base class.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The object of classes Derived1 and Derived2 are
+			kind of Base as these class are derived from Base class. The catch
+			block of Base class i.e. catch(Base&amp; b) makes catch blocks of
+			derived classes unreachable because all the exceptions of Derived1
+			and Derived2 types are caught by Base catch block.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="30">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			class Message {
+			public :
+			virtual void show(char*
+			msg =(char*)"Message1") {
+			cout&#171;msg;
+			}
+			};
+			class Message2 : public Message {
+			public :
+			virtual void show(char* msg =(char*)"Message2") {
+			cout&#171;msg;
+			}
+			};
+			int main() {
+			Message* pMsg = new Message2();
+			pMsg-&#62;show();
+			delete pMsg;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Message1  </a>
+			<b> Message2 </b>
+			<c> Compiler generates an error stating virtual function show can not
+				have default argument.
+			</c>
+			<d> Compiler generates ambiguity error in Message::show and
+				Message2::show.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Class Message2 is public base class of class
+			Message. Virtual function show() has default argument and is
+			overridden in derived class Message2. A default argument has static
+			linkage with the function i.e. default argument if given once will
+			override all further definition. Here default value char* msg
+			=(char*)”Message1” specified in base class function Message::show()
+			is used even though the function is called through derived class
+			object.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="31">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			//def.h file contains following function
+			void showError(char* err) {
+			cout&#171;err;
+			}
+			//main.cc file contains	following code
+			class MyError {
+			public:
+			#include "def.h"
+			};
+			int main() {
+			showError("This is error message");
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Compiler gives an error indicating #include statement can not be
+				put in class definition.
+			</a>
+			<b> Compiler gives an error indicating showError is undefined. </b>
+			<c> The program is compiled and run successfully. </c>
+			<d> showError function is private member function of class MyError.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">When C++ preprocessor preprocesses this piece of
+			code, MyError class definition expands as below.
+			class MyError {
+			public:
+			void showError(char* err) {
+			cout&#171;err;
+			}
+			};
+			The function
+			showError() is a member function of the class MyError.
+			Therefore
+			program will not find the definition of function anywhere
+			outside the
+			class, and will give an error.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="32">
+		<body>Pick up the correct statement(s) about following piece of code.
+			void f() throw(E1, E2);
+			void (*pf1) () throw(E1) = &amp;f;
+			void (*pf2) () throw(E1, E2, E3) = &amp;f;</body>
+		<options>
+			<a> The initialization of pf1 is valid and that of pf2 is invalid.
+			</a>
+			<b> The initialization of pf1 is invalid and that of pf2 is valid.
+			</b>
+			<c> Both are valid. </c>
+			<d> Both are invalid. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">One can assign address of a function that has a
+			more restrictive exception-specification to a pointer to function
+			that has a less restrictive exception-specification. Exception
+			specifications given in the question are described below.
+			void f()
+			throw(E1, E2); => f() can throw only E1 and E2
+			void (*pf1) ()
+			throw(E1); => pf1 can throw only E1
+			void (*pf2) () throw(E1, E2, E3);
+			=> pf2 can throw only E1, E2 and E3
+
+			Above decryption shows that pf1
+			has more restrictive exception
+			specification than that of f() where
+			pf2 has less restrictive
+			exception specification than that of f().
+			Hence pf2 can be
+			initialized by the address of f().
+
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="33">
+		<body>A reference to an array (given below) can be declared as:
+			int arr[ROW][COL];
+		</body>
+		<options>
+			<a> int&amp; ref_arr[ROW][COL]= arr; </a>
+			<b> int&amp; ref_arr [COL] = arr; </b>
+			<c> int (&amp;ref_arr)[ROW][COL] = arr; </c>
+			<d> int&amp; (ref_arr)[ROW] [COL] = arr; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">A reference is an alias for an existing variable,
+			which has unique address in memory. A reference to an integer
+			variable x can be declared as
+			int&amp; rx = x;
+			Here operator &amp; is
+			operated on rx to make it a reference variable. To
+			declare an array
+			reference, this operator should be operated on the
+			reference name to
+			an array. For example, a reference to an int array
+			a[5][10] can be
+			declared as
+			int (&amp;ra)[5][10] = a; or int (&amp;ra)[][10] = a;
+			Here
+			parenthesis is a must as operator &amp; is operated on the reference
+			name.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="34">
+		<body>The statement int *p = new int(10);</body>
+		<options>
+			<a> Allocates memory for 10 integers. </a>
+			<b> Allocates memory for one integer and initialize it by 10. </b>
+			<c> Produces syntax error. </c>
+			<d> Is equivalent to (int*)malloc(10*sizeof(int)); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The new operator is used to allocate memory
+			dynamically in C++. The standard prototypes of the new operator are:
+			void* operator new (size_t);
+			void * operator new[](size_t, unsigned
+			int size);
+			First new operator allocates memory for a scalar variable
+			and second one
+			allocates memory for an array. The statement int *p =
+			new int(10);
+			calls first new operator and initializes the memory by 10
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="35">
+		<body>The ptr_fun function adaptor in STL is used to allow:</body>
+		<options>
+			<a> A pointer to function to be used as an argument to STL algorithm.
+			</a>
+			<b> A pointer to member function of user defined class, to be used as an argument to STL algorithm.
+			</b>
+			<c> A reference to function to be used as an argument to STL algorithm.
+			</c>
+			<d> A reference to member function of user defined class, to be used as an argument to STL algorithm.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The ptr_fun is a pointer to function adapter that
+			allows a pointer to function to be used as an argument to algorithm.
+			For example, a user defined function display() given below can be
+			used to display a list of items.
+			void display(int x) {
+			cout&#171;x&#171;endl;
+			}
+			void disp_list(list&#60;int&#62; ll) {
+			for_each(ll.begin(), ll.end(), ptr_fun(&amp;display));
+			}
+			Another
+			adapter provided by STL is mem_fun, which can be used to pass a
+			pointer to member function to an algorithm
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="36">
+		<body>Consider the following statement and select appropriate option(s).
+			MyClass obj2 = obj1; //obj1 is an object of class MyClass.
+			When above statement executes:
+		</body>
+		<options>
+			<a> Copy constructor is invoked. </a>
+			<b> Assignment operator is invoked. </b>
+			<c> Both assignment operator and copy constructor are invoked. </c>
+			<d> Neither Assignment operator nor copy constructor is invoked. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">From the first look on the statement MyClass obj2
+			= obj1; it seems that copy constructor and assignment operator are
+			called, but this is not true. In this example, only copy constructor
+			is called because this statement is equivalent to the statement
+			MyClass obj2(obj1), and invokes copy constructor only.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="37">
+		<body>What is the output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Obj {
+			public:
+			Obj(int obj =0) : m_obj(obj){}
+			operator void*() {
+			cout&#171;&quot;VOID* &quot;;
+			return NULL;
+			}
+			private:
+			int m_obj;
+			};
+			int main(int x) {
+			Obj myObj(10);
+			if(myObj)
+			cout&#171;&quot;IF &quot;;
+			else
+			cout&#171;&quot;ELSE &quot;;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> VOID* ELSE     </a>
+			<b> VOID* IF </b>
+			<c> ELSE </c>
+			<d> IF </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The statement if(myObj) in the program, finds that
+			myObj is insufficient to make a decision. Therefore run time
+			environment looks for an operator defined in the class that can be
+			applied on myObj to get an applicable value. The operator void* is
+			present in the class definition and hence called on the object myObj,
+			which returns NULL after printing VOID*. The value returned by
+			operator void* is evaluated to be false by if statement and else
+			block is executed.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="38">
+		<body>What is the output of the following program?
+			#include "iostream"
+			using namespace std;
+			class C1 {
+			protected:
+			int m_c;
+			public :
+			C1(int a=0) : m_c(a){}
+			};
+			class C2 : public C1 {
+			public:
+			using C1:: m_c;
+			C2(int a=0) : C1(a) {}
+			};
+			int main() {
+			C2 c2(100);
+			cout&#171;c2.m_c;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Compiler generates error stating m_c is not accessable in main.
+			</a>
+			<b> Compiler generates error stating m_c is not member of C2. </b>
+			<c> Program is compiled and run successfully, and 100 is printed on console.
+			</c>
+			<d> Program is compiled and run successfully, and 0 is printed on console.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">Class C1 is public base class C2 and therefore all
+			data members of C1 have same access in C2 as those have in C1. The
+			data member m_c is protected in C1 so it should be protected in C2,
+			but using C1::m_c statement in public section of C2 overrides this
+			making m_c public in C2. Hence program executes successful and 100 is
+			printed on output window.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="39">
+		<body>A binder function (i.e bind1st) in STL:</body>
+		<options>
+			<a> Allows a two argument function object to be used as a single argument function object.
+			</a>
+			<b> Allows a one argument function object to be used as a two argument function object.
+			</b>
+			<c> Allows a three argument function object to be used as a two argument function object.
+			</c>
+			<d> Allows a two argument function object to be used as a three argument function object.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">A binder allows a two-argument function object to
+			be used as a single argument function object by binding one value as
+			an argument. STL provides two binder functions described below:
+			bind1st(val) :
+			This is used to bind first argument to val. For
+			example, following
+			function Find1() finds first value less than 10 in
+			the vector.
+			int Find1(vector&#60;int&#62; v) {
+			vector&#60;int&#62;::const_iterator itr = find_if(v.begin(), v.end(),
+			bind1st(greater&#60;int&#62;(),10));
+			return *itr;
+			}
+			The bind1st causes
+			greater&#60;int&#62; to use 10 as first argument while
+			comparing.
+			Bind2nd(val) :
+			This is used to bind second argument to val. For
+			example, following
+			function Find2() finds first value greater than 10
+			in the vector.
+			int Find2(vector&#60;int&#62; v) {
+			vector&#60;int&#62;::const_iterator itr = find_if(v.begin(), v.end(),
+			bind2nd(greater&#60;int&#62;(),10));
+			return *itr;
+			}
+			The bind2nd causes
+			greater&#60;int&#62; to use 10 as second argument while
+			comparing.
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="40">
+		<body>Suppose pObj is a pointer to an object of some class and pmf is a pointer to one of the functions of that class. To call the function pointed by pmf which statement can be used?
+		</body>
+		<options>
+			<a> pObj-&#62;*pmf(); </a>
+			<b> (pObj-&#62;*pmf)(); </b>
+			<c> pObj-&#62;(*pmf)();  </c>
+			<d> pObj-&#62;pmf(); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The operator ->* is used to access member
+			functions of a class through a pointer to object of that class.
+			Suppose pObj is a pointer to an object of a class Data given below,
+			and pmf is a pointer to the member functions showData(). To call
+			showData() using pObj, the statement (pObj->*pmf)(); will be used.
+			#include "iostream"
+			using namespace std;
+			class Data {
+			public:
+			void
+			showData() {
+			cout&#171;”Called showData()”;
+			}
+			};
+			int main() {
+			Data *pObj
+			= new Data();
+			void (Data::*pmf)() = &amp; Data::showData;
+			(pObj->*pmf)();
+			Return 0;
+			}
+			The program will display Called showData on
+			the output.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="41">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			template&#60;int max&#62;
+			struct NUM {
+			enum {val =	NUM&#60;max-2&#62;::val+max};
+			};
+			template&#60;&#62;
+			struct NUM&#60;1&#62; {
+			enum {val = 1};
+			};
+			int main() {
+			cout&#171;NUM&#60;9&#62;::val;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 1 </a>
+			<b> 9 </b>
+			<c> 25   </c>
+			<d> Program gives compilation syntax error.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">Program contains recursive template calls. When
+			enum variable is initialized, it makes calls to template
+			specialization recursively with the parameter decreased by 2.
+			Following is the detail how val is calculated?
+
+			NUM&#60;9&#62;::val =
+			NUM&#60;7&#62;::val + 9
+			NUM&#60;7&#62;::val = NUM&#60;5&#62;::val + 7
+			NUM&#60;5&#62;::val = NUM&#60;3&#62;::val + 5
+			NUM&#60;3&#62;::val =
+			NUM&#60;1&#62;::val + 3
+			NUM&#60;1&#62;::val = 1
+			At the end
+			NUM&#60;9&#62;::val is evaluated by backtracking and 25 is the
+			resultant value.
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="42">
+		<body>Pick up correct statement(s) about the following piece of code?
+			ostream&amp; os = cout&#171;"Hello World";</body>
+		<options>
+			<a> The both os and cout refers to same object of the class std::ostream.
+			</a>
+			<b> The both os and cout refers to different objects of the class std::ostream.
+			</b>
+			<c> "Hello World" is displayed twice on console. </c>
+			<d> Program gives compilation error.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The cout is the object of ostream class and
+			provides an interface to the output stream. The ostream does not
+			allow to copy or to assign its object cout to any other object. The
+			insertion operator &#171; is overloaded in class ostream for all
+			primitive types, and returns reference to cout object. The statement
+			ostream&amp; os = cout&#171;”Hello World”; calls this operator for
+			const char array and definition of the same will look like below.
+
+			ostream&amp; operator &#171;(ostream&amp; s, const char* ptr) {
+			//some stuff goes here
+			return s;
+			}
+			From above definition, it is clear
+			that os is a reference to cout and
+			both refer to the same object of
+			ostream class.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="43">
+		<body>Which of the following bit variables are not defined in std::ios class?
+		</body>
+		<options>
+			<a> badbit </a>
+			<b> failbit </b>
+			<c> eofbit </c>
+			<d> goodbit </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">Each of the input and output streams has a state
+			associated with it, and this state is described by following four
+			flags defined in the class ios_base.
+
+			badbit : set when stream is
+			consistent or corrupted.
+			eofbit : set when end of the stream reaches.
+			failbit : set when stream next operation will be OK or will fail
+			goodbit : set when stream is in good state for reading or writing
+
+			An
+			appropriate flags is set or reset when any of the conditions occur.
+			These flags can be checked directly or using wrapper functions
+			defined by ios class. These wrapper functions are given below for the
+			corresponding bit flag and returns true whenever a conditions
+			reaches.
+			bool bad() const;
+			bool eof() const;
+			bool fail() const;
+			bool
+			good() const;
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="44">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Menu {
+			enum {SIZE=50};
+			private:
+			char m_itemName[SIZE];
+			int m_itemNo;
+			public:
+			Menu(char* itemName="Name1", int itemNo=1){ strcpy(m_itemName,itemName); m_itemNo=itemNo; }
+			void showMenu(){ cout&#171;m_itemName&#171;&quot; &quot;&#171;m_itemNo; }
+			Menu&amp; getMenu() {
+			Menu m("Menu1",10);
+			return m;
+			}};
+			int main(){
+			getMenu().showMenu();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Program gives compile time error. </a>
+			<b> Name1 1  </b>
+			<c> Program compiles successfully except some warning being
+				displayed, but crashes at runtime.
+			</c>
+			<d> Menu1 10 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The function getMenu() returns a reference to an
+			object m of Menu class, and the object m is a local object and
+			constructed in the stack memory. When getMenu() function returns, the
+			object m is destroyed due to stack unwinding and hence function
+			returns reference to a non-existing object. The thumb rule is that
+			never return reference to a local object.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="45">
+		<body>Pick up correct statement(s) about function templates?</body>
+		<options>
+			<a> Function template can not have default parameters.  </a>
+			<b> Function template can have default parameters. </b>
+			<c> Function template can not be specialized. </c>
+			<d> Function template can not be static. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ad">Template provides a mechanism that allows a type
+			to be a parameter for class or function definition. The class or
+			function templates are instantiated at compile time to generate class
+			or function definitions on demand. For example, following program
+			generates two definitions of the function add() at compile time.
+			#include "iostream"
+			using namespace std;
+			template&#60;class T&#62;
+			T
+			add(T a, T b) {
+			return a+b;
+			}
+			int main() {
+			cout&#171;add(10,20);
+			cout&#171;add(12.5, 10.4);
+			return 0;
+			}
+			Default template parameters are
+			not allowed in function templates whereas
+			those are allowed in class
+			templates. Also function template can not
+			declared static. The
+			following function template is invalid whereas
+			class template is
+			valid.
+			#include "iostream"
+			using namespace std;
+			template&#60;class
+			T, int SIZE = 5&#62; //Error in the template parameters
+			void display(T
+			data[SIZE]) {
+			//logic goes here
+			}
+			template&#60;class T, int SIZE = 5&#62;
+			class CTmp {
+			private:
+			T data[SIZE];
+			public:
+			//logic goes here
+			};
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="46">
+		<body>Select appropriate option(s) from following.</body>
+		<options>
+			<a> Size of compiled object file is bigger when used templates, in comparison to non-template version of the same program.
+			</a>
+			<b> Size of executable file is bigger when used templates, in comparison to non-template version of the same program.
+			</b>
+			<c> Size of compiled object file is less when used templates, in comparison to non-template version of the same program.
+			</c>
+			<d> Size of executable file is less when used templates, in comparison to non-template version of the same program.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ad">Size of compiled object file containing template
+			definition is bigger than that of the non-template version of the
+			same program, and same is true for the executable files. This is
+			because of the program contains template definition and template
+			instances produced after template instantiations. For example,
+			following template and non-template versions of the same program have
+			different size for object files and executable files when compiled on
+			Sun Studio 11, Solaris 10.
+			Template Version
+			//prg.cc
+			#include "iostream"
+			using namespace std;
+			template&#60;class T&#62;
+			T
+			add(T a, T b) {
+			return a+b;
+			}
+			int main() {
+			printf(&quot;%d&quot;,add&#60;int&#62;(12,24));
+			return 0;
+			}
+
+			Size of object
+			file (prg.o) : 2808 bytes
+			Size of executable (prg) : 9808
+
+			Non-template
+			Version
+			//prg.cc
+			#include "iostream"
+			using namespace std;
+			int
+			add(int a, int b) {
+			return a+b;
+			}
+			int main() {
+			printf(&quot;%d&quot;,add(12,24));
+			return 0;
+			}
+
+			Size of object file
+			(prg.o) : 2664 bytes
+			Size of executable (prg) : 9796
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="47">
+		<body>Which one of the following containers is not a container adapter (derived container)?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> stack&#60;T&#62; </b>
+			<c> queue&#60;T&#62; </c>
+			<d> priority_queue&#60;T&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The vector&#60;&#62; is a standard sequential
+			container provided by STL whereas other containers in the list are
+			derived containers. The derived containers are implemented using any
+			of the standard containers by default.
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="48">
+		<body>Pick up correct statement(s) about std::cout and std::cin?
+		</body>
+		<options>
+			<a> Both are operators. </a>
+			<b> Both are objects. </b>
+			<c> cout is an operator and cin is an object. </c>
+			<d> cin is an operator and cout is an object. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The cout and cin are objects of ostream and
+			istream classes respectively, declared in header file
+			&#60;iostream&#62;. The cout is associated with standard output whereas
+			cin is associated with standard input.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="49">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Question {
+			public:
+			~Question(){
+			cout&#171;&quot;Question &quot;;
+			}
+			};
+			class Who : public
+			Question {
+			public:
+			~Who() {
+			cout&#171;&quot;Who &quot;;
+			}
+			};
+			class Whom : public Who {
+			public:
+			~Whom() {
+			cout&#171;&quot;Whom &quot;;
+			}
+			};
+			int main() {
+			Who* pWho = new Whom();
+			delete pWho;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Question Who </a>
+			<b> Question Who Whom  </b>
+			<c> Who Whom  </c>
+			<d> Whom </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">The output of the program is Who Question because
+			of the static binding of the destructor with base class (i.e.Who)
+			pointer. When object of the class Whom is destroyed, destructor is
+			called based on the pointer type because program does not have
+			dynamic mapping to call derived class constructor. This problem can
+			be resolved by making base class destructor virtual. In this way,
+			each class will have its own virtual table for dynamic mapping of the
+			functions with objects stored in base class pointer and hence
+			destructors of the base class and derived class as well will be
+			called.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="50">
+		<body>What is minimum size of a class object that can exist in memory?
+		</body>
+		<options>
+			<a> 0 Byte </a>
+			<b> 1 Byte </b>
+			<c> 4 Bytes </c>
+			<d> 8 Bytes </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The minimum possible size of an object in C++ is 1
+			byte. A class that has only member functions (no data members) has
+			its size 1 byte. Normally size of a class is sum of the size of its
+			data members with some padding bytes. In contrast, an object of a
+			class that does not have any data member has its size is 1 byte to
+			make the object addressable, as byte is minimum possible unit to
+			define in memory.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="51">
+		<body>Pick up the false statement(s) about an abstract class?</body>
+		<options>
+			<a> An abstract class must have at least one pure virtual function
+			</a>
+			<b> Objects of an abstract class can not be created directly </b>
+			<c> An abstract class can not have non-virtual functions </c>
+			<d> Constructors of an abstract class are never called </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">A class containing at least one pure virtual
+			function is called abstract class and is merely used to provide an
+			interface for various implementations. Apart from pure virtual
+			functions, abstract classes can have normal virtual functions and
+			non-virtual functions along with the data members. Objects of the
+			abstract classes cannot be created directly in the program, rather
+			these are created internally while creating the objects of derived
+			classes. The constructors defined in the abstract classes are called
+			through the constructors of the derived classes. The piece of code
+			given below defines an abstract class Shape and a concrete class
+			Circle to illustrate the concepts. The output of the program is
+			“Shape() Circle() Circle::draw()” which shows that constructor in
+			abstract class Shape is called when objects of concrete class Circle
+			is created.
+
+			#include "iostream"
+			using namespace std;
+			class Shape {
+			private:
+			//can have data members
+			float originX;
+			float originY;
+			float
+			radius;
+			public:
+			//can have constructor
+			Shape(float x=0.0, float y=0.0,
+			float r=0.0) {
+			originX=x;
+			originY=y;
+			radius=r;
+			cout&#171;&quot;Shape()
+			&quot;;
+			}
+			//can have non-virtual functions
+			void setLineStyle() {
+			cout&#171;&quot;Shape::setLineStyle &quot;;
+			}
+			//can have normal
+			virtual functions
+			virtual void setColor() {
+			cout&#171;&quot;Shape::setColor &quot;;
+			}
+			//can have pure virtual
+			function
+			virtual void draw()=0;
+			};
+			class Circle : public Shape {
+			public:
+			Circle(float x=0.0, float y=0.0, float r=0.0) : Shape(x,y,r) {
+			cout&#171;&quot;Circle() &quot;;
+			}
+			void draw() {
+			cout&#171;&quot;Circle::draw() &quot;;
+			}
+			};
+			int main() {
+			Shape* pShape
+			= new Circle(12.0, 15.0, 5.0);
+			pShape->draw();
+			return 0;
+			}
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="52">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class C {
+			public:
+			virtual void show(int i){
+			cout &#171; "Int ";
+			}
+			virtual void show(long l){
+			cout &#171; "Long ";
+			}
+			};
+			class Java {
+			public:
+			Java(long l = 0){
+			cout&#171; "Java ";
+			}};
+			class CPP : public C {
+			public:
+			virtual void show(Java java){
+			cout &#171; "CPP ";
+			}};
+			int main() {
+			CPP cpp;
+			cpp.show(2L);
+			C&amp; ref = cpp;
+			ref.show(2);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Java CPP Int </a>
+			<b> Long Int  </b>
+			<c> Int Long CPP </c>
+			<d> Program gives compilation error stating that can not find match
+				for CPP::show(float).
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Let us analyze the first call to show() mentioned
+			below.
+			CPP cpp;
+			cpp.show(10L);
+			The call to the show() function first
+			checks if there is a function
+			show() in class CPP. Yes it finds one.
+			Next it proceeds to evaluate
+			if the function has the exact same number
+			of arguments. This also
+			matches because the call and the function both
+			have 1 argument. Next
+			the compiler proceeds to check if the argument
+			type matches. Now
+			there is a problem. The call is made with parameter
+			10L but
+			CPP::show() takes an object of type Java. Next, the compiler
+			tries to
+			check if any standard conversions can be applied to match the
+			arguments. But Java is not an inbuilt type but instead a user defined
+			type. Hence as a last resort the compiler tries to match the
+			arguments using a user defined conversion and yes, it is possible to
+			covert a long to Java object using Java::Java(long). Thus show(Java
+			java) call is successful. This leads to printing &quot;Java&quot; and
+			then &quot;CPP&quot;.
+
+			Now let us analyze the second call.
+			C&amp; ref =
+			cpp;
+			ref.show(2)
+			A base class reference is used to reference a derived
+			class object.
+			This reference is now used to invoke the function
+			show(). Remember
+			that the compiler has to generate code to offset into
+			some entry into
+			the VTABLE at compile time for a virtual function
+			call. This offset
+			is determined based on the static type of the
+			pointer. In this case,
+			the static type of the pointer/reference used
+			to invoke the virtual
+			function is C. This is the same thing that
+			happens behind the scene
+			even for the first virtual function call as
+			well that we saw above.
+			As part of the call matching process, the
+			compiler finds that C
+			indeed has a function show(), that takes one
+			parameters, which is of
+			type int. There is an exact match rather than
+			a match by any inbuilt
+			or user defined conversion. Hence this call is
+			routed to C::show(int)
+			and it prints Int.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="53">
+		<body>Operator overloading can not change:</body>
+		<options>
+			<a> Behavior of the operators. </a>
+			<b> Precedence of the operators. </b>
+			<c> Number of arguments to the operators. </c>
+			<d> Return type of the operator. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="bc">The operator overloading can not change precedence
+			and number of operands of an operator i.e. precedence and syntax of
+			the operators are preserved. For example all binary arithmetic
+			operators take two operands and can not be overloaded with only one
+			operand. Following Example shows how behavior and return types of
+			binary addition ‘+’ and multiplication ‘*’ operators can be changed
+			but precedence and operands are preserved.
+			#include "iostream"
+			using namespace std;
+			class Example {
+			public:
+			Example(float value = 0) :
+			m_value(value) {}
+			int operator + (const Example&amp; ex) {
+			return
+			this-&#62;m_value*ex.m_value;
+			}
+			int operator * (const Example&amp; ex) {
+			return this-&#62;m_value+ex.m_value;
+			}
+			void showValue() {
+			cout&#171;m_value;
+			}
+			private:
+			float m_value;
+			};
+			int main() {
+			Example
+			ex1(1.2), ex2(2.3), ex3(3.4), ex4(4.5), ex5;
+			ex5 =
+			ex1+ex2*ex3+ex4*ex1;
+			ex5.showValue();
+			return 0;
+			}
+
+			Ideally the operator
+			functions should return object of Example, but here
+			these return int
+			type and operator + perform multiplication whereas
+			‘*’ performs
+			addition which is logically not recommended but is quite
+			possible.
+			Above expression is evaluated as mentioned below (observe
+			that
+			precedence and associatively is preserved).
+			ex5= ex1+ex2*ex3+ex4*ex1
+			=
+			ex1+5+ex4*ex1 as ex2*ex3 = 5.7 and returned as 5 (int)
+			=ex1+5+5 as
+			ex4*ex1 = 5.6 and returned as 5 (int)
+			=6+5 as ex1+5 = ex1+Example(5) =
+			1.2*5.0 = 6.0
+			=11
+			Therefore 11 is printed on the console.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="54">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class CData {
+			public:
+			CData(char* data=&quot;Default&quot;){
+			m_data= new char[strlen(data)+1];
+			strcpy(m_data, data);
+			}
+			void setData(char *data) {
+			strcpy(m_data, data);
+			}
+			char* getData() {
+			return m_data;
+			}
+			private:
+			char* m_data;
+			};
+			int main(){
+			CData data1(&quot;Data1&quot;);
+			CData data2 = data1;
+			CData data3 = data2;
+			data2.setData(&quot;Data2&quot;);
+			data3.setData(&quot;Data3&quot;);
+			cout&#171;data1.getData()&#171;&quot; &quot;&#171;data2.getData()&#171;&quot; &quot;&#171;data1.getData();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Data1 Data2 Data3 </a>
+			<b> Data1 Data1 Data1 </b>
+			<c> Data2 Data2 Data2 </c>
+			<d> Data3 Data3 Data3 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The statement CData data1(&quot;Data1&quot;);
+			calles CData(char*) constructor to create object of CData class. The
+			data member data1::m_data points to &quot;Data1&quot; somewhere in
+			memory which has been allocated dynamically. When next statements
+			CData data2 = data1; and CData data3 = data2; execute, these calls
+			default copy constructor which copies data1 to data2 and data2 to
+			data3 bitwise, that means value of data1::m_data, data2::data and
+			data3::m_data will be same i.e. all three will point to the same
+			memory location.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="55">
+		<body>Logically the statement catch(...) should be:</body>
+		<options>
+			<a> The first catch statement just after the try block </a>
+			<b> The last catch statement </b>
+			<c> The Second catch statement just after the try block </c>
+			<d> The second last catch statement </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The catch(…) statement catches all the exceptions
+			thrown from the preceding try block and should likely be put at the
+			end of the catch segment. C++ compiler also warns if there are catch
+			statements written after the catch(…) stating that catch statements
+			coming after the statement catch(…) are unreachable. For example, in
+			the following code segment, the statements catch (int ex) and
+			catch(float ex) are unreachable while catch(char ex) is reachable.
+			void find(int i) {
+			try {
+			switch(i) {
+			case 0:
+			throw(char(‘A’));
+			break;
+			case
+			1:
+			throw(float(10.5));
+			break;
+			case 2:
+			throw(int(10));
+			break;
+			default:
+			throw(&quot;Unknown&quot;);
+			} //end of switch
+			} //end of try
+			catch(char
+			c) {
+			cout&#171;&quot;Caught char&quot;;
+			}
+			catch(…) {
+			cout&#171;&quot;Caught the exception other than char&quot;;
+			}
+			//will
+			never reach here
+			catch(int i) {
+			cout&#171;&quot;Caught int&quot;;
+			}
+			catch(float i) {
+			cout&#171;&quot;Caught float&quot;;
+			}
+			}//end of
+			function
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="56">
+		<body>Suppose the classes D1 and D2 are derived from a non-polymorphic class B, then typeid(*pb).name(); where pb is a pointer of B, will result:
+		</body>
+		<options>
+			<a> D1, if pb points to D1 class object. </a>
+			<b> D2, if pb points to D2 class object. </b>
+			<c> B, irrespective the type of object pointed by pb. </c>
+			<d> Error, because an object of non-polymorphic class can not be passed to typeid.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Here, class B is non-polymorphic class i.e. B
+			class does not have any virtual function defined in it. The type of
+			an object pointed to by the pointer of class B is always B as pointer
+			has static binding with object it points and is already decided at
+			compile time. For example the statement B* pB = new D1(), where D1 is
+			the derived class of B, will store address of the object of D1
+			however *pB will be of type B. In contrast, the binding of the
+			pointer of a polymorphic class with the object it points is dynamic
+			and therefore the dereference operator &quot;*&quot; applied on base
+			class pointer will give type correct type of the object it points to.
+			Following example illustrates both types of binding printing BBD on
+			output.
+			#include "iostream"
+			using namespace std;
+			//Non-polymorphic
+			class
+			class B {
+			public:
+			void f(){}
+			};
+			//Polymorphic class
+			class A {
+			public:
+			virtual void f()=0;
+			};
+			//derived classes
+			class D1 : public B {
+			public:
+			void f() {}
+			};
+			class D2 : public B {
+			public:
+			void f() {}
+			};
+			class D :
+			public A {
+			public:
+			void f() {}
+			};
+			int main(){
+			B* pB = new D1();
+			cout&#171;typeid(*pB).name();
+			pB = new D2();
+			cout&#171;typeid(*pB).name();
+			A* pA = new D();
+			cout&#171;typeid(*pA).name();
+			return 0;
+			}
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="57">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Long {
+			public:
+			operator long() {
+			return m_d;
+			}
+			void show(long d=10) {
+			m_d=d;
+			cout&#171;this-&#62;m_d;
+			}
+			private:
+			long m_d;
+			};
+			int main() {
+			Long obj1(100), obj2(200);
+			obj1.show(obj2);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 100 </a>
+			<b> 10 </b>
+			<c> 200 </c>
+			<d> Program gives compilation error stating that no match for
+				Long::show(Long).
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The class Long contains a conversion function
+			operator long(), which can convert any object of this class to long
+			type. When statement obj1.show (obj2) is called, compiler looks for
+			the function in the class, which can accept object of the class as
+			argument but check fails. As a next step, compiler tries to find any
+			implicit or user defined conversion function, which can be applied to
+			convert from class Long type to primitive long type and this time it
+			is successful as conversion function is present. Compiler does
+			conversion and calls show function with 200 as argument, which leads
+			to print 200.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="58">
+		<body>In a file, namespace N is defined as
+			namespace N {
+			void f1	(){/*some stuff here.*/}
+			};
+			namespace N {
+			void f2 (){/*some stuff here.*/}
+			}
+			Which one is true about above piece of code?
+		</body>
+		<options>
+			<a> This is an error, because namespace is defined twice. </a>
+			<b> Later definition will override the former definition. </b>
+			<c> Later definition will be ignored. </c>
+			<d> Both functions f1 and f2 will be defined in the scope of N. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">Both of the functions defined in the file will be
+			part of the same namespace N as a namespace is automatically
+			re-opened to add members in it. From the piece of code given in the
+			question it seems that namespace N is defined twice but it is the
+			syntax to add new members to the namespace. Likewise, a namespace can
+			also be distributed across the files. For example to have the same
+			effect, the namespace N can be defined in two files mentioned below.
+			//file1.cc
+			namespace N {
+			void f1 (){/*some stuff here.*/}
+			};
+			//file2.cc
+			namespace N {
+			void f2 (){/*some stuff here.*/}
+			}
+		</answer>
+		<category>N</category>
+	</question>
+	<question no="59">
+		<body>Class std::fstream is derived from:</body>
+		<options>
+			<a> std::ifstream </a>
+			<b> std::ofstream </b>
+			<c> std::iostream </c>
+			<d> std::stringstream </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The class std::fstream provide an interface to
+			perform random and sequential read and write operations on the files
+			and is derived from std::iostream class.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="60">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Global {
+			public:
+			Global() {
+			cout&#171;&quot;Constructor &quot;;
+			}
+			void showGlobal(){
+			cout&#171;&quot;showGlobal &quot;;
+			}
+			};
+			int main() {
+			cout&#171;&quot;MainStarts&quot;;
+			extern Global obj;
+			obj.showGlobal();
+			cout&#171;&quot;MainEnds &quot;;
+			return 0;
+			}
+			Global obj;
+		</body>
+		<options>
+			<a> Constructor MainStarts showGlobal MainEnds </a>
+			<b> MainStarts Constructor showGlobal MainEnds  </b>
+			<c> MainStarts showGlobal MainEnds Constructor </c>
+			<d> Program gives compile time error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">Before executing the main function, C++ runtime
+			environment looks for any global variable declared in the program and
+			finds one i.e. obj is defined globally. Therefore constructor of the
+			class Global is called before program starts execution of main
+			function which prints Constructor on the output. After that
+			&quot;MainStarts&quot; is printed and then control comes to the
+			statement extern Global obj which only tells the compiler that object
+			obj is defined somewhere in the program. This statement only causes
+			compiler not to give compile time error if obj is not encountered yet
+			and therefore, does not allocate any memory for the object. Finally
+			program prints &quot;ShowGlobal&quot; followed by
+			&quot;MainEnds&quot; on the console.</answer>
+		<category>CS</category>
+	</question>
+	<question no="61">
+		<body>What are valid statement(s) to call a function template that takes an agrument?
+		</body>
+		<options>
+			<a> function_name&#60;type&#62;(type_val);  </a>
+			<b> function_name&#60;&#62;(type_val); </b>
+			<c> function_name(type_val);  </c>
+			<d> function_name(&#60;type&#62;type_val);  </d>
+			<e> All of the above </e>
+		</options>
+		<answer name="abc">Function templates in C++ are used when same set
+			of code/algorithm needs to be applied for different data types. The
+			same logic need not be repeatedly written for different data types,
+			involving lots of manual effort. Instead C++ compiler itself produces
+			different signatures for each data type when function templates are
+			used.
+			When a template function is called, the data types for the
+			template types
+			can be given in the call explicitly or is identified
+			implicitly by
+			the compiler. Following example shows how template
+			functions can be
+			called in different ways. The output of the program
+			is &quot;double
+			23.3 double 23.3 double 23.3&quot;
+			#include "iostream"
+			using namespace std;
+			template&#60;class T&#62;
+			T
+			add(T op1, T op2) {
+			cout&#171;typeid(T).name()&#171;&quot; &quot;;
+			return op1+op2;
+			}
+			int main() {
+			cout&#171;add(10.5, 12.8)&#171;
+			&quot; &quot;; //implicit type identification
+			cout&#171;add&#60;&#62;(10.5, 12.8)&#171; &quot; &quot;; //implicit
+			type identification
+			cout&#171;add&#60;double&#62;(10.5,
+			12.8)&#171;&quot; &quot;; //explicit type specification
+			return 0;
+			}
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="62">
+		<body>Which one of the following containers should be used when random access operations are frequently performed?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> a &amp; b both </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The vector&#60;&#62;, list&#60;&#62; and deque&#60;&#62;
+			are standard containers which perform operations like access, add,
+			delete etc uniquely on the data they store. The vector&#60;&#62; is
+			like a dynamic array and stores data elements at contiguous memory
+			allocations and therefore random access operations are relatively
+			less expensive in comparison of list and deque. In contrast,
+			list&#60;&#62; container is implemented as double linked list and
+			stores data elements randomly in memory. The list contains data
+			elements distributed in memory so to add/delete elements in the
+			middle of the list is relatively faster (as no data movement is
+			required) as compared with other linear STL containers. The
+			deque&#60;&#62; is preferred when data operations are performed at the
+			ends of the container.
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="63">
+		<body>The difference between std::endl and newline character (\n) is:
+		</body>
+		<options>
+			<a> Both flush the output stream.  </a>
+			<b> endl flushes the output stream, whereas new line character does not.
+			</b>
+			<c> new line character flushes the output stream, whereas endl does not.
+			</c>
+			<d> No one flushes the output stream. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Using '\n' is a request to output a newline.
+			Likewise, using endl requests to output a newline, but it also
+			flushes the output stream. In other words, endl has the same effect
+			as
+
+			cout &#171; '\n';
+			cout.flush(); // Then flush directly
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="64">
+		<body>The prototype of the conversion function in class Cartesian to convert Cartesian point to Polar one will be:
+		</body>
+		<options>
+			<a> void Polar(Cartesian point); </a>
+			<b> operator Polar(); </b>
+			<c> Polar Polar(Cartesian point); </c>
+			<d> Polar Cartesian(); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">C++ language implicitly provides data conversion
+			for primitive type. The primitive operations like arithmetic, logical
+			etc can only be perform between same type of data type. I case of the
+			different types of operands, the shorter type is promoted to the
+			larger type and result of the operations will be of same type or
+			larger one depending upon the valued returned by the operator. For
+			example, in the following code snapshot of the code, the data type of
+			x which is int, is promoted to double before the operation and result
+			also will be of double.
+			int x = 2489;
+			double y = 12.9876;
+			cout&#171;typeid(x+y).name(); //this will display double
+			But if any
+			of the operands is the object of the user defined class then
+			the
+			implicit data conversion is not possible. For example, operation
+			x+obj (where x is int and obj is an object of a class, say Data) can
+			be performed in two ways.
+			1. Convert x which in int to class type Data
+			and in this case
+			overloaded + operator function of Data will be
+			called.
+			2. Convert obj to int type and in this case result be of int
+			type.
+			To perform former scenario, you need to define one of the
+			constructor
+			with one argument as int and use this int. The constructor
+			for the
+			Data class will look like.
+			Data(int x) { //logic goes here}
+			And
+			for later case, you need to define a conversion function which will
+			convert Data object to int type. The definition of the conversion
+			function to make this conversion will look like.
+			operator int() {
+			int
+			temp;
+			//initialize temp here
+			return temp;
+			}
+			Here example is illustrated
+			with int type but x can be of any of the
+			primitive types or user
+			defined class types. In the problem, replace
+			int by Polar and Data by
+			Cartesian, you will get the answer.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="65">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class DataBase {
+			public:
+			virtual void showData() { cout&#171;&quot;DataBase::showData &quot;; }
+			virtual void getData() { cout&#171;&quot;DataBase::getData&quot;; }
+			private:
+			int m_conn;
+			};
+			class Oracle : public DataBase {
+			public:
+			virtual void showData() { cout&#171;&quot;Oracle::showData &quot;; }
+			virtual void getData() {
+			cout&#171;&quot;Oracle::getData&quot;;
+			}};
+			int main() {
+			DataBase base;
+			Oracle oracle;
+			int* pBase1 = (int*)&amp;base;
+			int* pOracle1 = (int*)&amp;oracle;
+			int* pBase2 = (int*)*pBase1;
+			int* pOracle2 = ()int*)*pOracle1;
+			*(pOracle+1)=*pBase;
+			DataBase* p = new Oracle();
+			p-&#62;showData();
+			p-&#62;getData();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> DataBase::getData Oracle::showData  </a>
+			<b> Oracle::showData DataBase:: showData  </b>
+			<c> Oracle:: getData Oracle:: getData </c>
+			<d> DataBase::showData DataBase::getData </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">A class that has virtual function(s) defined in it
+			has a virtual table. This virtual table contains pointers to virtual
+			functions of the class. This virtual table is pointed by a pointer
+			called VPTR that is stored as a part of the object of the class. In
+			memory occupied by the object, the VPTR is stored at the beginning of
+			the memory address. Here address virtual function address is
+			overwritten
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="66">
+		<body>A destructor of a class can take:</body>
+		<options>
+			<a> No argument. </a>
+			<b> Maximum One argument. </b>
+			<c> Maximum two arguments. </c>
+			<d> Any number of arguments. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">A destructor of a class can not take any arguments
+			and therefore this can not be overloaded.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="67">
+		<body>Pick up the false statement(s) out of following statements:
+		</body>
+		<options>
+			<a> A constructor can not be virtual whereas a destructor can be virtual.
+			</a>
+			<b> The virtual property of a function is inherited in derived class.
+			</b>
+			<c> A pure virtual destructor in base class can not have definition.
+			</c>
+			<d> Both constructor and destructor in a class can be virtual. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="cd">Virtual functions in C++ are used to define
+			polymorphic base classes. A class can not have virtual constructor
+			but can have virtual destructor. The reason behind this is that
+			constructors of the classes in a hierarchy are called starting from
+			base class to derived class whereas destructors are called in reverse
+			order. When an object of a derived class is created and assigned to
+			the base class pointer, the runtime environment has the class
+			information to call the constructors of respective class. When a
+			derived class object (created dynamically) pointed to by base class
+			pointer is destroyed by calling delete operator, then if destructor
+			is not virtual, only destructor of base class gets called. This is
+			because pointer has static binding with type of object it is
+			pointing. Therefore, it is essential to make destructor virtual in
+			the situation like this.
+
+			The virtuality of a function is inheritable
+			i.e. if a function is
+			declared virtual in a class, then it will be
+			virtual in all its
+			derived, even if there is no virtual specification
+			with the function.
+			A pure virtual destructor in a class is always
+			declared with its body
+			defined outside the class. For example, the
+			class PVD defined has
+			pure virtual destructor and its derived class
+			PVDD calls this
+			destructor when object of the PVDD gets destroyed.
+
+			class PVD {
+			public:
+			virtual ~PVD()=0;
+			void show() {
+			cout&#171;&quot;PVD::show&quot;;
+			}
+			};
+			PVD::~PVD() {
+			cout&#171;&quot;
+			PVD::~PVD&quot;;
+			}
+			class PVDD : public PVD {
+			}
+
+			The base class PVD has
+			definition of the pure virtual destructor but
+			still is an abstract
+			class whereas PVDD is a concrete class. Only
+			pure virtual destructor
+			can have definition i.e. any other pure
+			virtual function other than
+			destructor can not have definition.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="68">
+		<body>Which of the following operators cannot be defined as a friend function of a class?
+		</body>
+		<options>
+			<a> = </a>
+			<b> &#62;= </b>
+			<c> ++ </c>
+			<d> -- </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The operators =, [], () and -&#62; can not be
+			declared as friends of a class because these operators require L
+			value as it first argument. For example, the expression obj1=obj2
+			assume the obj1 as L value even though it calls the operator
+			function. These operators must be defined as non-static member
+			functions of the class.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="69">
+		<body>Which are valid catch statement(s)?</body>
+		<options>
+			<a> catch(int) {} </a>
+			<b> catch() {} </b>
+			<c> catch(..) {} </c>
+			<d> all of above </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">A catch block is followed by a try block and gets
+			called whenever an exception is thrown from within the try block. The
+			possible forms of the catch block are mentioned below.
+
+			1.
+			catch(data_type) {} //catch the exception of type data_type, but
+			does
+			not accept //any value
+			2. catch (data_type val) {} //catch the
+			exception of type data_type,
+			and accepts a value
+			3. catch(...) {}
+			//catch exceptions of any type
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="70">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class CArray {
+			public:
+			CArray() {
+			cout&#171;&quot;Default &quot;;
+			}
+			CArray(CArray&amp; obj) {
+			cout&#171;&quot;Copy &quot;;
+			}
+			CArray(CArray obj[ ]) {
+			cout&#171;&quot;Array &quot;;
+			}
+			};
+			void useArray(CArray arr[ ]){
+			}
+			int main() {
+			CArray obj1, obj2;
+			CArray arr [ ] = { obj1, obj2};
+			useArray(arr);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Default Default Default Default  </a>
+			<b> Default Default Copy Copy </b>
+			<c> Default Default Array  </c>
+			<d> Program gisves compile time error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The program initially declares two objects named
+			obj1 and obj2 of the class CArray class. This calls the default
+			constructor twice which prints &quot;Default Default&quot; on the
+			console. After that an array of the class is initialized by these two
+			objects. When a call to the function useArray() is made, both of the
+			objects are copied to pass as arguments to the function. So call to
+			the function makes call to the copy constructor twice which prints
+			&quot;Copy Copy&quot; on the console.</answer>
+		<category>CS</category>
+	</question>
+	<question no="71">
+		<body>A namespace can have:</body>
+		<options>
+			<a> Only classes and functions. </a>
+			<b> Only classes, functions and variables. </b>
+			<c> Only classes, functions and constants. </c>
+			<d> All of above can be put in a namespace. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">A namespace is simply a way of naming functions,
+			variables, and classes with simple names but still avoiding conflict
+			with names in other parts of a big program. A namespace can have
+			classes, objects, and variables of primitive types, constants and
+			functions defined in it.
+		</answer>
+		<category>N</category>
+	</question>
+	<question no="72">
+		<body>Pickup correct statement(s) about the following piece of code?
+			fstream fs(&amp;mydata.txt&amp;);
+			fs.clear(ios::failbit |	ios::eofbit);
+		</body>
+		<options>
+			<a> Function clear() clears failbit or eofbit. </a>
+			<b> Function clear() clears both failbit and eofbit.  </b>
+			<c> Function clear() clears all bits other than failbit and eofbit.
+			</c>
+			<d> Compilation error as clear() is not member of fstream class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The function clear() is defined in the class
+			std::ios and the fstream class is indirectly derived from
+			std::ios(refer to Q ). This function clears all error flag bits of
+			the stream and sets new set of flag bits passed as arguments to it.
+			The prototype of the functions is given below.
+			void clear ( iostate
+			state = goodbit );
+
+			Here failbit and eofbit are passed to the function
+			and therefore these
+			bits are set after the call to the function.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="73">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class ConstTest {
+			public:
+			ConstTest() {}
+			ConstTest(ConstTest&amp; obj) {
+			Cout&#171;&quot;Copy &quot;;
+			}
+			ConstTest operator +(ConstTest&amp; ref) {
+			cout&#171;"AddNormal ";
+			return ref;
+			}
+			ConstTest operator +(ConstTest&amp; ref) const {
+			cout&#171;"AddConstant ";
+			return ref;
+			}
+			ConstTest operator *(ConstTest&amp; ref) {
+			cout&#171;"MulNormal ";
+			return ref;
+			}
+			ConstTest operator *(ConstTest&amp; ref) const {
+			cout&#171;"MulConstant ";
+			return ref;
+			}};
+			int main() {
+			ConstTest t2,t3, t4;
+			ConstTest t1 = t2+t3*t4;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> MulNormal Copy AddNormal Copy </a>
+			<b> MulConstant Copy AddConstant Copy </b>
+			<c> MulNormal AddNormal Copy </c>
+			<d> Program gives compile time ambiguity error.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The program has constant and non-constant versions
+			of the '+' and '*' operators. The constant operator is only called
+			with the constant objects and this program does not declare any
+			constant objects. Therefore, only non-constant versions of the
+			operators are invoked. The associativity and precedence of the
+			operators are preserved in the operator overloading. As per the
+			precedence, first t3*t4 is evaluated and result is stored in a
+			temporary object, say t. To simulate the operation t=t3*t4
+			multiplication operator followed by copy constructor is called.
+			Finally operation ConstTest t1 = t2+t; is performed which calls
+			addition operator followed by copy constructor.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="74">
+		<body>Which of the Template Compilation Model uses the keyword &quot;export&quot;?</body>
+		<options>
+			<a> The Inclusion model  </a>
+			<b> Explicit Instantiation model </b>
+			<c> The separation model  </c>
+			<d> None of the above </d>
+			<e> All of the above </e>
+		</options>
+		<answer name="c">C++ language defines following three types of
+			compilation models, however, all three are not supported most of the
+			compilers today.
+			1. The Inclusion Model: In this model template
+			definition is given in a
+			header file and the header file is included
+			in each program’s
+			translation unit which instantiates the template.
+			This model is
+			supported by most of the C++ compilers today. Following
+			piece of code
+			illustrates this model.
+			//max.h, contains template
+			declaration followed by definition, given in
+			max.cc.
+			template&#60;class
+			T&#62; T max(T num1, T num2);
+			#include &quot;max.cc&quot;
+			//max.cc,
+			contains definition of function template
+			template&#60;class T&#62;
+			T
+			max(T num1, T num2) {
+			return num1 &#62; num2 ? num1 : num2;
+			}
+			//double_max.cc, instantiates template function for double type
+			#include &quot;max.h&quot;
+			void double_max(double x, double y) {
+			cout&#171;max(x, y);
+			return;
+			}
+			//long_max.cc, instantiates template
+			function for long type
+			#include &quot;max.h&quot;
+			void long_max(long x,
+			long y) {
+			cout&#171;max(x, y);
+			return;
+			}
+			//main.cc, contains main
+			function
+			#include &quot;max.h&quot;
+			int main() {
+			double_max(12.45,
+			45.12);
+			long_max(45L, 12L);
+			return 0;
+			}
+			The problem with this model is
+			that template definition is included in
+			each translation unit
+			(double_max.cc and long_max.cc) increasing the
+			size of the program.
+			2.
+			Explicit Instantiation Model: This model explicitly specifies in
+			advance for which type the template is instantiated. Explicit
+			instantiation can be specified in a separate file, which is compiled
+			with other program units. To implement this model above code can be
+			modified as given below. Apart from following files, all other files
+			remain unchanged.
+			//max.h, contains function template declaration.
+			template&#60;class T&#62; T max(T num1, T num2);
+			// inst_max.cc,
+			explicitly specifies template instantiation
+			#include
+			&quot;max.cc&quot;
+			template double max(double x, double y);
+			template
+			long max(long x, long y);
+			3. The Separation Model: This model uses
+			export symbol to make template
+			declaration from its definition. This
+			is the best-accepted standard,
+			but most of the compilers do not
+			support this model. To use this
+			model, the max.h header file is
+			modified as given below.
+			//max.h, contains function template
+			declaration.
+			export template&#60;class T&#62; T max(T num1, T num2);
+			The
+			export keyword can be given in template declaration, template
+			definition or both. All other files given in inclusion model remain
+			unchanged.
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="75">
+		<body>What is output of the following program? [Assume size of int 4 bytes]
+			#include "iostream"
+			using namespace std;
+			void showSize(int args[]) {
+			cout&#171;sizeof(args)&#171;" ";
+			args=args+3;
+			cout&#171;*args;
+			}
+			int main() {
+			int arr[]={10,20,30,40,50,60,70,80,90,100};
+			showSize(arr);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 4 40 </a>
+			<b> 40 40 </b>
+			<c> 40 4 </c>
+			<d> Program gives syntax stating that base address of array in
+				function showSize can not be modified.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">When one-dimensional array is passed as argument
+			to a function, then function always receives that argument in a
+			pointer variable and compiler uses the subscripts specified in the
+			argument to check whether an array is passed. Therefore type of the
+			argument args in the definition of showSize() is int* and hence size
+			of the args is 4 bytes. Furthermore, args is not an array which
+			indicates that operation args=args+3 valid.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="76">
+		<body>Which one of the following containers should be used when random delete and add operations are frequently performed?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> a &amp; b both </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">When random delete and add operations are
+			frequently performed, the list&#60;T&#62; standard container is
+			preferred
+		</answer>
+		<category>STL</category>
+	</question>
+	<question no="77">
+		<body>What is printed by the piece of code mentioned below?
+			int	arr4[][3][2][3]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+			cout&#171;sizeof(arr4)&#171;" ";
+			cout&#171;**(arr4[0][1]+2);
+		</body>
+		<options>
+			<a> 15 13  </a>
+			<b> 72 13 </b>
+			<c> 15 7 </c>
+			<d> 72 7 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The program declares a four-dimensional array of
+			dimensions 1x3x2x3 and initializes the same with 15 elements. The
+			fourth dimension (here 1) is calculated by dividing the number of
+			elements (here 15) by the size of three dimensional element(here 18)
+			it contains. Here number of elements(15) given are less than the size
+			of 3D array(18), therefore the minimum possible value for the fourth
+			dimension is 1 and total number of elements this can hold is 18 which
+			evaluates the size of the array equal to 18x4 = 72.
+			The statement
+			arr4[1][3][2][3] can be interpreted as arr4 contains one
+			three
+			dimensional array of size 3x2x3 and three dimensional array
+			contains
+			three two dimensional array of size 2x3. Further each two
+			dimansional
+			array contains two one dimansional array of 3 elements.
+			The arr4[0][1]
+			is the base address of the second two dimensional
+			array which starts
+			at element 7 i.e. arr4[0][1] is address of 7.
+			Therefore arr4[0][1]+1
+			is address of 10 and finally arr4[0][1]+2 is
+			address of 13.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="78">
+		<body>Pickup the correct satatement about cout, cerr and clog objects?
+		</body>
+		<options>
+			<a> cout and cerr are buffered while clog is unbuffered. </a>
+			<b> cout and clog are buffered while cerr is unbuffered. </b>
+			<c> clog and cerr are buffered while cout is unbuffered. </c>
+			<d> All three are buffered. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The cout, clog and cerr are pre-defined objects
+			defined in ostream class. Standard library provides following two
+			type of I/O.
+			Buffered - All output is temporarily stored in a buffer
+			and then dumped to
+			screen in one go. Both cout and clog are buffered.
+			Unbuffered- All output goes immediately to the output device. An
+			example of an
+			unbuffered object is cerr.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="79">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Copy {
+			public:
+			Copy(int copy =1) {
+			m_copy=copy;
+			}
+			Copy(Copy&amp; obj, int copy = 0) {
+			obj.m_copy = copy;
+			}
+			Copy(const Copy&amp; obj) {
+			m_copy = obj.m_copy;
+			}
+			void showCopy(){
+			cout&#171;m_copy;
+			}
+			private:
+			int m_copy;
+			};
+			int main(){
+			Copy c1(10);
+			Copy c2 = c1;
+			c1.showCopy();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 1 </a>
+			<b> 10 </b>
+			<c> Compilation error in copy constructor.  </c>
+			<d> 0 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The program consists of two copy constructors, and
+			both of the constructors are valid as copy constructor can have other
+			augments as default. The statement Copy c1(10); calls the constructor
+			with one int argument and assign 10 to the c1.m_copy data member.
+			When statement Copy c2=c1; is executed, it calls copy constructor
+			with argument as non-constant reference to the object of Copy which
+			assigns 0 to the c1.m_copy.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="80">
+		<body>A reference is logically equivalent to:</body>
+		<options>
+			<a> A non-constant pointer to non-constant variable </a>
+			<b> A constant pointer to non-constant variable </b>
+			<c> A constant pointer to constant variable </c>
+			<d> A non-constant pointer to constant variable </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">From user perspective, a reference is an alias to
+			a variable identifier i.e. a variable can be referenced by more than
+			one name. Each reference name refers to the same location in memory.
+			Also, once a reference is declared, it cannot be reused to refer
+			another variable i.e. a reference is const by nature. Therefore value
+			referred by the reference can be changed but reference itself cannot
+			be changed which implies that a reference logically looks like a
+			constant pointer to non-constant variable.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="81">
+		<body>What is the size of following class? [Assume size of long and float 4 bytes each]
+			class DataType {
+			public:
+			typedef long LONG;
+			typedef float REAL;
+			void showTypes() { /*…..*/ }
+			};
+		</body>
+		<options>
+			<a> 0 Byte </a>
+			<b> 1 B yte </b>
+			<c> 4 Bytes </c>
+			<d> 8 Bytes </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The class possesses two typedef declarations and
+			one function, which do not occupy any data memory. The class does not
+			have any data members and C++ runtime environment allocates 1
+			byte(the smallest addressable unit in memory) to locate the object of
+			this class in memory.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="82">
+		<body>The correct prototype to overload postfix ++ operator as member function of class MyClass is:
+		</body>
+		<options>
+			<a> MyClass operator ++ (int); </a>
+			<b> MyClass operator ++ (); </b>
+			<c> MyClass operator ++ (MyClass&amp;); </c>
+			<d> MyClass&amp; operator ++ (MyClass&amp;); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Logically both of the prefix ++ and postfix ++
+			operators do not need any arguments to be overloaded. But to make
+			difference between the definitions of these operators, C++
+			syntactically provides an unused int argument for postfix ++
+			operator.
+		</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="83">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			int f(int x=10);
+			int f(int x=0) {
+			return x;
+			}
+			int main() {
+			cout&#171;f();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 0 </a>
+			<b> 10 </b>
+			<c> 100 </c>
+			<d> Program gives syntax error stating default arguments are redeclared.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The default values for the arguments of a function
+			can be specified either in the function declaration or function
+			definition. Here, function declaration and function definition both
+			have specified default values 10 and 0 respectively, which is
+			syntactically wrong in C++. Hence compiler gives error message. The
+			valid syntax for the function f() to have default values can be given
+			as follows:
+
+			1. Default value in function declaration
+			int f(int x=10);
+			int f(int x) {
+			return x; //returns 10 if called without argument
+			}
+			2.
+			Default value in function definition
+			int f(int x);
+			int f(int x=0) {
+			return x; //returns 0 if called without argument
+			}
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="84">
+		<body>When an exception is thrown and caught in the respective catch block, then:
+		</body>
+		<options>
+			<a> After handling the exception, execution continues in the current function just after the catch where exception was caught.
+			</a>
+			<b> The control is passed to the calling function where exception was raised and execution continues with the next statement.
+			</b>
+			<c> The program is terminated. </c>
+			<d> The control is passed to the main() function irrespective where the exception was caught.
+			</d>
+			<e> None of the above. </e>
+		</options>
+		<answer name="a">When an exception is thrown within from the try
+			block, the program execution flow goes to the first matching catch
+			block and execution continues to the statements that falls just after
+			the matching catch block. The matching catch block is searched from
+			the current stack frame to the last one(stack frame of the main
+			function) while unwinding the stack. If no matching catch block is
+			encountered, the program is aborted. Following piece of code
+			illustrates, how control is passed when exception is raised and
+			caught.
+			//Exception class
+			class TestException {
+			public:
+			char* toString()
+			{
+			return &quot;This is TestException&quot;
+			}
+			};
+			//main function
+			int main()
+			{
+			cout&#171;&quot;Main starts&quot;&#171;endl;
+			try {
+			showError();
+			cout&#171;&quot;After showError&quot;&#171;endl; //Step y.
+			control will come here after
+			} //Step x
+			catch(…) {
+			cout&#171;&quot;Finally exception is caught here&quot;&#171;endl;
+			}
+			cout&#171;&quot;Main ends &quot;&#171;endl; //Step z. control
+			will come here after
+			return 0 //Step y.
+			}
+			void showError () {
+			try {
+			throw
+			TestException(); //exception is raised here
+			}
+			catch(TestException e) {
+			//exception is caught here
+			cout&#171;e.toString();
+			}
+			cout&#171;&quot;After exception is caught&quot;&#171;endl; //Step
+			x. Control is passed
+			to here
+			} //after exception is caught
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="85">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Cut;
+			class Paste {
+			public:
+			void showPaste(){
+			cout&#171;&quot;showPaste &quot;;
+			cut.showCut();
+			}
+			private:
+			Cut cut;
+			};
+			class Cut {
+			public:
+			void showCut() {
+			cout&#171;&quot;showCut&quot;;
+			}
+			private:
+			Cut m_cut;
+			};
+			int main(){
+			Paste p;
+			p.showPaste();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> showPaste showCut </a>
+			<b> showPaste </b>
+			<c> showCut </c>
+			<d> Program gives compilation error in declaring Cut cut as size of the class Cut is unknown at this point.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The program has forward declaration of class Cut
+			and object of this class is declared as member of the class Paste.
+			When object of a class is declared, compiler allocates memory for the
+			object. Therefore size of the class must be known at declaration
+			time. A forward declaration can only be used when control to that
+			declarative statement comes after the definition for that type is
+			encountered. For example, following version of the same program will
+			work because memory for function argument cut is allocated when
+			function showPaste() is called, and at this point definition of class
+			Cut is known to the compiler.
+			#include "iostream"
+			using namespace
+			std;
+			class Cut;
+			class Paste {
+			public:
+			void showPaste(Cut cut){
+			cout&#171;&quot;showPaste &quot;;
+			cut.showCut();
+			}
+			};
+			class Cut {
+			public:
+			void showCut() {
+			cout&#171;&quot;showCut&quot;;
+			}
+			private:
+			Cut
+			m_cut;
+			};
+			int main(){
+			Paste p;
+			p.showPaste();
+			return 0;
+			}
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="86">
+		<body>A call to typeid operator for polymorphic objects can be replaced by:
+		</body>
+		<options>
+			<a> dynamic_cast </a>
+			<b> static_cast </b>
+			<c> const_cast </c>
+			<d> reinterpret_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The typeid operator is used to find type of an
+			object. This operator returns a reference to the object of class
+			typy_info defined in the header file type_info.h. The class type_info
+			has a member function named name() which returns type name of the
+			object passed to the operator typeid. This operator can be used to
+			compare types of two objects using the assignment operator overloaded
+			in the class type_info. For polymorphic types the cast operator
+			dynamic_cast can be used to find type name of the object. For
+			example, following piece of code shows how typeid can be replaced by
+			dynamic_cast.
+			class ABC {
+			public:
+			virtual show() {
+			cout&#171;&quot;ABC&quot;;
+			}
+			};
+			class XYZ : public ABC
+			public:
+			virtual
+			show() {
+			cout&#171;&quot;XYZ&quot;;
+			}
+			};
+			//Use of typeid to compare two
+			objects
+			void checkType(ABC* pABC) {
+			ABC abc;
+			XYZ xyz;
+			if(typeid(*pABC)
+			==typeid(abc))
+			cout&#171;&quot;Type is ABC&quot;;
+			else
+			if(if(typeid(*pABC) == typeid(xyz))
+			cout&#171;&quot;Type is
+			XYZ&quot;;
+			else
+			cout&#171;&quot;Type is unknown&quot;;
+			}
+			//Above
+			function can be rewritten using dynamic_cast as follows.
+			void
+			checkType(ABC* pABC) {
+			if(dynamic_cast&#60;ABC&#62;(*pABC) != NULL)
+			cout&#171;&quot;Type is ABC&quot;;
+			else
+			if(dynamic_cast&#60;XYZ&#62;(*pABC) != NULL)
+			cout&#171;&quot;Type is
+			XYZ&quot;;
+			else
+			cout&#171;&quot;Type is unknown&quot;;
+			}
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="87">
+		<body>A class Figure is defined as given below. What will be the size of the class Figure?
+			class Figure {
+			public:
+			virtual void draw()=0;
+			virtual void count()=0;
+			};
+		</body>
+		<options>
+			<a> 4 bytes </a>
+			<b> 8 bytes  </b>
+			<c> 1 byte </c>
+			<d> 0 bytes </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The class figure is an abstract class (also called
+			polymorphic class) because it has two pure virtual functions defined
+			within it. A polymorphic class contains a virtual table to store
+			addresses of its virtual function. A special pointer called VPTR
+			points to this virtual table, and each polymorphic class has its own
+			virtual pointer. To store VPTR in memory, compiler reserves 4 bytes
+			(pointer size) of additional memory. The class figure does not have
+			any data member so the size of the class will be 4 bytes.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="88">
+		<body>A namespace N is defined as
+			namespace N {
+			typedef type1 TYPE1;
+			TYPE1 f();
+			};
+			To define the function f() outside the namespace, which statement can be used?
+		</body>
+		<options>
+			<a> TYPE1 N::f() {/*some stuff here*/} </a>
+			<b> TYPE1 f() {/*some stuff here*/} </b>
+			<c> N::TYPE1 N::f(){/*some stuff here*/} </c>
+			<d> N::TYPE1 f(){/*some stuff here*/} </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The namespace N has type definition for the type
+			TYPE1 and declaration for the function f(). To refer these outside
+			the namespace, the statements N::TYPE1 and N::f() will be used
+			respectively. Therefore following function definition of the function
+			is valid.
+			N::TYPE1 N::f() {
+			//logic goes here
+			}
+		</answer>
+		<category>N</category>
+	</question>
+	<question no="89">
+		<body>Pickup the correct statement(s) about the following piece of code?
+			ofstream ofs(&quot;mydata.txt&quot;);
+			if(ofs)
+			cerr&#171;&quot;Object creation is successful&quot;;
+			else
+			cerr&#171;&quot;Object creation is failed &quot;</body>
+		<options>
+			<a> The if statement checks whether ofs is NULL or not. </a>
+			<b> The if statement calls operator void*() which in turn calls ios::good().
+			</b>
+			<c> The if statement calls operator bool*() which in turn calls ios::good()
+			</c>
+			<d> The if statement calls operator bool() which in turn calls ios::good().
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">An object of a class cannot be used as Boolean
+			expression in if statement provided there is no overloaded operator
+			defined in the object’s class, which return Boolean value. The class
+			ofstream has operator void* defined in it which is automatically
+			called when object of this class is used as Boolean expression in if
+			statement.
+		</answer>
+		<category>IO</category>
+	</question>
+	<question no="90">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			int arr[5] = {10,};
+			int main() {
+			for(int i=0; i&#60;5;)
+			cout&#171;arr[i]&#171;" ",
+			++i;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10 0 0 0 0 </a>
+			<b> 10 10 10 10 10 </b>
+			<c> 10 </c>
+			<d> Program gives compilation syntax error.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The for loop used in the program contains comma
+			operator to separate the statements defined in the scope of the loop.
+			The statements cout&#171;arr[i]&#171;&quot; &quot;, and ++i;
+			constitutes a single statement because of the comma operator. Further
+			more, an array can be initialized leaving some values default after
+			comma operator.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="91">
+		<body>Which are not correct statements(s) to declare objects of a class "Test" given below?
+			template&#60;class T1 = int, class T2 = int&#62;
+			class Test {
+			//class definition goes here
+			};
+		</body>
+		<options>
+			<a> Test &#60;&#62; t1;  </a>
+			<b> Test t2; </b>
+			<c> Test&#60;long&#62; t3;  </c>
+			<d> Test &#60;float, short&#62; t4;  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The piece of code has default arguments for the
+			class template Test. The template has two generic types T1 and T2
+			which may have values as any of valid C++ types. The default value
+			for both of the types is int i.e. if no types are explicitly given
+			while creating the object of class Test, the types are considered as
+			int. Following is the explanation how objects of Test are created.
+
+			1.
+			Test&#60;&#62; t1; Creates object successfully. The T1 and T2 both are
+			taken as int.
+			2. Test t2; Gives syntax error stating that type value
+			is missing.
+			3. Test&#60;long&#62; t3; Creates object successfully. The
+			T1 and T2 are
+			taken as long and int respectively.
+			4. Test&#60;float,
+			short&#62; t4; Creates object successfully. The T1 and
+			T2 are taken as
+			float and short respectively.
+		</answer>
+		<category>FCT</category>
+	</question>
+	<question no="92">
+		<body>Which one of the following containers stores data sorted by default?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> map&#60;T&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The standard STL container map&#60;key, value&#62;
+			arrange data elements sorted by the key. By default, element are
+			sorted in ascending order, however a comparison algorithm can be
+			passed while defining a map&#60;&#62; object. </answer>
+		<category>STL</category>
+	</question>
+	<question no="93">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class C {
+			private:
+			int m_c;
+			public:
+			C(int c=0) {
+			m_c=c;
+			}
+			void show() {
+			cout&#171;m_c;
+			}
+			};
+			int main(){
+			C obj = (10,12,15);
+			obj.show();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 0 </a>
+			<b> 10 </b>
+			<c> Syntax error in declaring the object obj. </c>
+			<d> 15  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The program illustrates the beauty of comma
+			operator. From the first look, it seems that statement C obj =(10,
+			12, 15); has syntax error, but comma operator on right hand side
+			evaluates the statement (10, 12, 15) to 15 as follows.
+			C obj =(10, 12,
+			15);
+			1. C obj = 15;
+			2. C obj(15);
+			If the statement were C obj = 10, 12,
+			15; then there would be syntax
+			error because statement 10, 12, 15;
+			returns 10, and compiler looks
+			for semicolon just after the first
+			value.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="94">
+		<body>The statement extern &quot;C&quot; is used for:</body>
+		<options>
+			<a> Using C library function in C++ program. </a>
+			<b> Using C++ library function in C program. </b>
+			<c> Converting C++ classes to C structures. </c>
+			<d> Converting C structures to C++ classes. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The statement extern &quot;C&quot; is used to
+			direct C++ compiler not to re-generate function signature for the
+			functions specified in extern &quot;C&quot; block. Actually, C++
+			compiler re-generates the function’s signature (using function
+			arguments) in order to accomplish the function overloading. When a C
+			library is used in C++ program, header file of the library is
+			included in the program. The C++ compiler re-generates new signatures
+			for all the functions specified in the library header file.
+			Therefore, the functions prototypes internally used by the C++
+			compiler are different from those specified in the library header
+			file, which results in a linking error for each C library functions.
+			To resolve this problem, the C library header file is put in the
+			extern &quot;C&quot; block so that library function’s signatures are
+			not changed.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="95">
+		<body>What is the type of &quot;this&quot; pointer for a class named Book:
+		</body>
+		<options>
+			<a> Book*  </a>
+			<b> Book *const  </b>
+			<c> const Book*  </c>
+			<d> const Book *const  </d>
+			<e> None of the above  </e>
+		</options>
+		<answer name="b">Every non-static member function of a class
+			contains a special pointer named this, which points to the object of
+			the class itself. The this pointer contains address of the object
+			which calls the class function. The value of this pointer cannot be
+			altered, however the object pointed to by this can be altered.
+			Therefore, this is constant pointer to non-constant object.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="96">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class P {
+			public:
+			virtual void show() {
+			cout&#171;"P ";
+			}
+			};
+			class PQ : public P {
+			public:
+			virtual void show() {
+			cout&#171;"PQ ";
+			}
+			};
+			class PQR : public PQ {
+			};
+			int main(int) {
+			PQR pqr;
+			PQ&amp; pq=pqr;
+			pq.show();
+			P&amp; p=pqr;
+			p.show();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> PQ PQ </a>
+			<b> PQ P </b>
+			<c> P PQ </c>
+			<d> P P  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The class PQR is publicly derived from class PQ
+			and PQ is derived publicly from class P. Therefore, PQR is indirectly
+			derived from P, which implies that references to PQ and P can be
+			assigned by the object of PQR. When virtual function show() is called
+			through the statement pq.show(); The function definition is first
+			looked in the class PQR (as pq has reference to pqr), but look up
+			fails. Next function is looked in the class PQ and this time look up
+			is succeeded and function is called from class PQ.
+
+			The statements
+			p.show(); also calls the function from PQ class because
+			the function
+			definition is looked in all the classes in the hierarchy
+			starting from
+			the class PQR i.e. First function is searched in PQR,
+			next in PQ and
+			hence look up is succeeded before going to search P.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="97">
+		<body>The mechanism that allows same function to act differently is known as:
+		</body>
+		<options>
+			<a> polymorphism </a>
+			<b> encapsulisation  </b>
+			<c> delegation </c>
+			<d> data hiding </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">In C++, a function can have multiple definitions
+			provided they have different arguments. This is called function
+			overloading, which is also thought of as static polymorphism. See Q 4
+			for static polymorphism.
+		</answer>
+		<category>FSP</category>
+	</question>
+	<question no="98">
+		<body>What is output of the following program?
+			int main(){
+			cout&#171;typeid(&quot;Wipro&quot;).name();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> char[6] </a>
+			<b> char* </b>
+			<c> const char* </c>
+			<d> char [5]  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The string &quot;Wipro&quot; is one-dimensional
+			char array of size 6, one additional byte is reserved for null
+			character i.e. ‘\0’. The operator typeid() returns reference to the
+			object type_info class which encapsulates type information of
+			&quot;Wipro&quot;.</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="99">
+		<body>What is the value of r when following piece of code is executed?
+			int a=0, b=1, c=2, d=3;
+			int r=!a == b + c &amp;&amp; a | d &#187; 1	? c : d;</body>
+		<options>
+			<a> 0 </a>
+			<b> 1 </b>
+			<c> 2 </c>
+			<d> 3  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">As per the precedence and associativity of
+			operators in C++, the expression is evaluated as follows.
+			r=!a == b +
+			c &amp;&amp; a | d &#187; 1 ? c : d;
+			=&#62;1== b + c &amp;&amp; a | d
+			&#187; 1 ? c : d; // '!' has highest
+			priority among the used
+			operators.
+			=&#62;1 == 3 &amp;&amp; a | d &#187; 1 ? c : d; // '+' has
+			next higher
+			priority among the used operators.
+			=&#62;1== 3 &amp;&amp; a
+			| 1 ? c : d // '&#187;' has next higher priority
+			among the used
+			operators.
+			=&#62; 1== 3 &amp;&amp; 1 ? c : d // '|' has next higher
+			priority among the
+			used operators.
+			=&#62; 0 &amp;&amp; 1 ? c : d // '=='
+			has next higher priority among the
+			used operators.
+			=&#62; 0 ? c : d //'&amp;&amp;' has next higher priority among the used	operators.
+			=3
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="100">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Mouse {
+			public:
+			void move() {
+			cout&#171;"Mouse::move ";
+			}
+			};
+			class OpticalMouse : public
+			Mouse {
+			public:
+			void move(int color) {
+			cout&#171;"OpticalMouse::move";
+			}
+			};
+			int main() {
+			OpticalMouse om;
+			om.move();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> OpticalMouse::move </a>
+			<b> Mouse::move </b>
+			<c> OpticalMouse::move OpticalMouse::move </c>
+			<d> Program gives compilation error stating that too few parameters
+				in call to OpticalMouse::move(int).
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">From the first look on the class OpticalMouse, it
+			seems that function Mouse::Move() is called, but program shows
+			compile time error stating that &quot;too few parameters in call to
+			OpticalMouse::Move(int)&quot;. Reason is that a function can not be
+			overloaded across the class hierarchy. i.e. When a function is
+			defined in base class and same function name is used to define more
+			implementations in derived class with different signature, the
+			function definition in base class is ignored. In the program, Move()
+			function is again defined in derived class with one argument, and
+			therefore, program understands that you are calling
+			OpticalMouse::Move(int). If function OpticalMouse::Move(int) were not
+			defined, there would not be any error.
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="101">
+		<body>Which are true statement(s) about a class data member?</body>
+		<options>
+			<a> A class data member can have auto storage class </a>
+			<b> A static data member is always initialized outside of class definition
+			</b>
+			<c> A mutable data member can not be changed in class member functions
+			</c>
+			<d> A class data member can have extern storage </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">A class can not have data members of storage
+			classes auto and extern. Reason is that object of a class as a whole
+			is can be auto, extern or static, and it is not possible for an auto
+			object to have extern storage class for any of its data members.
+			Therefore C++ restricts the class not to have data members of these
+			storage classes. If a class has static data member, it does not mean
+			that data member has static storage class, the static keyword makes
+			data member to be shared among all of the objects of the same class,
+			hence is always initialized outside of a class. Mutable is used to
+			make a constant data member modifiable.
+		</answer>
+		<category>CS</category>
+	</question>
+	<question no="102">
+		<body>The memory allocated by new operator can be expanded by:</body>
+		<options>
+			<a> renew operator </a>
+			<b> realloc function </b>
+			<c> placement new operator </c>
+			<d> There is no library function/operator provided by C++ to expand the memory allocated by new operator.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">C++ does not provide any predefined
+			function/operator to extend or shrink the memory allocated by new
+			operator. Some people use realloc() library function of C language to
+			do the same, but it is not recommended to mix C functions and C++
+			operators. To do the same, it is advisable to write your own function
+			as given below:
+			template &#60;typename T&#62;
+			T *renew( T*&amp; src,
+			size_t oldSize, size_t newSize ) {
+			T *dst = new T[newSize];
+			if (newSize
+			&#60; oldSize) {
+			oldSize = newSize;
+			}
+			while (--oldSize &#62;= 0) {
+			dst[oldSize] = src[oldSize];
+			}
+			delete[] src;
+			src = dst;
+			return src;
+			}
+			This
+			template function expands or shrinks the memory pointed by src
+			pointer reference. It is necessary to pass the old memory pointer by
+			reference so that it can be reassigned in the function.
+		</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="103">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class M {
+			public:
+			M() {
+			cout&#171;&quot;M()&quot;;
+			}
+			~M() {
+			cout&#171;&quot;~M()&quot;;
+			}
+			};
+			class ML {
+			public:
+			ML() {
+			cout&#171;&quot;ML()&quot;;
+			}
+			~ML() {
+			cout&#171;&quot;~ML()&quot;;
+			}
+			private:
+			M m1;
+			static M m2;
+			};
+			int main(){
+			ML obj;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> M() M() ML() ~M() ~M() ~ML() </a>
+			<b> M() ML()~ML()~M() </b>
+			<c> ML() M() M() ~ML() ~M() ~M() </c>
+			<d> Program gives compilation error stating that static member should
+				be declared globally.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Constructor of base class M is executed before derived class ML and destructor of ML is called before that of M. Static object m2 never calls constructor/destructor as it is not defined outside the class </answer>
+		<category>IDP</category>
+	</question>
+	<question no="104">
+		<body>An object of a class namely "Data" containg two public int data members can be initialized by Data d = {10, 20}; statement if:
+		</body>
+		<options>
+			<a> The class has defined constructor with no argument. </a>
+			<b> The class has defined constructor with two int type arguments.</b>
+			<c> The class has no constructor defined.  </c>
+			<d> The statement like this can not be used to initialize the public data member of a class.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The object of a class in C++ can be initialised like a C structure if there is no constructor defined in the class</answer>
+		<category>CS</category>
+	</question>
+	<question no="105">
+		<body>What is output of the following program?
+			#include "iostream"
+			#include&#60;typeinfo&#62;
+			using namespace std;
+			class CA {
+			public:
+			CA() {
+			m_ca=10;
+			}
+			friend void operator &#171;(ostream&amp; os, CA&amp; ca) {
+			os&#171;typeid(ca).name();
+			}
+			~CA() {}
+			private:
+			int m_ca;
+			};
+			int main(){
+			cout&#171;CA();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> CA&amp; </a>
+			<b> CA </b>
+			<c> Program gives compilation error in declaring friend operator. </c>
+			<d> Program gives compilation error in main function. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b"> The type of ca which is CA is displayed</answer>
+		<category>CS</category>
+	</question>
+	<question no="106">
+		<body>What will happen if a non-virtual function of a public base class is made pure virtual in derived class?
+		</body>
+		<options>
+			<a> This will show an error indicating that a non-virtual function defined in base class can not be made pure virtual in derived classs.
+			</a>
+			<b> The derived class becomes abstract class while base class remains concrete class.
+			</b>
+			<c> The definition of the function in base class is ignored and both classes become abstract.
+			</c>
+			<d> The pure virtual statement in the derived class is ignored and 	both classes remain concrete.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Derived class will become abstract, whereas base class will be concrete</answer>
+		<category>IDP</category>
+	</question>
+	<question no="107">
+		<body>What is the output of the following program? [Assume size of int 	4 bytes]
+			#include "iostream"
+			using namespace std;
+			void showSize(int a[][3]) {
+			cout&#171;sizeof(a);
+			}
+			int main() {
+			int	arr[][3]={1,2,3,4,5,6,7,8,9,0};
+			cout&#171;sizeof(arr)&#171;" ";
+			showSize(arr);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10 10 </a>
+			<b> 48 48 </b>
+			<c> 48 4 </c>
+			<d> 4 48 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">arr is a two dimensional(4x3) array of int whereas a is pointer to an array</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="108">
+		<body>Given that class "MyData"" has its all data members private. Then operation d2 = 10 + d1; where d1, d2 are objects of MyData, can be 	performed using:
+		</body>
+		<options>
+			<a> a friend function of MyData </a>
+			<b> a member function of MyData with one argument </b>
+			<c> a member function of MyData with two arguments </c>
+			<d> a function which is neither friend nor member function </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a"> The left operand of the '+' operator is int type. Therefore, public friend MyData operator+(int x, MyData&amp; data); is only the way to perform above oparation.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="109">
+		<body>What is the value of size in the following piece of code?
+			float (*pfArray)[9][18];
+			int size = sizeof(*pfArray);
+		</body>
+		<options>
+			<a> 4 bytes </a>
+			<b> 9 bytes </b>
+			<c> 18 bytes </c>
+			<d> 162 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">pfArray is a pointer to 2-D array of dimension 9x18, therefore *pfArray is an array of 9*18 float elements.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="110">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			struct SS{
+			int ss_x;
+			int ss_y;
+			int ss_z;
+			}
+			getData() {
+			SS ss = {10,20,30};
+			return ss;
+			}
+			int main(){
+			SS ss = getData();
+			cout&#171;ss.ss_x&#171;&quot;
+			&quot;&#171;ss.ss_y&#171;&quot; &quot;&#171;ss.ss_z;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10 20 30 </a>
+			<b> 0 0 0 </b>
+			<c> 10 0 0 </c>
+			<d> Program gives syntax error in structure declaration as structure
+				declaration must be terminated by semecolon.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The structure declaration should be terminated by semicolon.</answer>
+		<category>CS</category>
+	</question>
+	<question no="111">
+		<body>A class contains two virtual functions (not pure virtual)	defined in it, and a derived class of this class does not override 	any of the virtual functions. What are correct option(s) about these classes?
+		</body>
+		<options>
+			<a> Both of the classes share same virtual table.  </a>
+			<b> Both of the classes have separate virtual tables.  </b>
+			<c> Both classes are abstract classes. </c>
+			<d> It is mandatory to override each of the virtual functions of base class in derived class and hence there will be syntax error in derived class.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Both base class and derived one will have separate virtual table.</answer>
+		<category>IDP</category>
+	</question>
+	<question no="112">
+		<body>When an exception is thrown, what happens to stack?</body>
+		<options>
+			<a> The state of the stack is unchanged. </a>
+			<b> The stack is unwinded until matching catch statement is found.
+			</b>
+			<c> Always stack top frame is unwinded.  </c>
+			<d> All frames except the main function, from the stack are unwinded.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">When an exception is thrown, control pssses to the
+			first matching catch statement. All of the frames are popped out from
+			thr stack until matching statement is encountered</answer>
+		<category>EH</category>
+	</question>
+	<question no="113">
+		<body>Pick up appropriate option(s) about the piece of code given below.
+			struct S {
+			public:
+			S(int s = 0) {
+			m_s=s;
+			}
+			void showData() {
+			cout&#171;m_s;
+			}
+			int m_s;
+			};
+			struct SD : S {
+			}
+		</body>
+		<options>
+			<a> The member function showData() is public in structure SD. </a>
+			<b> The member function showData() is private in structure SD. </b>
+			<c> The member function showData() is protected in structure SD. </c>
+			<d> The member function showData() is private in structure S.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Default access specifier for inheritance is private for class, and public for a struct</answer>
+		<category>CS</category>
+	</question>
+	<question no="114">
+		<body>The inheritance diamond problem occurs in:</body>
+		<options>
+			<a> Multiple inheritance only. </a>
+			<b> Multiple level of inheritance only. </b>
+			<c> Single inheritance </c>
+			<d> Both a &amp; b  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">In Multiple inheritance a class is derived from
+			more than one class. The inheritance diamond problem occurs when
+			a class is derived from more than one class, and base classes in turn
+			are derived from same class. For example,
+			compiler will show ambiguity problem while printing the data member m_a in
+			the below code.
+			class A {
+			protected:
+			char m_a;
+			};
+			class AB : public A {
+			protected:
+			char m_b;
+			};
+			class AC : public A {
+			protected:
+			char m_c;
+			};
+			class ABC : public AB, public AC {
+			public:
+			void showData(){
+			cout&#171;m_a; /*unable to resolve which m_a(i.e AB::m_a or AC:m_a) needs to be
+			printed. This is inheritance diamond problem, and is resolved through
+			virtual base classes i.e making AC and AB virtual base classes. */
+			}
+			};
+
+		</answer>
+		<category>IDP</category>
+	</question>
+	<question no="115">
+		<body>In exception handling, which one of the following routine is implicitly called, when unexpected exception is encountered?
+		</body>
+		<options>
+			<a> abort() </a>
+			<b> assert() </b>
+			<c> exit() </c>
+			<d> unexpected() </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The function calls the current unexpected handler function (either the one by default or the one set by a call to set_unexpected)</answer>
+		<category>EH</category>
+	</question>
+	<question no="116">
+		<body>What is output of the following program?
+			include&#60;iostream&#62;
+			using namespace std;
+			class CX {
+			public:
+			CX(int x=0) : m_x(x){}
+			void setX(int x) {	m_x=x;	}
+			int getX() { return m_x; }
+			private:
+			int m_x;
+			};
+			class CXY : public CX {
+			public:
+			CXY(int x=0, int y=0):CX(x), m_y(y){}
+			void setY(int y) {	m_y=y; 	}
+			private:
+			int m_y;
+			};
+			int main() {
+			CX* pX;
+			CXY xy[2];
+			pX = xy;
+			xy[0].setX(10);
+			xy[0].setY(101);
+			xy[1].setX(20);
+			xy[1].setY(201);
+			pX++;
+			cout&#171;pX-&#62;getX();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10 </a>
+			<b> 101 </b>
+			<c> 20 </c>
+			<d> 201 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The pointer px points to the object of CXY, whereas type of the pa is CX*. Initially px points to xy[0], and after px++; px will point to 101.</answer>
+		<category>IDP</category>
+	</question>
+	<question no="117">
+		<body>Which one of the following is a polymorphic cast?</body>
+		<options>
+			<a> dynamic_cast </a>
+			<b> static_cast </b>
+			<c> const_cast </c>
+			<d> reinterpret_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The dynamic_cast is used to find runtime
+			information about polymorphic class or object.</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="118">
+		<body>Which of the following statements are correct about the new operator members function?
+		</body>
+		<options>
+			<a> The 'new' operator member function of a class can not invoke non-static member functions of the class.
+			</a>
+			<b> The 'new' operator member function of a class can not call static member functions of the class.
+			</b>
+			<c> The 'new' operator member function of a class can not use 'this' pointer. </c>
+			<d> The 'new. operator member function of a class can not call any of the member functions of that class.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">An operator new() or operator new[]() for a class is always a static class member, even if it is not declared with the keyword static.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="119">
+		<body>A program contains the following statements.
+			namespace MyNameSpace {
+			/*some stuff here/*
+			}
+			Namespace N= MyNameSpace;
+			Select the appropriate option(s) regarding above statements.
+		</body>
+		<options>
+			<a> N is defined as a separate namespace which is identical to MyNameSpace.
+			</a>
+			<b> N is alias to MyNameSpace. </b>
+			<c> This is an error, can not assign a namespace to another using assignment operator.
+			</c>
+			<d> The namespaces are copy destructive, so MyNameSpace is destroyed and only N will be present in the current scope.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">N is an alias for the namespace called MyNameSpace.
+		</answer>
+		<category>N</category>
+	</question>
+	<question no="120">
+		<body>What is the correct prototype to declare a manipulator with no argument?
+		</body>
+		<options>
+			<a> ostream&amp; manip_name(ostream&amp; os); </a>
+			<b> ostream&amp; manip_name(void); </b>
+			<c> ostream&amp; manip_name(ostream os); </c>
+			<d> ostream manip_name(ostream os); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Not Available</answer>
+		<category>IO</category>
+	</question>
+	<question no="121">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			template&#60;class T&#62;
+			T UseT {
+			return 10.0;
+			};
+			int main() {
+			cout&#171;UseT&#60;int&#62;();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10  </a>
+			<b> 10.0 </b>
+			<c> Compilation error as type T is not being used in the template function.
+			</c>
+			<d> 0  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The generic type T is int</answer>
+		<category>FCT</category>
+	</question>
+	<question no="122">
+		<body>Which one of the following containers can not be used to implement a queue (FIFO)?
+		</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> map&#60;T1&#62;,&#60;T2&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">Map is associative container, therefore, can not be used to implement a sequential container.</answer>
+		<category>STL</category>
+	</question>
+	<question no="123">
+		<body>What is the difference between following statements?
+			char* pStr1=&quot;Hello World&quot;;
+			char pStr2 []=&quot;Hello World&quot;;
+		</body>
+		<options>
+			<a> pStr1 is constant pointer while pStr2 is variable pointer. </a>
+			<b> pStr2 is a constant pointer while pStr1 is variable pointer. </b>
+			<c> The data pointed by pStr1 can be changed while the data pointed by pStr2 can not be changed.
+			</c>
+			<d> The data pointed by pStr2 can be changed while the data pointed by pStr1 can not be changed.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="bd">pStr1 is a pointer to constant character string whereas pStr2 is an array of characters.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="124">
+		<body>A static member function in a class can use:</body>
+		<options>
+			<a> All data members of the class. </a>
+			<b> Only static data member of the class. </b>
+			<c> Only const data member of the class. </c>
+			<d> Only static and const data members of the class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">A static member function of a class can only use
+			static members of that class.</answer>
+		<category>CS</category>
+	</question>
+	<question no="125">
+		<body>Pick up correct statement(s) about the following piece of code.
+			class Fruit {
+			public:
+			virtual void showFruit() {
+			cout&#171;&quot;Fruit&quot;;
+			}
+			Fruit() {
+			cout&#171;&quot;Constructor &quot;;
+			}
+			public:
+			int m_fruit;
+			};
+			Fruit f;
+			char* po = interpret_cast&#60;char*&#62;(&amp;f);
+			char* pm = interpret_cast&#60;char*&#62;(&amp;f.m_fruit);</body>
+		<options>
+			<a> The values of po and pm will always be the same. </a>
+			<b> The values of po and pm will never be the same. </b>
+			<c> The equality of po and pm depends on the memory allocation for VPTR.
+			</c>
+			<d> There is syntax error in the code. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Fruit class contains a virtual function, therefore virtual table pointer is stored in the beginning of the object address, 
+						and  after VPTR data member m_fruit is stored in memory, which means that po will always point to VPTR. </answer>
+		<category>IDP</category>
+	</question>
+	<question no="126">
+		<body>Which of the following statements are true about a public static data member defined in a base class?
+		</body>
+		<options>
+			<a> A single copy of each static data member is shared by all derived classes.
+			</a>
+			<b> The derived classes will have separate copy of the static data menebers.
+			</b>
+			<c> Static data members are not inherited to the derived classes.   </c>
+			<d> Static data members can not be accessed through the object of derived classes.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Single copy of a static data member is created
+			which is shared among all classes </answer>
+		<category>IDP</category>
+	</question>
+	<question no="127">
+		<body>Which of the following statement(s) are correct to overload new operator?
+		</body>
+		<options>
+			<a> void *operator new(); </a>
+			<b> void *operator new(size_t n); </b>
+			<c> void *operator new[](size_t n); </c>
+			<d> void *operator new(void* p, size_t n); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="bc">b is used to allocate memory for scalar variable, and c is used for allocating memory for an array</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="128">
+		<body>What happens when an exception which is not caught any where in the program?
+		</body>
+		<options>
+			<a> The terminate handler is called and program is aborted. </a>
+			<b> The unexpected handler is called and program is aborted. </b>
+			<c> The program continues to execute in the function from where exception was thrown.
+			</c>
+			<d> The program continues to execute in the function from where exception throwing function was called.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">When an exception is not caught any where in the
+			program, then terminate handler is called, and program is aborted.
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="129">
+		<body>What is output of the following program?
+			#include "iostream"
+			#include&#60;string&#62;
+			using namespace std;
+			string&amp; getString(const char* str) {
+			return &amp;(4[str]);
+			}
+			int	main () {
+			cout&#171;getString(&quot;C++ Testing&quot;);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Program will give compilation error in return statement of getString().
+			</a>
+			<b> Program will display VTesting&quot;. </b>
+			<c> Program will display &quot;T&quot;. </c>
+			<d> Program will display &quot;C++&quot;. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">String starting from str[4]th charater will be returned</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="130">
+		<body>Which one of the following is a substitute for the conventional cast operator?
+		</body>
+		<options>
+			<a> dynamic_cast </a>
+			<b> static_cast </b>
+			<c> const_cast </c>
+			<d> reinterpret_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The static_cast can be used to replace the conventional cast. For example, y=(int)x; can be replaced by y=static_cast&#60;int&#62;(x);</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="131">
+		<body>A composite namespace CN is defined as follows.
+			namespace N1 {
+			const int SIZE=100;
+			/*other stuff here*/
+			};
+			namespace N2 {
+			const int
+			SIZE=10;
+			/*other stuff here*/
+			};
+			namespace CN {
+			using namespace N1;
+			using namespace N2;
+			/*other stuff here*/
+			};
+			In the scope of CN:
+		</body>
+		<options>
+			<a> The N1::SIZE will be available as N2:SIZE is ignored. </a>
+			<b> The N2::SIZE will be available as N1:SIZE is overridden. </b>
+			<c> Both N1::SIZE and N2::SIZE will be available, and same can be accessed by prefixing the namespace name e.g. N1::SIZE.
+			</c>
+			<d> This will throw error that multiple declaration of SIZE in the scope of CN.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">Both instances of the SIZE would be available, which can be accessed by prefixing the namespace name to avoid the ambiguity</answer>
+		<category>N</category>
+	</question>
+	<question no="132">
+		<body>What is the difference between istream::get() and istream::getline() when reading into a char array? [Assume that delimeter in each case is &quot;\n&quot;]</body>
+		<options>
+			<a> get() reads upto the delimeter and leaves delimeter in the input stream.
+			</a>
+			<b> getline() reads upto the delimeter and removes delimeter from the input stream.
+			</b>
+			<c> get() reads upto the delimeter and removes delimeter from the input stream.
+			</c>
+			<d> getline() reads upto the delimeter and leaves delimeter in the input stream.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ab">Both functions can be used to read an array, the difference is that get() method leaves delimeter in the input stream while getline() removes it from the stream.</answer>
+		<category>IO</category>
+	</question>
+	<question no="133">
+		<body>What is output of following program?
+			#include "iostream"
+			#include "typeinfo"
+			using namespace std;
+			template&#60;class T1=int&#62;
+			class Outer {
+			public:
+			template&#60;class T2=int&#62;
+			class Inner {
+			public:
+			void show() {
+			cout&#171;typeid(T2).name();
+			}
+			};
+			void show(){
+			cout&#171;typeid(T1).name();
+			}
+			};
+			int main(){
+			Outer&#60;long&#62;::Inner&#60;&#62; in;
+			in.show();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> int  </a>
+			<b> long </b>
+			<c> Program gives compilation syntax error.  </c>
+			<d> T2  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The default type for T2 is integer.</answer>
+		<category>FCT</category>
+	</question>
+	<question no="134">
+		<body>Which one of the following is not a sequential container?</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> map&#60;T1&#62;&#60;T2&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">Map is an associative container</answer>
+		<category>STL</category>
+	</question>
+	<question no="135">
+		<body>Pick up the correct option(s) about the following piece of code.
+			const char ch='a';
+			const char *p1=&quot;ch;
+			char const *p2=&quot;ch;;
+			char *const P3=&quot;ch;;
+		</body>
+		<options>
+			<a> p1 and p2 are pointers to constant char while p3 is constant pointer to char.
+			</a>
+			<b> p1 is pointer to constant char while p2 and p3 are constant pointers to char.
+			</b>
+			<c> p2 and p3 are pointers to constant char and p1 is constant pointer to char.
+			</c>
+			<d> p2 is pointer to constant char while p1 and p3 are constant pointers to char.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">p1 and p2 are pointers to constant char while p3 is constant pointer to char.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="136">
+		<body>A const member function in a class:</body>
+		<options>
+			<a> Can not change any of the data members of the class. </a>
+			<b> Can change the data members which are mutable. </b>
+			<c> Can change all data members except const data members. </c>
+			<d> Can not change data members which are mutable. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">A const member function in a class can change only the data members which are mutable.</answer>
+		<category>CS</category>
+	</question>
+	<question no="137">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Base {
+			public:
+			virtual void show() {
+			cout&#171;&quot;Base::show() &quot;;
+			}
+			Base() {
+			cout&#171;&quot;Base :: Base() &quot;;
+			}
+			};
+			class Derived : public
+			Base {
+			public:
+			virtual void show() {
+			cout&#171;&quot;Derived::show()&quot;;
+			}
+			Base() {
+			cout&#171;&quot;Derived :: Derived() &quot;;
+			}
+			};
+			int	main () {
+			Derived* d=new Base();
+       		d->show();
+			return 0;
+			}
+		</body>
+		<options>
+			<a>Invalid conversion from Base* to Derived* </a>
+			<b> Base::Base() Base::show() Derived::Derived() </b>
+			<c> Base::Base() Derived::show() Derived::Derived() </c>
+			<d> Derived::Derived() Base::Base() Derived::show()  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">Base class type can not be converted to Derived type, but vice-versa is true.</answer>
+		<category>IDP</category>
+	</question>
+	<question no="138">
+		<body>Given that class Person is derived from class Animal, and class "Bird" is a friend of class "Person". Which of the following statement(s) are true about these classes?
+		</body>
+		<options>
+			<a> All methods of class Bird can access private members of Animal.
+			</a>
+			<b> All methods of class Bird can access private members of Person.
+			</b>
+			<c> All methods of class Person can access private members of Animal.
+			</c>
+			<d> All methods of class Person can access private members of Bird.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The class Bird is friend of class Person, so all methods of class Bird can access any member of the class. Class Animal does not know about the class Animal</answer>
+		<category>CS</category>
+	</question>
+	<question no="139">
+		<body>Which of the following statement(s) are correct to overload delete operator?
+		</body>
+		<options>
+			<a> void operator delete(); </a>
+			<b> void operator delete(void* p); </b>
+			<c> void operator delete[](void* p); </c>
+			<d> void operator delete(void* p, size_t n); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="bc">The syntax in option b is used to free memory occupied by an obkect, whereas syntax given in option c is used to free memory occupied by an array of objects.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="140">
+		<body>An unexpected handler is called when:</body>
+		<options>
+			<a> An exception is thrown but is not caught. </a>
+			<b> An exception is thrown from a function which does not include the exception name in its exception specification list.
+			</b>
+			<c> An exception is thrown from a function which includes the exception in its exception specification list.
+			</c>
+			<d> An unknown exception is thrown.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The unexpected_handler is called when an exception is thrown from a function which does not include the exception name in its exception specification list.
+		</answer>
+		<category>EH</category>
+	</question>
+	<question no="141">
+		<body>Which one of following is used to remove constantness of the an identifier?
+		</body>
+		<options>
+			<a> dynamic_cast </a>
+			<b> static_cast </b>
+			<c> const_cast </c>
+			<d> reinterpret_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The const_cast is used to remove constantness of the an identifier</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="142">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			#define NUM1 50
+			#define	NUM2 30
+			#define NUM3 NUM1 + NUM2
+			#define NUM3 20
+			int main () {
+			cout&#171;NUM3*20;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 1600 </a>
+			<b> 650 </b>
+			<c> 400 </c>
+			<d> Program gives syntax error as there are multiple definitions of NUM3.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">Second definition is considered. Some compilers display warning saying multiple definitions of NUM3</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="143">
+		<body>To add a new function add() to a namespace called Math, a programmer writes the following statement.
+			int Math::add (int	a, int b) {return a+b;}
+			Pick up correct statement(s) about namespace code.
+		</body>
+		<options>
+			<a> The function add() will be added to the namespace Math. </a>
+			<b> An error is thrown saying that add() is not member of Math.
+			</b>
+			<c> No error is thrown, however add() is not added to Math. </c>
+			<d> An warning is shown, and add() is added to the namespace Math. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">Programmer needs to include the function to the namespace. He just defined the function, and not included the same in namespace.</answer>
+		<category>N</category>
+	</question>
+	<question no="144">
+		<body>The effect of ios::binary flag when used with file streams is:
+		</body>
+		<options>
+			<a> Stream converts '\n’ character to Carriage Return + Line Feed(CRLF) when writing to the file. </a>
+			<b> Stream does not convert ‘\n’ character to Carriage Return + Line Feed(CRLF) when writing to the file. </b>
+			<c> To allow input/output on binary files only. </c>
+			<d> To allow input/output on ascii(text) files only. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">In binary mode, stream does not convert ‘\n’ character to Carriage Return + Line Feed(CRLF) when writing to the file</answer>
+		<category>IO</category>
+	</question>
+	<question no="145">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			template&#60;class T&#62;
+			T add(T a, T b) {
+			cout&#171;"Generalization ";
+			return a+b;
+			}
+			template&#60;&#62;
+			int addint a, int b) {
+			cout&#171;"Specialization ";
+			return a+b;
+			}
+			int add(int a, int b) {
+			cout&#171;"Non Template ";
+			return a+b;
+			}
+			int main() {
+			cout&#171;add(10,20);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Generalization 30  </a>
+			<b> Specialization 30 </b>
+			<c> Non Template 30 </c>
+			<d> Program gives compilation syntax error.   </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">There is no temlate call while calling add() function.</answer>
+		<category>FCT</category>
+	</question>
+	<question no="146">
+		<body>Which one of the following containers is preferred for fast name look up?</body>
+		<options>
+			<a> vector&#60;T&#62; </a>
+			<b> list&#60;T&#62; </b>
+			<c> deque&#60;T&#62; </c>
+			<d> set&#60;T&#62; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The set is used to fast search as this container stores keys in sorted order.</answer>
+		<category>STL</category>
+	</question>
+	<question no="147">
+		<body>A reference in C++ is declared as:</body>
+		<options>
+			<a> type&amp; ref = var;</a>
+			<b> type&amp; ref = &amp;var; </b>
+			<c> type ref = &amp;var; </c>
+			<d> type ref = var; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a"> A reference in C++ is defined using the syntax type&amp; ref = var </answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="148">
+		<body>Which are valid statement(s) about static data member of a class?
+		</body>
+		<options>
+			<a> Each object of the class has its own copy of static data member.
+			</a>
+			<b> All objects of the class share the same copy of the static data member.
+			</b>
+			<c> A static data member needs to be defined outside the class. </c>
+			<d> A static data member can be used in all static and none-static member functions of that class.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="bcd">The static data member of a class is shared among all the instances of that class. Moreover, a staic data member can be
+			used in any member function of that class, and defined outside the class.</answer>
+		<category>CS</category>
+	</question>
+	<question no="149">
+		<body>Given that a class &quot;Object&quot; has an inner class named &quot;Part&quot;, and functions useObject() and usePart() are friends of &quot;Object&quot; and &quot;Part&quot; classes respectively. Which of the following statement(s) are true about these classes?
+		</body>
+		<options>
+			<a> Function usePart() can access private members of class Object, and Part as well.
+			</a>
+			<b> Function useObject() can access private members of class Object and Part as well.
+			</b>
+			<c> Function usePart() can access private members of class Object only.  </c>
+			<d> Function useObject() can access private members of class Part only. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">The function usePart() can only access private members of class Part whereas function useObject() can only access private members of class Object. </answer>
+		<category>CS</category>
+	</question>
+	<question no="150">
+		<body>What is output of the following program?
+			#include "iostream"
+			#include "typeinfo"
+			using namespace std;
+			class  Alert {
+      		 public:
+       		 virtual Alert* getAlert()=0;
+       		 void showAlert() {
+          		cout&#171;typeid(*this).name();
+      		}
+		};
+		class Alarm : public Alert {
+      	 public:
+       	virtual Alarm* getAlert() {
+          return this;
+        }
+	};
+	int  main () {
+       Alarm a;
+       a.showAlert();
+       return 0;
+	}
+
+		</body>
+		<options>
+			<a> Alert </a>
+			<b> Alarm </b>
+			<c> Alarm* </c>
+			<d> Program gives compilation error conflicting between
+				Alarm::getAlert() and Alert::getAlert().
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The type of the object 'a' is Alarm</answer>
+		<category>IDP</category>
+	</question>
+	<question no="151">
+		<body>The postfix operator &quot;--&quot; when defined as friend of a class, say &quot;Test&quot; will have the declaration as:</body>
+		<options>
+			<a> friend Test&amp; operator --(int); </a>
+			<b> friend Test&amp; operator --(Test&amp;); </b>
+			<c> friend Test&amp; operator --(Test&amp;, int); </c>
+			<d> friend Test&amp; operator -- (); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The posix operator &quot;--&quot; takes an extra argument to differentiate from prefix &quot;--&quot; one.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="152">
+		<body>Which statement is used to rethrow same exception in from within a catch block?</body>
+		<options>
+			<a> throw &#60;exception_name&#62;; </a>
+			<b> rethrow &#60;exception_name&#62;; </b>
+			<c> throw; </c>
+			<d> rethrow; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The &quot;throw;&quot; statement is used to re-throw an exception from the catch block.</answer>
+		<category>EH</category>
+	</question>
+	<question no="153">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			double data =100;
+			namespace Data1 {
+			double data = 200;
+			}
+			namespace Data2 {
+			double data = 300;
+			}
+			int main () {
+			cout&#171;data;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 100 </a>
+			<b> 200 </b>
+			<c> 300 </c>
+			<d> Program gives ambiguity error in global data and namespace's data. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">In main function global data variable is visible.</answer>
+		<category>N</category>
+	</question>
+	<question no="154">
+		<body>The standard std::bad_alloc exception is thrown by:</body>
+		<options>
+			<a> static_cast </a>
+			<b> dynamic_cast </b>
+			<c> const_cast </c>
+			<d> reinterpret_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="e">The exception "std::bad_alloc is thrown by 'new' operator not bt RTTI</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="155">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Game {
+			public:
+			virtual void setGame(int game = 1) {
+			cout&#171;&quot;Game::setGame() &quot;;
+			m_game= game;
+			}
+			void showGame() {
+			setGame(10);
+			cout&#171;m_game;
+			}
+			protected:
+			int m_game;
+			};
+			class Cricket : public Game {
+			public:
+			virtual void setGame(int game) { cout&#171;&quot;Cricket::setGame() &quot;; m_game= game; }
+			void showGame() {
+			cout&#171;&quot;Cricket::showGame() &quot;; cout&#171;m_game; }
+			};
+			int main () {
+			Game* pGame=new Cricket;
+			pGame-&#62;showGame();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Cricket::showGame() 0 </a>
+			<b> Game::setGame() 1 </b>
+			<c> Game::setGame() 10 </c>
+			<d> Cricket::setGame() 10 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">The pointer pGame points to the object of the class Cricket, but showGame() from base class Game is called as showGame() is not virtual. </answer>
+		<category>IDP</category>
+	</question>
+	<question no="156">
+		<body>What is true about a namespace?</body>
+		<options>
+			<a> A namespace can not be splitted into the multiple files. </a>
+			<b> A namespace can be splitted into the multiple files, but the data in the namespace defined in one file can not be seen in other files.
+			</b>
+			<c> A namespace can be splitted into the multiple files, and the data in the namespace defined in one file can be used in other files. </c>
+			<d> A file can have only one namespace defined in it.  </d>
+			<e> Non of above </e>
+		</options>
+		<answer name="c">A namespace can be splitted into the multiple files, and the data in the namespace defined in one file can be used in other files.</answer>
+		<category>N</category>
+	</question>
+	<question no="157">
+		<body>The function fstream::rdbuf() returns:</body>
+		<options>
+			<a> A pointer to streambuf class. </a>
+			<b> A pointer to fstreambuf class. </b>
+			<c> A reference to streambuf class. </c>
+			<d> A reference to fstreambuf class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IO</category>
+	</question>
+	<question no="158">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			template&#60;typename T&#62;
+			T max(T a, T b) {
+			return a &#62; b ? a : b;
+			}
+			int main() {
+			int a=10;
+			double b=5.5;
+			cout&#171; max&#60;double&#62;(a,b);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 10  </a>
+			<b> 5.5 </b>
+			<c> 0 </c>
+			<d> Program gives compilation syntax error.   </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>FCT</category>
+	</question>
+	<question no="159">
+		<body>What are basic differences between a reference and a pointer
+			from a programmer’s point of view?</body>
+		<options>
+			<a> No memory is allocated to a reference while separate memory is
+				allocated for a pointer. </a>
+			<b> No memory is allocated to a pointer while separate memory is
+				allocated for a reference. </b>
+			<c> There is no difference between reference and pointer with respect
+				to memory. </c>
+			<d> Reference is always initialized but it is not necessary to
+				initialize a pointer. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="ad">A reference can be thought of as an alias for an identifier, therefore, separate memory is not allocated for a reference. Also it is mandetory to initialize a reference while defining it.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="160">
+		<body>What is output of the following program?
+			#include "iostream"
+			#include&#60;vector&#62;
+			using namespace std;
+			int main() {
+			vector&#60;int&#62; Vect1;
+			for(int i=0; i&#60;10; i++)
+			Vect1[i]=i;
+			for(vector&#60;int&#62;::iterator itr = Vect1.begin();
+			itr !=Vect1.end(); itr++) {
+			cout&#171;*itr;
+			}
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 12345678910  </a>
+			<b> 0123456789 </b>
+			<c> Program is crashed. </c>
+			<d> 10 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>STL</category>
+	</question>
+	<question no="161">
+		<body>Pick up the appropriate option(s) out of following.</body>
+		<options>
+			<a> The value of &quot;this&quot; pointer in a static member function of a class is always NULL. </a>
+			<b> There is no this pointer associated with the static member
+				function of a class. </b>
+			<c> A static member function can call none-static member functions of
+				a class. </c>
+			<d> A static member function can call other static member
+				functions of same class. </d>
+			<e> None of the above is true </e>
+		</options>
+		<answer name="d">The static member function of a class can only use static members of that class. As static member's scope is limited to the class, so there is no &quot;this&quot; pointer associated with it. </answer>
+		<category>CS</category>
+	</question>
+	<question no="162">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Number {
+			public:
+			virtual void showNumber() =0;
+			Number(int type = 0) : m_type(type){ }
+			protected:
+			int m_type;
+			};
+			class Interger : public Number {
+			public:
+			virtual void showNumber () { cout&#171;&quot;Integer::showNumber &quot;; cout&#171;m_type; }
+			Interger(int type) : Number(type) {}
+			};
+			class UseNum {
+			public:
+			UseNum(Number* pNum) : m_pNumber(pNum) {}
+			~UseNum() {	delete pNumber; }
+			Number* pNumber;
+			}
+			int main () {
+			Number* pNum = new Integer(1);
+			UseNum* p = new UseNum (pNum);
+			UseNum obj = *p;
+			delete p;
+			obj.pNumber-&#62;showNumber();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Integer::showNumber 1 </a>
+			<b> Integer::showNumber 0 </b>
+			<c> Program crashes at run time. </c>
+			<d> Program gives compilation error. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IDP</category>
+	</question>
+	<question no="163">
+		<body>Pick up correct statement(s) about the following piece of code:
+			class X {
+			public :
+			virtual void mf1() {
+			/*logic goes here*/
+			}
+			void mf2() {
+			/*logic goes here*/
+			}
+			private:
+			/*data members */
+			};
+		</body>
+		<options>
+			<a> The member function mf2() may be inline while mf1() can not be inline.
+			</a>
+			<b> The member function mf1() may be inline while mf2() can not be inline.
+			</b>
+			<c> Both may be inline functions.   </c>
+			<d> Both can not be not inline functions. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">A virtual function of a class can not be inline.</answer>
+		<category>CS</category>
+	</question>
+	<question no="164">
+		<body>An overloaded operator:</body>
+		<options>
+			<a> can have default arguments. </a>
+			<b> can not have default arguments.  </b>
+			<c> can not be a friend function of a class. </c>
+			<d> can not return the object of the class in which it is defined.
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">An overloaded operator in a class can not have default arguments.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="165">
+		<body>Which cast operator is used to convert one type into
+			fundamentally different type?</body>
+		<options>
+			<a> static_cast </a>
+			<b> dynamic_cast </b>
+			<c> reinterpret_cast </c>
+			<d> const_cast </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The reinterpret_cast can convert one type into another type. For example, an int can be casted to int* type.</answer>
+		<category>RTTI</category>
+	</question>
+	<question no="166">
+		<body>What is output of following program?
+			#include "iostream"
+			using namespace std;
+			class Main {
+			public:
+			int main(int x) {
+			cout&#171;&quot;main(int) &quot;;
+			}
+			int main(double d) {
+			cout&#171;&quot;main(double) &quot;;
+			}
+			};
+			int main() {
+			Main m;
+			m.main(20);
+			m.main(20.5);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> main(int) main(double)  </a>
+			<b> main(double) main(double) </b>
+			<c> Compile time error, main() function can not be member of a class.
+			</c>
+			<d> Compile time error, main() function can not be overloaded in a
+				class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>CS</category>
+	</question>
+	<question no="167">
+		<body>A namespace alias can not be used:</body>
+		<options>
+			<a> With &quot;using&quot; declarative statement. </a>
+			<b> With &quot;using&quot; directive statement. </b>
+			<c> To open the namespace to modify. </c>
+			<d> All of the above </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>N</category>
+	</question>
+	<question no="168">
+		<body>What is your opinion about the following piece of code?
+			ifstream ifs(&quot;mydata.txt&quot;);
+			cout&#171;ifs.rdbuf();</body>
+		<options>
+			<a> This displays contents of the file &quot;mydata.txt&quot; on console. </a>
+			<b> This displays address of the object ifs on console.  </b>
+			<c> This displays text &quot;mydata.txt&quot; on console. </c>
+			<d> Compilation error as rdbuf() is not member of ifstream class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">The function ifstream::rdbuf() returns contents of the file associated with the stream.</answer>
+		<category>IO</category>
+	</question>
+	<question no="169">
+		<body>What is output of following program?
+			#include &#60;iostream&#62;
+			using namespace std;
+			template&#60;typename P, typename R&#62;
+			R local_cast(const P&amp; param) {
+			return param;
+			}
+			int main() {
+			int a=10;
+			cout&#171;typeid(local_cast&#60;float&#62;(a)).name();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> float  </a>
+			<b> int </b>
+			<c> const float&amp; </c>
+			<d> Program gives compilation syntax error as R can not be used as
+				return type.   </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>RTTI</category>
+	</question>
+	<question no="170">
+		<body>What is returned by the statement sizeof(void*); when executed?
+		</body>
+		<options>
+			<a> Error as size of void pointer can not be found. </a>
+			<b> 1 </b>
+			<c> 4 </c>
+			<d> 2 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="c">The type of void* is unsigned int.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="171">
+		<body>A function pointer p to a non-static member function with two arguments of a class say, &quot;C&quot;
+			can be declared as:
+		</body>
+		<options>
+			<a> return_type (C::*p) (type1 arg1, type2 arg2); </a>
+			<b> return_type (*C::p) (type1 arg1, type2 arg2); </b>
+			<c> return_type *(C::p) (type1 arg1, type2 arg2); </c>
+			<d> return_type (*p) (type1 arg1, type2 arg2); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">The correct statement is return_type (C::*p) (type1 arg1, type2 arg2);</answer>
+		<category>CS</category>
+	</question>
+	<question no="172">
+		<body>What is output of the following program?
+			#include "iostream"
+			#include&#60;vector&#62;
+			using namespace std;
+			int main() {
+			vector&#60;int&#62; Vect2(10);
+			for(int i=0; i&#60;5; i++)
+			Vect2.push_back(i);
+			cout&#171;Vect2.size();
+			}
+		</body>
+		<options>
+			<a> 10  </a>
+			<b> 5 </b>
+			<c> 15 </c>
+			<d> 20 </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>STL</category>
+	</question>
+	<question no="173">
+		<body>Pick up correct statement(s) about the following piece of code.
+			class XY : public X , Y {
+			private:
+			/*private members */
+			public :
+			/*public members*/
+			};
+		</body>
+		<options>
+			<a> All public members of X and Y are public in XY. </a>
+			<b> All public members of X are public in XY while all public members
+				of Y are private in XY. </b>
+			<c> All public members of X are public in XY while all public members
+				of Y are protected in XY.   </c>
+			<d> All public members of X and Y are protected in XY. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">The class Y is private base class of XY by default.</answer>
+		<category>IDP</category>
+	</question>
+	<question no="174">
+		<body>Pick up correct statement(s) about the following piece of code?
+			class Locked;
+			class Lock {
+			friend class Locked;
+			Lock() {}
+			Lock(const Lock&amp; lock) {}
+			};
+			class Locked : public virtual Lock {
+			public:
+			Locked() {};
+			Locked(const Locked&amp; locked) {}
+			};
+			class ApplyLock : public Locked{
+			};
+		</body>
+		<options>
+			<a> All three classes Lock, Locked and ApplyLock can not be
+				instantiated. </a>
+			<b> Only classes Lock and ApplyLock can not be instantiated. </b>
+			<c> Only class Lock can not be instantiated. </c>
+			<d> Only class ApplyLock can not be instantiated. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IDP</category>
+	</question>
+	<question no="175">
+		<body>Which of the following are correct statement(s) to overload
+			operator &quot;&#171;&quot; as a member of class Person ?</body>
+		<options>
+			<a> ostream&amp; operator &#171; (ostream&amp; os, Person&amp;person); 
+			</a>
+			<b> ostream&amp; operator &#171; (ostream os, Person&amp; person);
+			</b>
+			<c> ostream&amp; operator &#171; (ostream* os, Person&amp; person);
+			</c>
+			<d> ostream* operator &#171; (ostream&amp; os, Person&amp; person);
+			</d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IO</category>
+	</question>
+	<question no="176">
+		<body>The standard std::bad_exception exception is thrown by:</body>
+		<options>
+			<a> The new operator </a>
+			<b> The dynamic_cast operator </b>
+			<c> The typeid operator </c>
+			<d> a function defined with exception specification. </d>
+			<e> Nove of above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>EH</category>
+	</question>
+	<question no="177">
+		<body>What is output of following the program?
+			#include "iostream"
+			int main() {
+			int x = 10;
+			int * px =&amp;x;
+			int*&amp; rp = p;
+			cout&#171;typeid(px).name()&#171;&quot; &quot;;
+			cout&#171;typeid(rp).name();
+			return 0;
+			}
+		</body>
+		<options>
+			<a> int* int*&amp; </a>
+			<b> int* int* </b>
+			<c> int*&amp; int* </c>
+			<d> int*&amp; int*&amp; </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>RTTI</category>
+	</question>
+	<question no="178">
+		<body>What is true about the standard namespace std?</body>
+		<options>
+			<a> This namespace is read-only i.e. can not be modified by the user
+				program. </a>
+			<b> User program can modify the namespace to add new members in it
+				but can not delete existing members from this. </b>
+			<c> User program can delete existing members from the namespace. </c>
+			<d> This namespace is by default opened for use, so user need not to
+				write &quot;using namespace std;&quot; statement in program. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">The namespace std is read-only i.e. can not be modified by the user
+				program.</answer>
+		<category>N</category>
+	</question>
+	<question no="179">
+		<body>A C++ programs has following function defined in a file.
+			void useMath(){
+			using namespace Math;
+			/*other stuff goes here*/
+			}
+			Select appropriate option(s) about the above code.
+		</body>
+		<options>
+			<a> The contents of the namespace Math are only visible in function
+				useMath(). </a>
+			<b> The contents of the namespace Math are visible in entire
+				file (in which the function useMath() is defined). </b>
+			<c> The contents of the namespace Math are visible in part of the
+				file that comes after the &quot;using namespace Math;&quot; statement.  </c>
+			<d> The contents of the namespace Math are visible in all files
+				included in the program.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">The contents of the namespace Math are only visible in function useMath().</answer>
+		<category>N</category>
+	</question>
+	<question no="180">
+		<body>What is output of following program?
+			template&#60;typename T, int ROWS, int COLS&#62;
+			void init(T (&amp;arr)[ROWS][COLS] ) {
+			for(int i=0;i&#60;ROWS; ++i)
+			for(int j=0; j&#60;COLS; ++j)
+			arr[i][j]=T(10);
+			for(int i=0;i&#60;ROWS; ++i)
+			for(int j=0; j&#60;COLS; ++j)
+			cout&#171;arr[i][j];
+			}
+			int main() {
+			int a[2][3];
+			init&#60;int&#62;(a);
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 6 times 10 is printed. </a>
+			<b> 6 times 0 is printed. </b>
+			<c> Nothing is printed. </c>
+			<d> Program gives compilation syntax error.   </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>FCT</category>
+	</question>
+	<question no="181">
+		<body>What is the correct increasing order for below code?
+			#include "iostream"
+			#include&#60;vector&#62;
+			using namespace std;
+			vector&#60;int&#62; V;
+			for(int i=0; i&#60;10; i++)
+			V.push_back(i);
+		</body>
+		<options>
+			<a> V.size()&#60;V.max_size()&#62;V.capacity()  </a>
+			<b> V.size()&#60;V.max_size()&#60;V.capacity() </b>
+			<c> V.size()&#62;V.max_size()&#62;V.capacity() </c>
+			<d> V.size()&#62;V.max_size()&#60;V.capacity() </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>STL</category>
+	</question>
+	<question no="182">
+		<body>What will happen if a program containing the following piece of
+			code is	Compiled and executed?
+			void *p = malloc(10*sizeof(int));
+			*p++=65;
+			*p=’\0’;
+			cout&#171;p;</body>
+		<options>
+			<a> The program will be compiled successfully, and when executed
+				unexpected result will be produced. </a>
+			<b> Program gives compile time error, the type void* can not de
+				dereferenced. </b>
+			<c> By default p would be considered as char* and program will run
+				successfully.  </c>
+			<d> By default p would be considered as int* and program will run
+				successfully.  </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">Program gives compile time error, the type void* can not be dereferenced.</answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="183">
+		<body>A function pointer p to the static member function of class C	with two arguments can be declared as:</body>
+		<options>
+			<a> return_type (C::*p) (type1 arg1, type2 arg2); </a>
+			<b> return_type (*C::p) (type1 arg1, type2 arg2); </b>
+			<c> return_type *(C::p) (type1 arg1, type2 arg2); </c>
+			<d> return_type (*p) (type1 arg1, type2 arg2); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z">The poinetr to static member function of a class is declared as normal pointer.</answer>
+		<category>CS</category>
+	</question>
+	<question no="184">
+		<body>What are the correct ways to access AB ::m_a in function	ABC::show()?
+			class A {
+			protected :
+			int m_a;
+			};
+			class AB : public A {
+			};
+			class AC : public A {
+			};
+			class ABC : public AB, public AC {
+			public:
+			void show() {
+			cout&#171;m_a;
+			}
+			};
+		</body>
+		<options>
+			<a> Make AB and AC virtual base classes. </a>
+			<b> Replace statement cout&#171;m_a; by cout&#171;AB :: m_a; </b>
+			<c> Write using AB :: m_a in ABC. </c>
+			<d> All of the above </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>CS</category>
+	</question>
+	<question no="185">
+		<body>A conversion function operator in class, say quot;Distancequot; can convert:
+		</body>
+		<options>
+			<a> Distance type to only primitive type. </a>
+			<b> Distance type to all other types. </b>
+			<c> Only primitive types to Distance type. </c>
+			<d> All Other types to Distance type. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="b">A conversion function in a class converts class type to any of the other types.</answer>
+		<category>OOTCF</category>
+	</question>
+	<question no="186">
+		<body>The standard exception class std::runtime_error is derived from.
+		</body>
+		<options>
+			<a> std::logic_error </a>
+			<b> std::ios::failure </b>
+			<c> std::exception </c>
+			<d> std::domain_error </d>
+			<e> Nove of above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>EH</category>
+	</question>
+	<question no="187">
+		<body>What is output of the following program?
+			#include "iostream"
+			int main() {
+			volatile const int x = 10;
+			cout&#171;typeid(x).name();
+			}
+		</body>
+		<options>
+			<a> volatile const int </a>
+			<b> const int </b>
+			<c> volatile int </c>
+			<d> int </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>RTTI</category>
+	</question>
+	<question no="188">
+		<body>What is true about alias of a namespace?</body>
+		<options>
+			<a> A namespace can be opened for modification using alias name. </a>
+			<b> An alias can only be used with using namespace
+				&#60;namespace_name&#62; statement.  </b>
+			<c> A namespace can have more than one alias. </c>
+			<d> A namespace can not have an alias. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>N</category>
+	</question>
+	<question no="189">
+		<body>The manipulator setioflags(flags) is equivalent to:</body>
+		<options>
+			<a> ios::setf(flags); </a>
+			<b> ios::flags(flags); </b>
+			<c> ios::unsetf(flags); </c>
+			<d> Both a &amp; b </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IO</category>
+	</question>
+	<question no="190">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			class Shoes {
+			public:
+			Shoes() {
+			cout&#171;&quot;Base &quot;;
+			}
+			Shoes(const Shoes&amp; shoes) {
+			cout&#171;&quot;BaseCopy &quot;;
+			}
+			};
+			class NikeShoes : public Shoes {
+			public:
+			NikeShoes(const NikeShoes&amp; nikeshoes) {
+			cout&#171;&quot;DerivedCopy &quot;;
+			}
+			};
+			int main() {
+			NikeShoes ns;
+			NikeShoes ns2 =ns;
+			return 0;
+			};
+		</body>
+		<options>
+			<a> Base DerivedCopy  </a>
+			<b> Base DerivedCopy Base </b>
+			<c> Base BaseCopy DerivedCopy </c>
+			<d> Base DerivedCopy BaseCopy </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IDP</category>
+	</question>
+	<question no="191">
+		<body>Select the appropriate option(s) about the following piece of
+			code.
+			template&#60;typename T&#62;
+			T sum(T a, T b) {
+			return a+b;
+			}
+			int main() {
+			sum&#60;int&#62;(10,20);
+			int (*p1)(int,int) = &amp;sum&#60;int&#62;;
+			sum&#60;long&#62;(10,20);
+			long(*p2)(long,long) = &amp;sum&#60;long&#62;;
+			sum&#60;double&#62;(10.1,10.1);
+			double (*p3)(double,double) = &amp;sum&#60;double&#62;;
+			return 0;
+			}
+		</body>
+		<options>
+			<a> Values of p1, p2 and p3 are equal.  </a>
+			<b> Values of p1, p2 and p3 are different. </b>
+			<c> p1 is equal to P2 but different from p3. </c>
+			<d> p2 is equal tp p3 but different from p1.   </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>FCT</category>
+	</question>
+	<question no="192">
+		<body>Which one of the following declarations is invalid?</body>
+		<options>
+			<a> vector&#60;char&#62; v1(10)  </a>
+			<b> vector&#60;char&#62; v2(20, 'a'); </b>
+			<c> vector&#60;char&#62; v3; </c>
+			<d> vector&#60;char&#62; v4('b',10); </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>STL</category>
+	</question>
+	<question no="193">
+		<body>Which are not valid C++ source file extensions?</body>
+		<options>
+			<a> .c, .cc </a>
+			<b> c++, .cpp  </b>
+			<c> .C, .c++ </c>
+			<d> .CC, .CPP </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IO</category>
+	</question>
+	<question no="194">
+		<body>A friend function of a class can access:</body>
+		<options>
+			<a> All data members of the class. </a>
+			<b> Only private data members of the class. </b>
+			<c> Only protected data members of the class. </c>
+			<d> Only public data members of the class. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="a">A friend function of a class can access all data members of that class.</answer>
+		<category>CS</category>
+	</question>
+	<question no="195">
+		<body>Pick up correct statement(s) about the following piece of code?
+			typedef int* (*FUN1)();
+			typedef FUN1 (*p)[5];
+		</body>
+		<options>
+			<a> p is an array of pointers to functions with return type int*. </a>
+			<b> p is an array of pointers to pointers to functions with return
+				type int*. </b>
+			<c> p is an array of pointers to pointers to int*. </c>
+			<d> p is an array of pointers to int*. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="196">
+		<body>A dangling pointer arises when:</body>
+		<options>
+			<a> a pointer to an object is used after the lifetime of that object.
+			</a>
+			<b> a pointer is initialed to NULL. </b>
+			<c> a pointer that points to a valid object, is initialized by the
+				address of another valid object. </c>
+			<d> a pointer with value NULL is initialized by the address of a
+				valid object. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="197">
+		<body>What is output of the following program?
+			#include "iostream"
+			using namespace std;
+			int&amp; setData11() {
+			static int x = 0;
+			cout&#171;x&#171;&quot; &quot;;
+			return x;
+			}
+			int&amp; setData2() {
+			static int x = 0;
+			cout&#171;x&#171;&quot; &quot;;
+			return x;
+			}
+			int main () {
+			setData1()=1;
+			setData2()=2;
+			setData1()=10
+			setData2()=20
+			return 0;
+			}
+		</body>
+		<options>
+			<a> 0 0 1 2 </a>
+			<b> 1 2 10 20 </b>
+			<c> 0 0 10 20 </c>
+			<d> Program gives compile time error as function can not be Lvalue of
+				the assignment operator. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>DTOPCS</category>
+	</question>
+	<question no="198">
+		<body>Given that classes Circle and Line are derived from an abstract
+			class called Figure. Which of following statements are true about
+			these classes?</body>
+		<options>
+			<a> Each class has its own sepatate virtual table. </a>
+			<b> Virtual table of base class Figure is shared by derived classes
+				Circle and Line.  </b>
+			<c> Abstract class Figure does not have virtual table.  </c>
+			<d> Derived classes Circle and Line do not have virtual table. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>IDP</category>
+	</question>
+	<question no="199">
+		<body>A conversion constructor in class Distance can convert</body>
+		<options>
+			<a> Distance type to only primitive type. </a>
+			<b> Distance type to any types. </b>
+			<c> Only primitive types to Distance type. </c>
+			<d> Any types to Distance type. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="d">A conversion constructor in a class can convert any of the other types into the class type.</answer>
+		<category>CS</category>
+	</question>
+	<question no="200">
+		<body>Pick up correct statement(s) out of following.</body>
+		<options>
+			<a> A pointer to function can be converted to void*. </a>
+			<b> A pointer to member function of a class, can be converted to
+				void*. </b>
+			<c> A pointer to data member of a class, can not be converted to
+				void*. </c>
+			<d> A pointer to an array can not be converted to void*. </d>
+			<e> None of the above </e>
+		</options>
+		<answer name="z"></answer>
+		<category>DTOPCS</category>
+	</question>
+</cpp>

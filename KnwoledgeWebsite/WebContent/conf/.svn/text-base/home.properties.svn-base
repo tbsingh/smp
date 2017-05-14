@@ -1,0 +1,27 @@
+header.name=TEJBIR SINGH
+header.position=Software Architect
+header.email=SSL, Cork, Ireland.
+header.image=../image/home.png
+
+main.menu.item1.url=http://tbsingh.appspot.com/
+main.menu.item1.name=Home
+main.menu.item2.url=/knowledge/knowledgeView.html
+main.menu.item2.name=Knowledge
+
+side.menu1.item1.url=/personal/experienceView.html
+side.menu1.item1.name=Professional Experience
+side.menu1.item2.url=/personal/educationView.html
+side.menu1.item2.name=Educational Qualifications
+side.menu1.item3.url=/personal/certificationView.html
+side.menu1.item3.name=Certifications
+side.menu1.item4.url=/personal/recognitionView.html
+side.menu1.item4.name=Recognitions
+#side.menu1.item5.url=/personal/rndView.html
+#side.menu1.item5.name=Research & Development
+
+side.menu2.item2.url=/personal/autobiographyView.html
+side.menu2.item2.name=My Autobiography
+side.menu2.item3.url=/personal/blogView.html
+side.menu2.item3.name=My Blog
+
+

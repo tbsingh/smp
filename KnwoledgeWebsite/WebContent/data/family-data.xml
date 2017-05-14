@@ -1,0 +1,80 @@
+<Family>
+	<Son>
+		<PersonalInfo name="Aditya Pratap Singh">
+			<Reltionship name="Relationship">Son</Reltionship>
+			<Dob name="Date of Birth">06/11/2006</Dob>
+			<Profession name="Profession">Student</Profession>
+			<Education name="Education">Studying in Junior Infants</Education>
+			<Hoby name="Hobies">Watching Peppa Pig, Ninza Hathodi etc</Hoby>
+			<Home name="Home Page">familySon</Home>
+		</PersonalInfo>
+		<Insurance name="ICICI Smart Kid">
+			<Policy name="Policy Name">ICICI SmartKid – New Unit Linked RP</Policy>
+			<PolicyNo name="Policy#">91145087</PolicyNo>
+			<StartDate name="Start Date">12/05/2008</StartDate>
+			<EndDate name="Maturity Date">12/05/2024 (Term 16 years)</EndDate>
+			<Amount name="Installment Amount(Rs)">26,000  Yearly (2 installments half yearly)</Amount>
+		</Insurance>
+		<ForeignTrip name="Ireland">
+			<Start name="Start Date">July 1, 2010</Start>
+			<End name="End Date">Till Date</End>
+			<Visited name="City Visited">Dublin, Athlone, Cork, Galway, Aran Island, Donegal, Sligo</Visited>
+		</ForeignTrip>
+	</Son>
+	<Daughter>
+		<PersonalInfo name="Srishti Singh">
+			<Reltionship name="Relationship">Daughter</Reltionship>
+			<Dob name="Date of Birth">28/09/2000(Thursday, 11:40AM)</Dob>
+			<Profession name="Profession">Student</Profession>
+			<Education name="Education">Studying in 6th Standard</Education>
+			<Hoby name="Hobies">Watching Cartoons, Movies etc</Hoby>
+			<Home name="Home Page">familyDaughter</Home>
+		</PersonalInfo>
+		<Insurance name=" Birla Sun Life">
+			<Policy name="Policy Name">Flexi CashFlow</Policy>
+			<PolicyNo name="Policy#">999287689</PolicyNo>
+			<StartDate name="Start Date">28/07/2006</StartDate>
+			<EndDate name="Maturity Date">28/07/2026(Term 20 years, pay 15 years)</EndDate>
+			<Amount name="Installment Amount(Rs)">26,445 Yearly(2203.74 monthly installment)</Amount>
+		</Insurance>
+		<ForeignTrip name="Ireland">
+			<Start name="Start Date">July 1, 2010</Start>
+			<End name="End Date">Till Date</End>
+			<Visited name="City Visited">Dublin, Athlone, Cork, Galway, Aran Island, Donegal, Sligo</Visited>
+		</ForeignTrip>
+	</Daughter>
+	<Wife>
+		<Insurance name="LIC India">
+			<Policy name="Policy Name">The Endowment Assurance Policy</Policy>
+			<PolicyNo name="Policy#">437873458</PolicyNo>
+			<StartDate name="Start Date">28/05/2001</StartDate>
+			<EndDate name="Maturity Date">28/05/2024 (Premium to pay up to 23 years)</EndDate>
+			<Amount name="Installment Amount(Rs)">4149 Yearly</Amount>
+		</Insurance>
+		<Bank name="State Bank of India(SBI)">
+			<Address name="Bank Address">Gurgaon, India</Address>
+			<AccountNo name="Account#">69415728299</AccountNo>
+			<AccountType name="Account Type">Saving Account</AccountType>
+		</Bank>
+		<Property name="Unit# R026CS40004, Supertech Captown, Sector 74, Noida">
+			<Type name="Property Type">MIG Flat</Type>
+			<Authority name="Authority">NOIDA Authority</Authority>
+			<Builder name="Builder Name">Supertech Ltd</Builder>
+			<Cost name="Total Cost(Rs)">40,00,000</Cost>
+		</Property>
+		<PersonalInfo name="Savita Rani Singh">
+			<Reltionship name="Relationship">Spouse</Reltionship>
+			<Dob name="Date of Birth">01/07/1976</Dob>
+			<Profession name="Profession">House Wife</Profession>
+			<Education name="Education">Master of Art(MA)</Education>
+			<Hoby name="Hobies">Watching Serials, Movies etc</Hoby>
+			<Home name="Home Page">familyWife</Home>
+		</PersonalInfo>
+		<ForeignTrip name="Ireland">
+			<Start name="Start Date">July 1, 2010</Start>
+			<End name="End Date">Till Date</End>
+			<Visited name="City Visited">Dublin, Athlone, Cork, Galway, Aran Island, Donegal, Sligo</Visited>
+		</ForeignTrip>
+	</Wife>
+</Family>
+

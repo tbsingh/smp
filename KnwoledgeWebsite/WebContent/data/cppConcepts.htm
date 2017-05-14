@@ -1,0 +1,3358 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:72.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Body Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+code
+	{font-family:"Courier New";}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Times New Roman","serif";}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Body Text";
+	font-family:"Times New Roman","serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Times New Roman","serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 63.35pt 72.0pt 90.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<style type="text/css" media="print"> 
+	@media print { 
+	body { display:none } 
+	} 
+</style> 
+ <script type="text/javascript">
+   document.oncontextmenu=new Function("return false");//Disabling right-click
+   //below javascript is used for Disabling text selection in web page
+   document.onselectstart=new Function ("return false"); //Disabling text selection in web page
+   if (window.sidebar){
+       	document.onmousedown=new Function("return false"); 
+	    //Disable Cut into HTML form using Javascript 
+	    document.oncut=new Function("return false"); 
+	    //Disable Copy into HTML form using Javascript 
+	    document.oncopy=new Function("return false"); 
+   }
+</script>
+
+</head>
+
+<body lang=EN-IE>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span lang=EN-US style='font-size:12.0pt;font-family:"Arial","sans-serif";
+color:#333399'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;line-height:150%;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>F#1: The size of int data type is
+platform dependent i.e. size of int is 16 bits and 32 bits on 16-bit operating
+system and 32-bit operating system respectively. </span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The data types
+are vastly used by the programmer in C++. Therefore it's very important to understand
+how these data type values are stored in the computer physical memory. MS-DOS
+programmers think that size of <i>int</i> is 2 bytes while others working on
+Unix assume it 4 bytes, but this is not true. The int data type is dependent of
+the word length of the operating system on which program is compiled and
+compiler model used to compile the program as well. On the 16-bit operating
+system like MSDOS, WINDOW 3.11 etc, the size of int type is 2 bytes as these
+operating systems process 16 bits data at a time (word length). Reason is that
+these operating systems initiate the processor in 8086 mode i.e. 16 bits. Other
+operating system like Unix, Windows XP etc have the word length as 32 bits and
+use the advance feature of the processor.  Following table shows the summery of
+data type size on different platform.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Platform</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Data type</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Size(bytes)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>16-Bit
+  operating system like MSDOS, WINDOW 3.11 etc</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>char</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>short int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>long int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>float</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>double</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>1</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>8</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>32-Bit
+  operating system like WINDOW 95 onward, Solaris, Linux  etc</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>char</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>short int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>long int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>float</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>double</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>1</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>8</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=209 valign=top style='width:156.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>64-Bit
+  operating system like HP</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>char</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>short int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>long int</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>float</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>double</span></p>
+  </td>
+  <td width=209 valign=top style='width:156.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>1</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>8</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4</span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>8</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#2:
+Use of larger data type to store small range of values degrades the performance
+of the program. </span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Each of the
+computer languages like C, C++, Java etc has more than one data type to store
+the same kind of information. For example, in C++ a signed integer value can be
+stored in short int, long int and long long int data types. If data type to
+store given information is not chosen carefully, it directly affects the
+program performance. Computer stores the value of a symbol or variable in
+physical memory using multiple bytes. Maximum value that a byte can contain is
+255, so to store an integer value computer divides the value to be stored by
+2^(n/2) in case of signed value and 2*2^(n/2) in case of unsigned value, where
+n is the number of bits to store the value. For example, to store a signed
+short int value, the value is divided by 2^8 i.e. 256. The quotient is stored
+in high order n/2 bits whereas remainder is stored in low order n/2 bits.  To
+understand the concept, consider the declarative statements:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>short int
+ival = 2857; </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Here, data type
+used is short int which takes 16 bits and to store this value in memory, computer
+divides 2857 by 256 which produces 11 as quotient and 41 as remainder. This
+value in memory is stored as follows:                      </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>                                    Lower
+8 bits                           Higher 8 bits</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=429
+ style='width:322.05pt;margin-left:76.65pt;border-collapse:collapse;border:
+ none'>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>41</span></p>
+  </td>
+  <td width=224 valign=top style='width:168.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>11</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>                        X                                               
+X+1</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Now imagine how
+lval is stored in memory declared as long int lval = 850828; The number of bits
+to store long int is 32 on Unix(may be different on your platform) an hence
+this number is divided by 2^16 i.e. 32768 which produces quotient 25 and
+remainder 31628. The quotient and remainder are stored in 2 bytes each as
+described above. The memory layout oh this would be like below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span style='position:absolute;z-index:251659264;left:0px;margin-left:
+302px;margin-top:2px;width:83px;height:12px'><img width=83 height=12
+src="cppConcepts_files/image001.png"></span><span style='position:absolute;
+z-index:251658240;left:0px;margin-left:451px;margin-top:2px;width:113px;
+height:12px'><img width=113 height=12 src="cppConcepts_files/image002.png"></span><span
+style='position:absolute;z-index:251657216;left:0px;margin-left:25px;
+margin-top:2px;width:105px;height:12px'><img width=105 height=12
+src="cppConcepts_files/image003.png"></span><span style='position:absolute;
+z-index:251656192;left:0px;margin-left:212px;margin-top:2px;width:86px;
+height:12px'><img width=86 height=12 src="cppConcepts_files/image004.png"></span><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>                              
+Remainder                                             Quotient</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=544
+ style='width:407.8pt;margin-left:25.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:24.7pt'>
+  <td width=136 valign=top style='width:101.95pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:24.7pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>140</span></p>
+  </td>
+  <td width=136 valign=top style='width:101.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:24.7pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>123</span></p>
+  </td>
+  <td width=136 valign=top style='width:101.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:24.7pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>25</span></p>
+  </td>
+  <td width=136 valign=top style='width:101.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:24.7pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+  none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>0</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>      X                              
+X+1                           X+2                           X+3</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Now think about
+the number of operations performed by processor to fetch this value from
+memory. Processor reads the remainder and quotient and then will produce the
+number. The other types of values like float, double are internally stored as
+integer.  if a small value say 25 is stored in larger data type say long long
+int (64 bytes), then computer unnecessary will perform a lot of operations to
+store and fetch value, which will degrades the performance and will waste
+physical memory. So it is recommended to use proper data type to hold a value
+in a program. I executed following two programs on the same machine with Solaris
+10 installed, and observed that there is significant difference (250807-46013 =
+204795 micro seconds )between the execution time of the multiplication
+operations.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>// program
+with incorrect type of val </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;iostream&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;sys/time.h&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>Using
+namespace std;</span></p>
+
+<p class=MsoNormal style='margin-left:35.25pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>int main() {</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>int i=0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>long
+long int val=10;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+timeval  tv1, tv2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>gettimeofday(&amp;tv1,NULL);</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>for
+(i=0; i&lt;5000000; i++)</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        val=val*1234;</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>gettimeofday(&amp;tv2,NULL);</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>cout&lt;&lt;&quot;Time
+taken : Seconds  “&lt;&lt;tv2.tv_sec tv1.tv_sec</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>       &lt;&lt;”, Microseconds  &quot;&lt;&lt;tv2.tv_usec-tv1.tv_usec;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>return
+0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Output :</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'> Time taken
+: Seconds 0, Microseconds 250807</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>// program
+with correct type of val </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;iostream&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;sys/time.h&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>Using
+namespace std;</span></p>
+
+<p class=MsoNormal style='margin-left:35.25pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>int main() {</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>int i=0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>short
+int val=10;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+timeval  tv1, tv2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>gettimeofday(&amp;tv1,NULL);</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>for
+(i=0; i&lt;5000000; i++)</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        val=val*1234;</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>gettimeofday(&amp;tv2,NULL);</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>cout&lt;&lt;&quot;Time
+taken : Seconds  “&lt;&lt;tv2.tv_sec tv1.tv_sec</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-align:justify;text-indent:
+36.0pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                &lt;&lt;”, Microseconds 
+&quot;&lt;&lt;tv2.tv_usec-tv1.tv_usec;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:110.1pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>return
+0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:71.25pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Output :</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Time taken :
+Seconds 0, Microseconds 46013</span></i></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#3:
+Pointers are unsigned integers i.e. value of the cbytes, ibytes, lbytes and
+dbytes in following statements will be same.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>                       </span></b><b><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>cbytes=sizeof(char*);        ibytes=sizeof(int*);
+</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Verdana","sans-serif"'>lbytes=sizeof(long*);        dbytes=sizeof(double*);
+</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>A pointer in
+C++, is a variable which points to other variable of a specific type in memory,
+and is said to &quot;point to&quot; memory address that is stored in it. A
+pointer data type is the key feature of C++ that makes possible to access data
+values directly through memory address. Moreover, using pointer data access is
+faster than using normal variable directly. For example, char* pVar = &amp;Var;
+states that pVar is a pointer which points to char type variable Var. The
+address of a memory location is always positive integer and hence, data type of
+each pointer variable is unsigned int.  The size of pVar pointer variable in
+above example is equal to the size of unsigned int i.e. 2 bytes on 16-bit
+platform and 4 bytes on 32-bit platform whereas the size of the variable Var
+pointed by this is 1 byte(char data type).  Following program elaborates the
+concept in more detail.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>            </span><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;iostream&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        using
+namespace std;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        int
+main() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                int 
+Var1 = 32700, *pVar1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                float
+Var2 = 1754.9800, *pVar2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                long
+long Var3=437890, *pVar3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                double
+Var4=234567.345, *pVar4;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                float
+**ppVar2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                pVar1=&amp;Var1;   
+/*pVar1 points to Var1 */</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                pVar2=&amp;Var2;   
+/*pVar2 points to Var2 */</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                pVar3=&amp;Var3;   
+/*pVar3 points to Var3 */</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                pVar4=&amp;Var4;   
+/*pVar4 points to Var4 */</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                ppVar2=&amp;pVar2;/*ppVar2
+points to pVar2,pointer to pointer */</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                cout&lt;&lt;&quot;Pointer
+to int &quot;&lt;&lt;sizeof(pVar1)&lt;&lt;endl;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                cout&lt;&lt;&quot;Pointer
+to float &quot;&lt;&lt;sizeof(pVar2)&lt;&lt;endl;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                cout&lt;&lt;&quot;Pointer
+to long long &quot;&lt;&lt;sizeof(pVar3)&lt;&lt;endl;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                cout&lt;&lt;&quot;Pointer
+to double &quot;&lt;&lt;sizeof(pVar4)&lt;&lt;endl;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                cout&lt;&lt;&quot;Pointer
+to pointer to float &quot;&lt;&lt;sizeof(ppVar2)&lt;&lt;endl;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                return
+0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        }</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Output:</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Pointer to
+int 4</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Pointer to
+float 4</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Pointer to
+long long 4</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Pointer to
+double 4</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><i><span lang=EN-US style='font-family:"Arial","sans-serif"'>Pointer to
+pointer to float 4</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Above program
+shows that size of a pointer is always same irrespective of the data type it
+points to. C++ compiler restricts the binary operations applied on the pointers
+to avoid any memory access violation. To understand the operations allowed for
+pointer types, let take two pointers p1=54279 and p2=32698.   </span></p>
+
+<p class=MsoNormal style='margin-left:17.1pt;text-align:justify;text-indent:
+-17.1pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>1.  Addition, an integral constant
+value can be added to a pointer whereas addition of two pointers is not allowed
+i.e. p1+4 is valid while p1+p2 is invalid.</span></p>
+
+<p class=MsoNormal style='margin-left:19.95pt;text-align:justify;text-indent:
+-19.95pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>2. Subtraction, an integral constant
+value can be subtracted from a pointer whereas subtraction of two pointers is
+allowed i.e. p1-4 and p1-p2 are valid.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>3.
+Multiplication and division are not allowed in any form.</span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Further more, when a
+pointer is increased or decreased by an integral value, the pointer reaches to
+the address of next value. For example, the operation p1 = p1+2 will make value
+of p1 equal to:</span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            i.          
+54287 (54279+2*sizeof (int)) if type of p1 is int* </span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            ii.         54281
+(54279+2*sizeof(char)) if type of p1 is char*</span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            iii.        54295
+(54279+2*sizeof(double)) if type of p1 is double*</span></p>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            iv.        54287
+(54279+2*sizeof(double*)) if type of p1 is double**</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-autospace:
+none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#4:
+Binary arithmetic operation is always performed between same kind of data types
+i.e. ideally it is not possible to add an int value to a float value.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The binary
+arithmetic operations in C++ require both of the operands to be of same type.
+If a binary operation is performed between two different kinds of data values,
+shorter data type is promoted to the data type of longer type and then
+operation is performed, and result will be of the longer data type. C++
+compiler promotes shorter type to longer to avoid any loss of data and
+promotion is done implicitly. For example, if an addition operation is
+performed between an <i>int</i> and <i>double</i> data values, int value is
+promoted to <i>double</i> and resultant value will be of <i>double</i> type. 
+Table 1.1 shows how data types are promoted to perform the arithmetic
+operations.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>First Operand Type </span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second Operand Type</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Result Type</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Remark</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>long double</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Any</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>long double</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to long double while addition operation is performed.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>double</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Any other than long
+  double</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>double</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to double when addition operation is performed.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>float</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Any other than long
+  double and double</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>float</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to float when addition operation is performed</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><code><span
+  lang=EN-US style='font-size:10.0pt;line-height:150%;font-family:"Arial","sans-serif"'>unsigned
+  long int</span></code></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Any other than long
+  double, double, float</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><code><span
+  lang=EN-US style='font-size:10.0pt;line-height:150%;font-family:"Arial","sans-serif"'>unsigned
+  long int</span></code></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to </span><code><span lang=EN-US style='font-size:10.0pt;line-height:
+  150%;font-family:"Arial","sans-serif"'>unsigned long int</span></code><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'> when addition operation
+  is performed</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><code><span
+  lang=EN-US style='font-size:10.0pt;line-height:150%;font-family:"Arial","sans-serif"'>long
+  int</span></code></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>unsigned int </span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>unsigned long int or long
+  int</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>If a long int can
+  represent all values of an unsigned int, the operand of type unsigned int is
+  converted to long int. If a long int cannot represent all the values of an
+  unsigned int , both operands are converted to unsigned long int</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><code><span
+  lang=EN-US style='font-size:10.0pt;line-height:150%;font-family:"Arial","sans-serif"'>long
+  int</span></code></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><code><span
+  lang=EN-US style='font-size:10.0pt;line-height:150%;font-family:"Arial","sans-serif"'>long
+  int</span></code></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to </span><code><span lang=EN-US style='font-size:10.0pt;line-height:
+  150%;font-family:"Arial","sans-serif"'>long int</span></code><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'> when addition operation
+  is performed.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>unsigned int</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>unsigned int</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to unsigned int when addition operation is performed.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=117 valign=top style='width:88.05pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>char , short int , or int
+  bit field</span></p>
+  </td>
+  <td width=110 valign=top style='width:82.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>int</span></p>
+  </td>
+  <td width=281 valign=top style='width:210.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>Second operand is
+  promoted to int when addition operation is performed.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:150%;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#5:
+Storage classes direct the compiler to decide the life and scope of an object
+(variable or function) and to decide whether the variable is to be stored in
+register, stack or heap.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The storage
+classes in C++ define the scope, life time and linkage of the variables,
+functions and function parameters. The available storage classes in C++ are
+register, auto, static, extern and mutable. Each variable, function and
+function parameter defined in C++ has a storage class associated with it. By
+default, local variables ( the variables declared within curly brackets) and
+function parameters have auto storage class whereas  global variables  have
+extern storage class. To understand how memory storage is allocated for the
+objects (variables and functions) let us first understand how memory segments
+are allocated for a process. The memory allocated for a process has four
+segments specified in the fig 1.2. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:117.0pt;line-height:
+150%;text-autospace:none'><span style='font-family:"Arial","sans-serif"'><img
+width=293 height=319 id="Picture 1" src="cppConcepts_files/image005.png"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:117.0pt;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Fig
+1.2 process memory segments.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>1. The <b>text
+segment</b> stores program instructions like routines, executive statements.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2. The <b>data
+segment</b> contains statically allocated and global data that are initialized
+with nonzero values.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>3. The <b>bss
+segment</b> referred as “Block Started by Symbol” contains statically allocated
+and global data that are initialized with zero values.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>4. The <b>stack
+segment</b> contains local variables and grows towards heap segment in most of
+the implementations.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The data values
+defined in C++ program have three kinds of scope as described below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>1. <b>Block
+scope</b>, a block is an instruction set placed within curly brackets i.e. {}
+like loop statement, function etc. a variable defined in a block has auto
+storage class by default. These variables are created when program execution
+enters the block and destroyed when execution control exits the block. A
+variable in a block can have static storage class that is created when program
+execution enters the block first time and remains preserved in memory when
+execution control exits the block, and the value will be available next time
+when program executes the block again. However the static variable will be
+visible in the block where it is defined not outside the block. Function
+parameters and local variables can be of register   storage class. The register
+class instructs the compiler to store the variable in a register for fast
+access. If compiler does not find any register to store that variable, the
+variable is stored in cache memory. It is recommended that the variable
+frequently accessed (like loop controlling variables) should be declared with
+register class to improve the program performance.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>2. <b>File
+Scope</b>, when a program code is spread in multiple files, there may be
+requirement to restrict the scope of a variable or function to the file in
+which it is declared. A static variable defined in a file outside any
+block(global to file) has scope to that file only and will remain live
+throughout of the program.  Suppose there are two files file1.cc and file2.cc,
+then a static variable defined in file1.cc will not be visible in file2.cc.
+This shows that static storage class has internal linkage.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>3. <b>Program
+scope</b>, a non-static global variable or function defined in a program is
+visible anywhere in the program and therefore has external linkage. If global
+object is defined before its use, extern storage class can be used to instructs
+the compiler that this object is defined somewhere later in the program.
+Suppose you want to use a non-static int variable say x, defined in a file1.cc
+in another file say file2.cc, you need to write extern int x; somewhere in
+file2.cc before use of this variable. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Mutable storage
+class is used with class and objects, normally a constant member function is
+not allowed to change a normal data member, but if data member is mutable, it
+can be changed in a constant member function. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#6:
+Unlike pointers, a reference initialized to point to one object can not be used
+to point to another object.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>A reference is
+an object that refers to another object in memory. These provide many of the
+same capabilities as constant pointers. The key difference between constant
+pointers and references is their usage. To dereference a pointer, you must
+explicitly use an operator, such as * or [] whereas you don't have to do
+anything special to dereference a reference. A reference dereferences itself
+when you use it. As you can use the const qualifier in pointer declarations,
+you can also use it in reference declarations, with one notable exception. You
+can declare either a &quot;pointer to const&quot;, a &quot;const pointer&quot;
+and a &quot;const pointer to const whereas in case of reference, you can
+declare only a &quot;reference to const&quot;, you are not allowed to declare a
+&quot;const reference&quot;. To make it clear, let us consider following piece
+of code.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int x =
+10240, z=1000;                //x and z are non-constant integer variables</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>const int y =
+20460;            // y is a constant integer variable</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int *px1 =
+&amp;x;                    // px1 is a pointer to x</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>const int
+*py1=&amp;y;              // py1 is a pointer to constant integer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int const 
+*py2=&amp;y;             //py2 is same as py1</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int *const
+px2 = &amp;x;            //px2 is constant pointer to non-constant variable x</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>const int
+*const py3=&amp;y;      //py3 is constant pointer to a constant variable</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int &amp;rx1
+= x;                      // rx1 is a reference to x</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>const int
+&amp;ry1=y;                // ry1 is a reference to constant integer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int const 
+&amp;ry2=y;               //ry2 is same as ry1</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>//int
+&amp;const rx2 = x;            //syntax error</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>//const int
+&amp;const ry3=y;      //syntax error</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>rx1=z;                               //it
+does not change rx1, but assign z to x</span><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>A reference is
+inherently const, therefore you are not allowed to declare a &quot;const
+reference&quot;, but you can declare a reference to a constant object. Once you
+bind a reference to refer to an object, you cannot bind it to refer to a
+different object. The statement rx1=z; looks like rx1 is changed, but truth is
+that here rx1 is dereferenced to x and z is assigned to x. Moreover, reference
+can only be declared to an existing object i.e. you can not declare a reference
+to an object which does not exist. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Like pointers
+you can declare a reference to an array or functions as:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int Arr[20];</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+Func(void);</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int
+(&amp;rArr)[20]=Arr;     //reference to one dimensional array of 20 integers</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>int
+(&amp;rFunc)()=Func  //reference to a function</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>As a summery, a
+reference has following advantages over pointers if object to be referenced
+exists.</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+     none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Reference
+     is dereferenced automatically</span></li>
+ <li class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+     none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>No extra
+     memory is allocated for reference object whereas 4 bytes are required to
+     hold pointer </span></li>
+ <li class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+     none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>An object
+     is bounded with a reference object, there is no chance of memory
+     corruption.</span></li>
+ <li class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+     none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Helpful
+     when overloading operator for standard classes object like ostream,
+     istream etc. </span></li>
+ <li class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+     none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>You can
+     not get address of a reference which may be useful in some situation like
+     data privacy etc.</span></li>
+</ol>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#7:
+A Union is the best choice to save memory when a program uses mutually
+exclusive data.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>A union is a
+data type similar to a structure except that all of its members start at the
+same location in memory. Therefore, a union variable can represent the value of
+only one of its members at a time. A union member cannot be a class object that
+has a constructor, destructor, or overloaded copy assignment operator, nor can
+it be of reference type. Also a union member cannot be declared with the
+keyword static.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The storage
+allocated for a union is the storage required for the largest member of the
+union (plus any padding that is required so that the union will end at a word
+boundary. Each member of a union is allocated storage starting at the beginning
+of the union, and only one member can occupy the storage at a time. Hence
+unions are very useful when a lot of mutually exclusive global data is used in
+a program.  For example, let us consider a multithreaded scenario where a 
+producer thread produces different kinds of data say char, short int, long int,
+double  and puts the result in a shared global variables, so that any of other
+threads can consume the data as per its requirement. The global data in this
+scenario can be implemented in following two ways.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>a. Declare one
+separate global variable to hold each type of data. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>b. Declare one
+union containing four members of type char, short int, long int, double.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>In first case,
+you will have four global variable to store char, short int, long int, double 
+values and will need 15 (1+2+4+8) bytes of physical memory. Additionally you
+will need more than one synchronizing object to make access of data consistent.
+Whereas in the second case, you will have only 8 bytes of physical memory used
+as all of the union members share the same memory location. As data is put in
+the single union object, so it will save the programming efforts for
+synchronization. Following piece of the code shows how data is organized to
+achieve this.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>//Union
+declaration for global shared data</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>union {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        char
+cData;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        short
+int sData;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        long
+int lData;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        double
+dData;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>} Data;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+consumeCharThread() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>     //this
+function will use Data.cData</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+consumeShortThread() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>     //this
+function will use Data.sData</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+consumeLongThread() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>     //this
+function will use Data.lData</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+consumeDoubleThread() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>     //this
+function will use Data.dData</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>void
+producerThread() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        srand((unsigned
+int)time(0));   //seed to generate random number</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        while(1)
+{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                produced
+= rand()%5;  // generate random number in range 0 to 4</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                switch(produced)
+{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                        case
+1:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                Data.cData='A';</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                //here
+notify char consumer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                        case
+2 :</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                Data.cData=12345;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                //here
+notify short consumer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                        case
+3 :</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                Data.cData=123456789;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                //here
+notify long consumer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                        case
+4 :     </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                Data.cData=1234.987651;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                //here
+notify double consumer</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                        default:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                                break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>                }//end
+of switch</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        }//end
+of while</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#8:
+Size of a structure/union type is not always equal to the sum of the size of
+its data members because of memory alignment.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>A processor
+access physical memory in two ways, one is alignment memory access and other is
+unaligned memory access. In the former case,  processor attempts to fetch a
+data object of size N bytes stored at some memory address that is multiple of
+N. in most of the cases,  N is the word length of the processor in bytes i.e.
+the length of the data that can be processed in one CPU cycle.  In a typical
+32-bit platform, in one memory operation, 4 bytes can be either read or written
+at address multiple of 4 i.e. 0x004, 0x08 etc. Therefore to make efficient
+access of memory, C++ compilers does padding by barring the unused memory.
+Whereas in the later case, data is stored in unaligned fashion and can be
+stored at any address. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>When a
+structure object is defined in aligned memory, the size of a structure may not
+be exactly equal to the sum of the size of it members because each of the
+structure object will be saved at the address which is multiple of the largest
+data member. Let us consider a structure named MyData1 and MyData2 given below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+MyData1 {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        int 
+x1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        char
+y1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}data1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+MyData2 {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        double
+x2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        char
+y2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}data2;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Ideally if
+memory is not aligned, the size of MyData1 and MyData2 will be equal to
+sizeof(int)+sizeof(char) i.e. 4+1=5 bytes and sizeof(double)+sizeof(char) i.e.
+8+1=9 respectively. In case of alligned memory allocation size of the MyData1
+will be such that each of the objects of the structure will start at the
+address multiple of 4(size of int as int is the largest among the data members)
+and the memory allocated for the structure's object will be
+sizeof(int)+size(char)+3 byte padding i.e. 4+1+1=8 as 8 is the smallest integer
+number greater than 4 to make start address multiple of 4. Similarly In case of
+alligned memory allocation size of the MyData2 will be such that each of the
+objects of the structure will start at the address multiple of 8(size of double
+as double is the largest among the data members) and the memory allocated for
+the structure's object will be sizeof(double)+sizeof(char)+7 byte padding i.e.
+8+1+7=16 as 16 is the smallest integer number greater than 8 to make start
+address multiple of 8.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>One more point
+to note here is, if you list down the members in ascending order based on the
+size, you can utilize the memory in efficient manner. Consider following
+structure named MyData3 given below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+MyData3</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char x3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+y3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char z3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+l3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    short int
+m3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char n3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    long long
+int p3; </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}data3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>In the above declaration,
+data values of different types are given in mixed fashion and size of the
+structure is 48 bytes. The compiler stores the data values by allocating 8
+bytes of memory chunk as largest of the member is double(size 8 bytes); The
+padding done by the compiler is given below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>First 8 bytes =
+size of x3 + 7 bytes padding i.e. 1+7</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of y3 i.e. 8</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of z3 + 7 bytes padding i.e. 1+7</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of l3 i.e. 8</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of m3 + size of n3 +5 bytes padding i.e. 2+1+5</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of p3 i.e. 8 </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Now arrange the
+members of this structure in ascending order based on the size as given below
+and again calculate the memory used.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+MyData3</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char x3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char z3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char n3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    short int
+m3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+y3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+l3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    long long
+int p3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}data3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>As illustrated
+below, the memory needed for this structure's object will be only 32 bytes
+saving one third of the memory in comparison with the previous declaration.
+First 8 bytes = size of x3 + size of z3 + size of n3 + size of m3 +3 bytes
+padding i.e. 1+1+1+2+3</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of y3 i.e. 8</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of l3 i.e. 8</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Next 8 bytes =
+size of p3 i.e. 8</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Hence, it is
+always to have the lower size members at first which precede the bigger size members
+when writing the structures in aligned memory management.</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>By default most
+of the compilers use aligned memory management, however you can direct the
+compiler how much padding to be done in your program while defining the
+structures/unions. This  can be done by one of the compiler's directive named
+pragma,  and to use this directive just type #define pragma pack(n), where n is
+the number of bytes in which the value is to be packed. For example,  statement
+#define pragma pack(2) directs the compiler that  pack the value in two bytes
+if the size required to store the value is less than 2 bytes else ignore it. 
+Recall previous structure data3 with pragma directive.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'> </span><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>#define pragma pack(2)</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+MyData3</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char x3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+y3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char z3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    double
+l3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    short int
+m3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    char n3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    long long
+int p3; </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>}data3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>In this
+structure, char type is only data type which takes less than 2 bytes and hence
+for each chars value 2 bytes would be reserved, one byte to hold value and 1
+byte padding. Therefore, the size of the structure will be 32 bytes.
+Similarly,  if you pass value 4 to pack() routine, x3, z3, n3 and m3 will be
+stored in 4 bytes as only these are the values which need memory less than 4
+bytes. The permissible value of n in pragma macro are 1, 2, 4, 8, 16 etc. 
+Remember that a value greater than the largest data value in a structure is
+ignored For example, if you specify value of n greater than 8 in above
+structure, it will be ignored.</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#9:
+The bit fields when used with structure/union save physical memory and improve
+program performance.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>After doing all
+memory saving efforts with structure (as discussed in F#8) it is almost
+impossible to remove padding completely in a aligned memory management. Also if
+we know in advance that a particular member of a structure will have values in
+very small range i.e. day of week(1-7), month of year (1-31) etc, even use of 
+smallest data type can not help in saving the memory. For example to store  day
+of week in a date structure, you need to use short int (2 bytes) whereas the
+values( 1 to 7) can be stored in only 3 bits, therefore selecting short int to
+store day of week will waste 14 of bytes. In the situation like this, bit
+fields in C++ structure play a key role to save the memory and to improve
+performance of the program.  The syntax to declare a structure with bit fields
+used in C++ is as follows.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct
+&lt;name&gt; {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        &lt;data
+type&gt; &lt;member1 name&gt; : &lt;number of bits&gt;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        &lt;data
+type&gt; &lt;member2 name&gt; : &lt;number of bits&gt;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        &lt;data
+type&gt; &lt;member3 name&gt; : &lt;number of bits&gt;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        ....................</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        &lt;data
+type&gt; &lt;membern name&gt; : &lt;number of bits&gt;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>For example to
+declare a date structure in C++ using bit fields, you can use following
+structure.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct MyDate
+{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int day : 3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int month : 5;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short  int year : 8;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Note that it is
+recommended to use unsigned data to make utilization of the Most Significant
+Bit(MSB) which is used to store sign (- or +) in case of signed data. The total
+number of bytes used to store object of MyData will be 2. Now think if you
+could have not used bit field, you would be using 2+2+2 bytes to store the
+same.  Sometimes it is required to store a particular member at the beginning
+of next word, for this you can include an unnamed field of length 0 in the
+structure as given below. Now year data member will be stored in the next word
+i.e. size of the structure will be 4 bytes now. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct MyDate
+{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int day : 3;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int month : 5;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int : 0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short int year : 8;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'> Bit fields
+play more important role when you need to maintain a list of the binary
+flags(True or False). The bitwise operator can be used to check the status of
+the each of the flags in the case. Let us consider a situation where you need
+to store file permissions while writing a file explorer application for UNIX
+platform.  You will need to define a structure like this.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>struct Perms
+{</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short owner_r : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short owner_w : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short owner_x : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short group_r : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short group_w : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short group_x : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short other_r : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short other_w : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short other_x : 1;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>        unsigned
+short spare : 7;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>The last member
+named spare can be used in future to add more attributes to the file permission
+structure. Lets say a file on UNIX operating has read, write and execute to
+owner, read, execute to group and read only to others, and then the structure
+object corresponding to this file will have values as below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>            For
+Owner : owner_r = 1, owner_w = 1, owner_x = 1</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>            For
+Group : group_r = 1, group_w = 0, group_x = 1</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>            For
+Others : other_r = 1, other_w = 0, other_x = 0</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Now you can
+apply any of the bit operators on these structure members to improve the
+performance of the program like below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>if(obj.owner_r
+&amp; 0xFF) {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    
+cout&lt;&lt;&quot;User has read permission\n&quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>if(obj.group_x
+&amp; 0xFF) {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>    
+cout&lt;&lt;&quot;Group has execute permission\n&quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>...............</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>...............</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Hence using bit
+fields you can save lot of memory and can increase the program speed.</span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#10:
+Logically an N dimensional array is one dimensional array of N-1 dimensional
+arrays.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>An array is a
+collection of homogenous data values stored in memory at contiguous memory
+locations. This is one of the preferred data structure when random read operations
+are frequently performed. The C++ provides built-in support for
+multi-dimensional arrays. An N dimensional array is a collection of items which
+are accessed via N subscript expressions. An item in one dimensional array is
+referred by 1 subscript, similarly a value in 2 D array is referred by 2
+subscripts and so on.  Let’s say you want to capture the position of a plane in
+4 dimensions, then the array in C++ can be declared as int P[X][Y][Z][T]; as
+stated above the elements of this array can accessed by 4 indices i.e. 0, 1, 2
+and 3. Each index specifies a dimension in the expression. There are two ways
+to store array elements in physical memory. These are row-major order and
+column order i.e. logically arrays are stored in form of row and columns. in the
+former case, indices are increased from higher to lower whereas in the later
+case, indices are increased from lower to higher. Following listing shows how
+array P is stored in memory in both of the ways if value of each dimension is
+equal to 2 and base address of the array is A0.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>Row-Major Order: </span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][0][0]</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][0][1]</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][1][0]</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][1][1]</span></p>
+  </td>
+  <td width=118 style='width:88.6pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0                      
+A0+1                    A0+2                    A0+3                     A0+4</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=594
+ style='width:445.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:30.0pt'>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][0][1]</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][1][0]</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.1pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+5                  
+A0+6                    A0+7                     A0+8                    A0+9</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=594
+ style='width:445.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:30.0pt'>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.1pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+10                          
+A0+11                  A0+12                  A0+13                 A0+15    </span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=598
+ style='width:448.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:25.5pt'>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+15                          
+A0+16                  A0+17                  A0+18         ……………………....</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>Column-Major Order: </span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][0][0]</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=118 style='width:88.55pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][0][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=118 style='width:88.6pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0                      
+A0+1                    A0+2                    A0+3                     A0+4</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=594
+ style='width:445.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:30.0pt'>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][1][0]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.05pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 style='width:89.1pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+5                  
+A0+6                    A0+7                     A0+8                    A0+9</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=594
+ style='width:445.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:30.0pt'>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][0][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][0][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][0][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.1pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:30.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[0][1][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+10                          
+A0+11                  A0+12                  A0+13                 A0+15    </span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=598
+ style='width:448.3pt;border-collapse:collapse;border:none'>
+ <tr style='height:25.5pt'>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>P[1][1][1][1]</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.65pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+  <td width=120 valign=top style='width:89.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>A0+15                          
+A0+16                  A0+17                  A0+18         ……………………....</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Above memory layout illustrates
+that data elements are stored at contiguous location irrespective of the row or
+column order. By default most of the compilers support row-major order to have
+data in the form of logical rows. Here, P the array name is the base address of
+the array itself and is by default constant in nature i.e. base address of an
+array can not changed and is only the input parameter to refer an element of
+the array. Therefore C++ compiler places this restriction on the base address
+to avoid any memory leakage. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Now think about another
+two-dimensional array Arr which is declared as</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'> int Arr[2][3] = { 1, 2, 3,
+4, 5, 6 };</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>The base address of this
+array is Arr and elements can be referred by any of these. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Arr[0][0], Arr[0][1],
+Arr[0][2], Arr[1][0], Arr[1][1] and Arr[1][2] OR</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>*(Arr[0]+0), *(Arr[0]+1),
+*(Arr[0]+2), *(Arr[1]+1), *(Arr[1]+1) and *(Arr[1]+2) OR</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>*(*(Arr+0)+0), *(*(Arr+0)+1), *(*(Arr+0)+2),
+*(*(Arr+1)]+1), *(*(Arr+1)+1) (*(Arr+1)+2)</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>From above it is clear that
+Arr is nothing but a pointer, and it points to an array. The equivalent pointer
+declaration for this is int (*pArr)[3]. The type of Arr and pArr are same as
+both are pointer to an array of int of size 3 and additionally an array is
+itself equivalent to a pointer, consequently pArr[0], pArr[1] and likewise are
+base address of the arrays of int of size 3. On the same ground Arr[0] and
+Arr[1] are the base address of  the one dimensional array containing 1, 2, 3
+and 4, 5, 6 respectively.  More precisely you can say that Arr is one
+dimensional array of 2 one dimensional arrays containing 3 elements each. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Recall the 4 dimensional
+array P we declared, the pointer equivalent of the P array is</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>int (*pP)[2][2][2]; which
+indicates that pP is one dimensional array of 3 dimensional arrays. Following
+list shows the type of the base address of each of the array included in P.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Identifier                                Pointer
+Type</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>P                                             int
+(*)[2][2][2], pointer to 4-D array</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>P[i]                                          int(*)[2][2],
+pointer to 3-D array       </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>P[i][j]                                        int(*)[2],
+pointer to 2-D array           </span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>P[i][j][k]                                   int(*)[2],
+pointer to 1-D array                                               </span></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>F#11:
+Ideally arrays are used to store same type of value, but with the help of union
+type, it is possible to use array to store different types.</span></b></p>
+
+<p class=MsoNormal style='margin-left:35.85pt;text-align:justify;text-indent:
+-33.0pt;text-autospace:none'><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>By definition, an array is
+collection of homogenous data and used to store values of same data type. But
+there may be some situations, where you need to store different kind of values
+in same array.  This is quite possible using union and enum types in C++.  For
+this you need to declare an enum object along with a union and then declare an
+array of these union objects. Element of enum object will be used to identify
+type of the element and index as well in the array. Let’s say you want to keep
+char, int, double and user defined type data in an array, then declare an enum
+and union as follows.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>enum indices {CHAR=0,
+INT, DOUBLE, USER_T};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>struct user_t {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>    char user[25];</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>union MyData {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        char c;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        int i;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        double d;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        user_t u;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>The user_t can be any user
+defined type like structure, array etc. Now declare an array of the objects of
+the union defined above as illustrated in the following piece of code.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>#include&lt;iostream&gt;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>using namespace std;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>#define SIZE 4</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>int readArray(MyData
+data[]);</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>int showArray(MyData
+data[]);</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>int main() {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        MyData
+data[SIZE];             //Array of heterogeneous types</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        readArray(data);</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        showArray(data);</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        return 0;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>int readArray(MyData
+data[]) {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>     for(int i=0;
+i&lt;SIZE; i++) {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        switch(i) {</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                case
+CHAR:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cout&lt;&lt;&quot;Enter a Character : &quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                        cin&gt;&gt;data[CHAR].c;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                case INT:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cout&lt;&lt;&quot;Enter an Integer  : &quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cin&gt;&gt;data[INT].i;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                case
+DOUBLE:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                        cout&lt;&lt;&quot;Enter
+a Double : &quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cin&gt;&gt;data[DOUBLE].d;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                case
+USER_T:</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cout&lt;&lt;&quot;Enter a your name : &quot;;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                       
+cin&gt;&gt;data[USER_T].u.user;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>                        break;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>        }</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Verdana","sans-serif"'>    }</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>As illustrated above, enum
+is used to specify the value type stored in an element and index of the value
+in the array as well. </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-42.75pt;line-height:150%;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>F#12:  Enum objects can have values
+other than the values specified in the enum definition as its members.</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><b><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            </span></b><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>Enum objects are the best
+choice  when you need to define symbolic names in a C++ program. For example,
+to use symbols True or False for 0 and 1, you can define an enum type as below.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>            enum  Bool_t 
+{False, True}; </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>or you can give values
+explicitly to the enum members as </span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>enum  Bool_t  {False=0,
+True=1};</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>By default, the first
+enumerator has a value of 0, and each successive enumerator is one larger than
+the value of the previous one, unless you explicitly specify a value for a
+particular enumerator. Some people prefer to have enumerator’s name in upper
+case to make it more readable. Sometimes novice programmers think that enum are
+integers, however, this is not absolutely true. This is implementation
+dependent, which integral type is used  as underlying type for enum. The only
+important thing is that enum can not hold a value larger than an int.  The C++
+enforces following rules on enums.</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;text-indent:
+-20.25pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>There is
+an implicit conversion from any enum type to int, but reverse is not true. For
+example, for object holiday of type Day_t defined below,  operation (i) and
+(ii) are valid whereas operation (iii) is invalid.</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>enum
+Day_t {Sun,                 //0 is assigned to Sun</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Mon,
+                //1 is assigned to Mon and so on</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Tue,
+</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Wed,
+</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Thu,
+</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Fri,
+</span></p>
+
+<p class=MsoNormal style='margin-left:137.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>Sat};                  //
+6 is assigned to Sat</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%;text-autospace:
+none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>                        Day_t
+             holiday=Wed;</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>(i).          int
+x = holiday;          //holiday is implicitly converted to int</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>(ii).         int
+y = x+holiday       //addition is performed after holiday is </span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>                                                  //converted
+to int       </span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>(iii).        holiday
+=  3               //Error : can not convert Day_t to int           </span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;text-indent:
+-20.25pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>The
+enum objects are not restricted to have values specified in the enum member
+list.  The range of the values that an enum object can posses is determined  by
+the first and last members.</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;text-indent:
+-20.25pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>A value
+within the range of enum, but not specified in the member list can not be
+assigned directly to an enum object.</span></p>
+
+<p class=MsoNormal style='margin-left:65.85pt;text-align:justify;text-indent:
+-20.25pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>Enum
+can have negative or positive integer values.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-42.75pt;line-height:150%;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>F#14:  Switch statements can be slower
+than if-else ladder if case values used in switch have large range.</span></b></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>Switch-case and if-else constructs  are decision making
+statements and are used where one option is to be selected from a list of
+options.  The syntax of these construct are as follows.</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><b><u><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>Switch-Case</span></u></b></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>switch(choice) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>            case choice_1 :</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        break;</span></p>
+
+<p class=MsoNormal style='margin-left:81.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>case choice_2 :</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        break;</span></p>
+
+<p class=MsoNormal style='margin-left:81.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>case choice_33 :</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        break;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>……………………………………</span></p>
+
+<p class=MsoNormal style='margin-left:81.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>case choice_n :</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                        &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>            break;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                     default:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+26.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&lt;do rest of things here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>} //end of switch statement</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><b><u><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>If-else</span></u></b></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>if(choice == choice_1) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                     &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>else if(choice == choice_2) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                     &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>else if(choice == choice_3) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                     &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>………………………..</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>else if(choice == choice_n) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>                     &lt;do something here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>else {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>         &lt;do rest of the things here&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>} //End of if-else ladder</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>The switch-case statement can have only integral value like
+int, char as choice parameter , whereas if-else can have any type of object for
+which ‘==’ operator is defined. In other words, logically, you can say that
+switch-case construct is restricted if-else where you can use only integral
+values.  So question arises, which one should you use in a particular
+situation. The answer is implementation dependent. Generally it is said that
+switch statement is faster than equivalent if-else ladder. This is not
+absolutely true i.e. switch can be slower than if-else. For small programs,
+where you have around 5 or less options, you can not see the difference, but if
+number of choices are increased beyond this, the difference can be noticed.  </span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>In C++, switch-case  is implemented using a jump table
+with the case values as index into the table while on other hand  if-else is
+implemented using a cascade of conditional jumps. This means in switch-case
+average time to find an matching option is always of order O(1) and in if-else
+this is of order O(n), where n is total number of  choices.  Lets take
+following example to check what user has entered from the keyboard.</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>int main() {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      int n;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      cout&lt;&lt;”Enter a number : “;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      cin&gt;&gt;n;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      switch(n) {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              case 1:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      cout&lt;&lt;”You entered 1”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      break;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              case 2:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      cout&lt;&lt;”You entered 2;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      break;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              ………………….  //case for 3 to 999</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              case 100:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      cout&lt;&lt;”You entered 1000”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      break;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              default:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                      cout&lt;&lt;”You entered a value
+not in the range </span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                                1-1000”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      }</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      return 0;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>The equivalent program using if-else is:</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'> int main() {</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      int n;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      cout&lt;&lt;”Enter a number : “;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      cin&gt;&gt;n;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      if(n==1) </span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              cout&lt;&lt;”You entered 1”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      else if(n==2)</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              cout&lt;&lt;”You entered 2;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      ………………….  //if-else for 3 to 999</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      else if(n==1000)</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              cout&lt;&lt;”You entered 1000”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      else</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>              cout&lt;&lt;”You entered a value not in
+the range 1-</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>                         1000”;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>      return 0;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+35.4pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Verdana","sans-serif"'>}</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>In
+this case compiler will  create index/hash table with index/key 1, 2, 3…1000
+for switch statement something like this.</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 align=right
+ style='border-collapse:collapse;border:none;margin-left:6.75pt;margin-right:
+ 6.75pt'>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>1</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 1 block</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>2</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 2 block</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>3</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 3 block</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>4</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 4 block</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>….</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>….</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>999</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 999 block</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=110 valign=top style='width:82.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>1000</span></p>
+  </td>
+  <td width=437 valign=top style='width:327.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+  -.6pt;line-height:150%;text-autospace:none'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Pointer to case 1000 block</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;line-height:
+150%;text-autospace:none'><span lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>Suppose you enter value 999 in above example, then
+compiler will this value to find the corresponding branch address. If Base
+address of this table is Base0, compiler will read the address Base0+999 and
+continue the execution until first break statement is encountered. There is no
+comparison made to find a matching value. You would have observed that if you
+forget to put break statement in matching case statement, then case statement
+just after this case is also executed.</span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>On other hand, for if-else compiler creates a conditional
+jump table and will compare each and every value until match is found. In above
+example, almost 999 comparison are made to find  the matching option. </span></p>
+
+<p class=MsoNormal style='margin-left:45.6pt;text-align:justify;text-indent:
+-.6pt;line-height:150%;text-autospace:none'><span lang=EN-US style='font-family:
+"Arial","sans-serif"'>It is not necessary that compiler will create index jump
+table for each switch-case statement used in your program. The switch-case
+statements are many times changed into if-else by the compilers. This happens
+when the case label values are too far apart and/or are spread over a fairly large
+range.  Therefore, switch-case  statement can also be slower than if-else if
+not used carefully. Remember following tips for switch-case construct.</span></p>
+
+<p class=MsoNormal style='margin-left:81.0pt;text-align:justify;text-indent:
+-18.0pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>Use
+switch-case only when case values are  not in large range.</span></p>
+
+<p class=MsoNormal style='margin-left:81.0pt;text-align:justify;text-indent:
+-18.0pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>Put the
+cases in the beginning which are frequently matched.</span></p>
+
+<p class=MsoNormal style='margin-left:81.0pt;text-align:justify;text-indent:
+-18.0pt;line-height:150%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial","sans-serif"'>If case
+values are in very large range, break the switch statement into nested
+switch-cases.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:"Arial","sans-serif"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

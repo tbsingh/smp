@@ -1,0 +1,32 @@
+DTOPCS=Data Types, Operators and Control Structures
+FSP=Functions and Static Polymorphism
+EH=Exception Handling
+RTTI=Run Time Type Information
+IO=Input/Output and Files
+OOP=Object Oriented Programming
+
+CS=Classes and Structures
+OOTCF=Operator Overloading and Type Conversion Functions
+IDP=Inheritance and Dynamic Polymorphism
+N=Namespace
+FCT=Functions and Class Templates
+STL=Standard Template Library
+
+PKG=Package
+TLT=Template
+EDH=Encapsulation and Data Hiding
+AI=Abstraction and Interfaces
+IP=Inheritance and Polymorphism
+MT=Multithreading
+GT=Generic Types
+JC=Java Collections
+
+DPT=Object Oriented Design Patterns
+DPP=Object Oriented Design Principles
+APT=Architectural Patterns
+
+DBMS=Database Management System
+OS=Operating System(Unix)
+DGN=Software Design
+JAVA=Java Programming
+DS=Data Structure

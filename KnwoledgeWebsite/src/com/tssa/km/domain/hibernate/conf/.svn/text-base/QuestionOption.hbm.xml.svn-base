@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tssa.km.domain.hibernate">
+
+	<class name="QuestionOption" table="kmp_questions_option">
+
+		<id name="id" column="id" type="long" unsaved-value="null">
+			<generator class="native" />
+		</id>
+
+		<version
+			name="version"
+			column="version"
+			type="integer"
+			/>
+			
+   		<property
+			name="name"
+			access="field"
+			not-null="true"
+			/>
+		<property
+			name="text"
+			access="field"
+			not-null="true"
+			/>
+		<many-to-one 
+			name="question"
+			class="QuestionExt" 
+			access="field" 
+			column="question_id" 
+			update="false" 
+			lazy="false"
+			/>
+		<property
+			name="createdTs"
+			access="field"
+			type="timestamp"
+			update="false"
+			/>
+	</class>
+
+	<query name="question.option.listAll">
+		from QuestionOption
+	</query>
+	
+</hibernate-mapping>

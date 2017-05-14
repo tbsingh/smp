@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<os>
+  <question no="1">
+		<body>What is the main difference between a soft link and hark link to a file in Unix? 
+		</body>
+		<options>
+			<a>A soft link is just another symbolic name(like windows desktop shortcut)while hard link creates a new file, and copy the file data to new location in the file system.</a>
+			<b>A soft link is just another symbolic name(like windows desktop shortcut)while hard link creates a new file with same inode number i.e both files points to same contents of the file.</b>
+			<c>A hard link is just another symbolic name(like windows desktop shortcut)while soft link creates a new file, with same inode number i.e both files points to same contents of the file.</c>
+			<d>Both are same.</d>
+		</options>
+		<answer name="b">A soft link is just another symbolic name(like windows desktop shortcut)while hard link creates a new file with same inode number i.e both files points to same contents of the file.
+		</answer>
+		<category>OS</category>
+	</question>
+	<question no="2">
+		<body>Which of the statement is not true about the Unix operating system? 
+		</body>
+		<options>
+			<a>Unix is almost platform independent operating system.</a>
+			<b>The root directory of Unix File system is '/'</b>
+			<c>An inode number in Inode table determines the location of the contents of a file. </c>
+			<d>The inode numbers are assigned to files but not directories or devices.</d>
+		</options>
+		<answer name="d">An inode number is internal name used by Unix to process a file. As Unix treats directories and devices as file, therefore, devices and directories also have associated inode number.
+		</answer>
+		<category>OS</category>
+	</question>
+	<question no="3">
+		<body>A process in Unix operating system is: 
+		</body>
+		<options>
+			<a>An executabe file stored in the secondary storage(hard disk).</a>
+			<b>A program file written in C language.</b>
+			<c>An exeutable file loaded into the physical memory(RAM)for execution.</c>
+			<d>An unix command.</d>
+		</options>
+		<answer name="d">A process in Unix operating system is an exeutable file loaded into the physical memory(RAM)for execution.
+		</answer>
+		<category>OS</category>
+	</question>
+	<question no="4">
+		<body>What is a command to kill a process for sure in Unix operating system? The pid is the process ID of the process to kill.
+		</body>
+		<options>
+			<a>kill -9 pid</a>
+			<b>kill pid</b>
+			<c>stop pid</c>
+			<d>stop -9 pid</d>
+		</options>
+		<answer name="a"> To terminate a process for sure 'kill -9 pid'	command is used</answer>
+		<category>OS</category>
+	</question>
+	<question no="5">
+		<body>A programmer wants to execute a program named 'prg' in background, and wants to redirect error message to error.log file, and standard output to output.log file. What is the Unix command to do this?
+		</body>
+		<options>
+			<a>prg &#62; output.log 2&#62; error.log&amp;</a>
+			<b>prg &#62; output.log 2&#62; error.log&amp;</b>
+			<c>prg&amp; &#62; output.log 2&#62; error.log</c>
+			<d>prg 1&#62;output.log 2&#62; error.log&amp;</d>
+		</options>
+		<answer name="ad"> Numbers 0,1, 2 are file descriptors for stdin, stdout and stderr respectively. Therefore, 'prg 1&#62; output.log 2&#62; error.log&amp;' is equivalent to 'prg &#62; output.log 2&#62; error.log&amp;' </answer>
+		<category>OS</category>
+	</question>
+	<question no="6">
+		<body>What does the command 'grep ^Error$ error.log' do?
+		</body>
+		<options>
+			<a>The command displays all lines from error.log which contains text 'Error' only i.e. lines starting and ending with word 'Error'.</a>
+			<b>The command displays all lines from file error.log starting with word 'Error'.</b>
+			<c>The command displays all lines from file error.log ending with word 'Error'.</c>
+			<d>The command displays all lines from error.log which don not contain text 'Error'.</d>
+		</options>
+		<answer name="a">The command displays all lines from error.log which contains text 'Error' only i.e. lines starting and ending with word 'Error'. </answer>
+		<category>OS</category>
+	</question>
+	<question no="7">
+		<body>what does below command do?
+				cat &#60; abc.txt &#62; xyz.txt 
+		</body>
+		<options>
+			<a>The command reads xyz.txt as standard input and writes it to file abc.txt.</a>
+			<b>The command reads abc.txt as standard input and writes it to file xyz.txt.</b>
+			<c>The command displays contents of abc.txt and xyz.txt on the console.</c>
+			<d>The command displys an error message.</d>
+		</options>
+		<answer name="b"> </answer> The command 'cat &#60; abc.txt &#62; xyz.txt' reads abc.txt as standard input and writes it to file xyz.txt.
+		<category>OS</category>
+	</question>
+	<question no="8">
+		<body>What is Unix command to search all the files containing text 'Exception' starting from root(/) directory.
+		</body>
+		<options>
+			<a>grep Exception /</a>
+			<b>find / | grep Exception</b>
+			<c>find / -name "*" | grep Exception</c>
+			<d>find / -name "*" | xargs grep Exception</d>
+		</options>
+		<answer name="d"> </answer> The command 'find / -name "*" | xargs grep Exception' will first list all the files which are then passed as argument to grep command by xargs command.
+		<category>OS</category>
+	</question>
+	<question no="9">
+		<body>What is the command to display detail list of all process in Unix operating system.
+		</body>
+		<options>
+			<a>ps -ef</a>
+			<b>prs -ef</b>
+			<c>pslist -af</c>
+			<d>None of the above</d>
+		</options>
+		<answer name="a"> </answer> The command 'ps -ef' display all process in Unix.
+		<category>OS</category>
+	</question>
+	<question no="10">
+		<body>In how many modes does 'vi' editor work in Unix?
+		</body>
+		<options>
+			<a>command, input, and escape mode</a>
+			<b>command, input, and ex mode</b>
+			<c>input, command mode</c>
+			<d>input and ex mode</d>
+		</options>
+		<answer name="b"> </answer> The 'vi' editor n Unix works in three modes input, command, and ex editor mode.
+		<category>OS</category>
+	</question>
+</os>

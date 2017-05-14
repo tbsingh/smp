@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+  <!-- ========================= CONFIGURATION ========================= -->
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="ignoreResourceNotFound" value="true" />
+    <property name="locations">
+      <list>
+        <value>conf/knowledge.properties</value>
+      </list>
+    </property>
+  </bean>
+    
+   <!-- ========================= DEFINITIONS OF VIEW RESOLVERS ========================= -->
+
+   <!-- <bean id="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+    <property name="order" value="0" />
+  </bean>
+   -->
+
+   <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="order" value="0" />
+    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+    <property name="prefix" value="/WEB-INF/view/knowledge/" />
+    <property name="suffix" value=".jsp" />
+  </bean>
+
+  <!-- ========================= DEFINITIONS OF CONTROLLERS ========================= -->
+
+  <bean id="beanNameUrlHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+  </bean>
+
+  <bean name="/compJavaTestView.html"  class="com.tssa.km.web.controller.CompJavaTestQuestionFormController">
+   		<property name="formView" value="testQuestionView" />
+		<property name="successView" value="redirect:/knowledge/compJavaTestView.html" />
+		<property name="displayTotalQuestions" >
+			<map>
+				<entry key="java" value="${display.comp.java.java.questions}"/>
+				<entry key="db" value="${display.comp.java.db.questions}"/>
+				<entry key="os" value="${display.comp.java.os.questions}"/>
+				<entry key="design" value="${display.comp.java.design.questions}"/>
+			</map>
+		</property>
+		<property name="questionService" ref="questionService"/>
+  </bean>
+   <bean name="/cppTestView.html"  class="com.tssa.km.web.controller.CppTestQuestionFormController">
+   		<property name="formView" value="testQuestionView" />
+		<property name="successView" value="redirect:/knowledge/cppTestView.html" />
+		<property name="displayTotalQuestions" value="${display.cpp.questions}">
+		</property>
+		<property name="questionService" ref="questionService"/>
+  </bean>
+  <bean name="/javaTestView.html"  class="com.tssa.km.web.controller.JavaTestQuestionFormController">
+   		<property name="formView" value="testQuestionView" />
+		<property name="successView" value="redirect:/knowledge/javaTestView.html" />
+		<property name="displayTotalQuestions" value="${display.java.questions}">
+		</property>
+		<property name="questionService" ref="questionService"/>
+  </bean>
+   <bean name="/designTestView.html"  class="com.tssa.km.web.controller.DesignTestQuestionFormController">
+   		<property name="formView" value="testQuestionView" />
+		<property name="successView" value="redirect:/knowledge/designTestView.html" />
+		<property name="displayTotalQuestions" value="${display.design.questions}">
+		</property>
+		<property name="questionService" ref="questionService"/>
+  </bean>
+  <bean name="/testAgreementView.html"  class="com.tssa.km.web.controller.TestAgreementFormController">
+  		<property name="commandClass" value="com.tssa.km.web.command.AgreementCommand"></property>
+  		<property name="formView" value="testAgreementView" />
+		<property name="successView" value="redirect:/knowledge/testQuestionView.html" />
+		<property name="displayJavaQuestions" value="${display.java.questions}"/>
+		<property name="displayCppQuestions" value="${display.cpp.questions}"/>
+		<property name="displayDesignQuestions" value="${display.design.questions}"/>
+  </bean>
+  <bean name="/testRegistrationView.html"  class="com.tssa.km.web.controller.TestRegistrationFormController">
+  		<property name="commandClass" value="com.tssa.km.web.command.RegistrationCommand"></property>
+  		<property name="formView" value="testRegistrationView" />
+		<property name="successView" value="redirect:/knowledge/testAgreementView.html" />
+		<property name="validator" ref="registrationFormValidator" /> 
+		<property name="googleAppMailSender" ref="googleAppMailSender"/>
+  </bean>
+  <bean name="/knowledgeView.html"  class="com.tssa.km.web.controller.KnowledgeController">
+    	<property name="commandClass" value="com.tssa.km.web.command.KnowledgeCommand"></property>
+  		<property name="formView" value="knowledgeView" />
+  </bean>
+  <bean id="registrationFormValidator" class="com.tssa.km.core.validator.FormObjectValidator">
+		<property name="supportedClass" value="com.tssa.km.web.command.RegistrationCommand" />
+		<property name="validators">
+			<list>
+				<bean class="com.tssa.km.core.validator.EmailValidator">
+					<property name="propertyName" value="emailAddress" />
+				</bean>
+				<bean class="com.tssa.km.core.validator.StringValueValidator">
+					<property name="propertyName" value="firstName" />
+					<property name="maxLength" value="2500" />
+				</bean>
+				<bean class="com.tssa.km.core.validator.StringValueValidator">
+					<property name="propertyName" value="secondName" />
+					<property name="maxLength" value="2500" />
+				</bean>
+			</list>
+		</property>
+  </bean>
+  <bean name="/testResultDetailView.html"  class="com.tssa.km.web.controller.TestResultDetailFormController">
+  <property name="questionService" ref="questionService"/>
+  </bean>
+  <bean name="/testResultView.html"  class="com.tssa.km.web.controller.TestResultFormController">
+   <property name="questionService" ref="questionService"/>
+  </bean>
+<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/messages</value>
+			</list>
+		</property>
+		<property name="cacheSeconds" value="30" />
+</bean>
+</beans>
